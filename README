@@ -1,0 +1,13 @@
+How to Build libjpeg-turbo for multiple ARM architectures and the Simulator.
+
+First, look at the build setting to make sure that you've selected the approprate SDK if you have more than one. Otherwise leave it at "Latest" and the sciprt will use the appropriate one with no change from you required.
+
+Second, edit the ScriptVariables file. Essentially you need to construct  the appropriate flags for each architecture as described there.
+
+You can opt to use the latest SVN source code or a tagged release - again refer to the SourceVariables file. If you use the latest SVN trunk code, then on each build this project will do an "svn update" in the source folder.
+
+If you opt to use a particular tagged release, then the script will look and see if a libjpeg-turbo folder exists - if it does, THAT FOLDER IS USED. WARNING! If you change the release from 1.18 to 1.19, then you MUST first delete the old libjpeg-turbo folder entirely then run the script again. You can see what Version you are using by looking at the VERSION file in the Xcode left pane (its a file located in the libjpeg-turbo folder).
+
+Finally, do a Build operation. You should be using the "IOS Device" not the Simulator when you do the build. IT WILL NOT WORK if you do not do this.
+
+You can select the Log file in the left pane. It will show the last build output before you start, then slowly fill as the build progresses. This is just a convenience so you don't have to look at the Build output in the pane and expand it to see what happened.

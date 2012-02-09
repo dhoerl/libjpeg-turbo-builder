@@ -1,0 +1,570 @@
+
+
+
+  IOS_PLATFORMDIR="/Developer/Platforms/iPhoneOS.platform"
+  IOS_SYSROOT="$IOS_PLATFORMDIR/Developer/SDKs/iPhoneOS4.3.sdk"
+  IOS_GCC="$IOS_PLATFORMDIR/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2"
+
+  ARM v6 only (up to and including iPhone 3G):
+  IOS_CFLAGS="-march=armv6 -mcpu=arm1176jzf-s -mfpu=vfp"
+
+  ARM v7 only (iPhone 3GS and newer, iPad):
+  IOS_CFLAGS="-march=armv7 -mcpu=cortex-a8 -mtune=cortex-a8 -mfpu=neon"
+
+Follow the procedure under "Building libjpeg-turbo" above, adding
+
+  --host arm-apple-darwin10 --enable-static --disable-shared \
+    CC="$IOS_GCC" LD="$IOS_GCC" \
+    CFLAGS="-mfloat-abi=softfp -isysroot $IOS_SYSROOT -O3 $IOS_CFLAGS" \
+    LDFLAGS="-mfloat-abi=softfp -isysroot $IOS_SYSROOT $IOS_CFLAGS"
+
+to the configure command line.
+
+
+
+
+
+# assuming that NATIVE_ARCH_32_BIT is i386, this is what you would use for the simulator
+CFLAGS_i386='-O3 -m32'
+LDFLAGS_i386=-m32
+
+TCC=arm-apple-darwin10-llvm-gcc-4.2 # do a whence to be sure
+IOS_PLATFORMDIR=${PLATFORM_DIR}
+
+NATIVE_ARCH_32_BIT i386
+
+ --host arm-apple-darwin10 --enable-static --disable-shared \
+    CC=${TCC} LD="{TLD}" \
+    CFLAGS="${TCFLAGS}" \
+    LDFLAGS="${TLDFLAGS}"
+
+
+
+
+
+
+
+
+
+Additional build requirements:
+
+  gas-preprocessor.pl (https://github.com/yuvi/gas-preprocessor) should be
+  installed in your PATH.
+
+Set the following shell variables for simplicity:
+
+  IOS_PLATFORMDIR="/Developer/Platforms/iPhoneOS.platform"
+  IOS_SYSROOT="$IOS_PLATFORMDIR/Developer/SDKs/iPhoneOS4.3.sdk"
+  IOS_GCC="$IOS_PLATFORMDIR/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2"
+
+  ARM v6 only (up to and including iPhone 3G):
+  IOS_CFLAGS="-march=armv6 -mcpu=arm1176jzf-s -mfpu=vfp"
+
+  ARM v7 only (iPhone 3GS and newer, iPad):
+  IOS_CFLAGS="-march=armv7 -mcpu=cortex-a8 -mtune=cortex-a8 -mfpu=neon"
+
+Follow the procedure under "Building libjpeg-turbo" above, adding
+
+  --host arm-apple-darwin10 --enable-static --disable-shared \
+    CC="$IOS_GCC" LD="$IOS_GCC" \
+    CFLAGS="-mfloat-abi=softfp -isysroot $IOS_SYSROOT -O3 $IOS_CFLAGS" \
+    LDFLAGS="-mfloat-abi=softfp -isysroot $IOS_SYSROOT $IOS_CFLAGS"
+
+to the configure command line.
+
+
+
+
+
+
+]o[ ls  -l  /Volumes/Data/git/gas-preprocessor
+total 40
+-rwxr-xr-x  1 dhoerl  admin  14377 Feb  7 14:26 gas-preprocessor.pl
+
+]o[ whence gas-preprocessor.pl
+/Volumes/Data/git/gas-preprocessor/gas-preprocessor.pl
+
+pull into .
+
+
+
+IOS_CFLAGS='-march=armv7 -mcpu=cortex-a8 -mtune=cortex-a8 -mfpu=neon'
+
+IOS_GCC=arm-apple-darwin10-llvm-gcc-4.2 # do a whence to be sure
+IOS_PLATFORMDIR=${PLATFORM_DIR}
+IOS_SYSROOT=${SDK_DIR}
+
+
+NATIVE_ARCH_32_BIT i386
+NATIVE_ARCH_64_BIT x86_64
+
+
+]o[ ls  -l  /Volumes/Data/git/gas-preprocessor
+total 40
+-rwxr-xr-x  1 dhoerl  admin  14377 Feb  7 14:26 gas-preprocessor.pl
+
+]o[ whence gas-preprocessor.pl
+/Volumes/Data/git/gas-preprocessor/gas-preprocessor.pl
+
+pull into .
+
+
+
+IOS_CFLAGS='-march=armv7 -mcpu=cortex-a8 -mtune=cortex-a8 -mfpu=neon'
+
+IOS_GCC=arm-apple-darwin10-llvm-gcc-4.2 # do a whence to be sure
+IOS_PLATFORMDIR=${PLATFORM_DIR}
+IOS_SYSROOT=${SDK_DIR}
+
+
+NATIVE_ARCH_32_BIT i386
+NATIVE_ARCH_64_BIT x86_64
+
+
+
+
+PhaseScriptExecution "Run Script" "/Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Intermediates/PhotoScrollerNetwork.build/Debug-iphoneos/PhotoScrollerNetwork libjpeg-turbo.build/Script-DE4ADA4F14E2A43100D63E5A.sh"
+    cd /Volumes/Data/git/PhotoScrollerNetwork
+    setenv ACTION build
+    setenv AD_HOC_CODE_SIGNING_ALLOWED NO
+    setenv ALTERNATE_GROUP staff
+    setenv ALTERNATE_MODE u+w,go-w,a+rX
+    setenv ALTERNATE_OWNER dhoerl
+    setenv ALWAYS_SEARCH_USER_PATHS NO
+    setenv APPLE_INTERNAL_DEVELOPER_DIR /AppleInternal/Developer
+    setenv APPLE_INTERNAL_DIR /AppleInternal
+    setenv APPLE_INTERNAL_DOCUMENTATION_DIR /AppleInternal/Documentation
+    setenv APPLE_INTERNAL_LIBRARY_DIR /AppleInternal/Library
+    setenv APPLE_INTERNAL_TOOLS /AppleInternal/Developer/Tools
+    setenv APPLY_RULES_IN_COPY_FILES NO
+    setenv ARCHS armv7
+    setenv ARCHS_STANDARD_32_64_BIT armv7
+    setenv ARCHS_STANDARD_32_BIT armv7
+    setenv ARCHS_UNIVERSAL_IPHONE_OS armv7
+    setenv AVAILABLE_PLATFORMS "iphonesimulator macosx iphoneos"
+    setenv BUILD_COMPONENTS "headers build"
+    setenv BUILD_DIR /Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Products
+    setenv BUILD_ROOT /Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Products
+    setenv BUILD_STYLE 
+    setenv BUILD_VARIANTS normal
+    setenv BUILT_PRODUCTS_DIR /Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Products/Debug-iphoneos
+    setenv CACHE_ROOT /var/folders/bq/kv68nbln6jng4_6pl9znhlxh0000gp/C/com.apple.Xcode.502
+    setenv CCHROOT /var/folders/bq/kv68nbln6jng4_6pl9znhlxh0000gp/C/com.apple.Xcode.502
+    setenv CHMOD /bin/chmod
+    setenv CHOWN /usr/sbin/chown
+    setenv CLANG_ENABLE_OBJC_ARC YES
+    setenv CLASS_FILE_DIR "/Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Intermediates/PhotoScrollerNetwork.build/Debug-iphoneos/PhotoScrollerNetwork libjpeg-turbo.build/JavaClasses"
+    setenv CLEAN_PRECOMPS YES
+    setenv CLONE_HEADERS NO
+    setenv CODESIGNING_FOLDER_PATH "/Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Products/Debug-iphoneos/PhotoScrollerNetwork copy.app"
+    setenv CODE_SIGNING_ALLOWED YES
+    setenv CODE_SIGNING_REQUIRED YES
+    setenv CODE_SIGN_CONTEXT_CLASS XCiPhoneOSCodeSignContext
+    setenv CODE_SIGN_IDENTITY "iPhone Developer"
+    setenv COMMAND_MODE legacy
+    setenv COMPOSITE_SDK_DIRS /var/folders/bq/kv68nbln6jng4_6pl9znhlxh0000gp/C/com.apple.Xcode.502/CompositeSDKs
+    setenv COMPRESS_PNG_FILES YES
+    setenv CONFIGURATION Debug
+    setenv CONFIGURATION_BUILD_DIR /Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Products/Debug-iphoneos
+    setenv CONFIGURATION_TEMP_DIR /Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Intermediates/PhotoScrollerNetwork.build/Debug-iphoneos
+    setenv CONTENTS_FOLDER_PATH "PhotoScrollerNetwork copy.app"
+    setenv COPYING_PRESERVES_HFS_DATA NO
+    setenv COPY_PHASE_STRIP NO
+    setenv COPY_RESOURCES_FROM_STATIC_FRAMEWORKS YES
+    setenv CP /bin/cp
+    setenv CURRENT_ARCH armv7
+    setenv CURRENT_VARIANT normal
+    setenv DEAD_CODE_STRIPPING YES
+    setenv DEBUGGING_SYMBOLS YES
+    setenv DEBUG_INFORMATION_FORMAT dwarf-with-dsym
+    setenv DEFAULT_COMPILER com.apple.compilers.llvm.clang.1_0
+    setenv DEPLOYMENT_LOCATION NO
+    setenv DEPLOYMENT_POSTPROCESSING NO
+    setenv DERIVED_FILES_DIR "/Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Intermediates/PhotoScrollerNetwork.build/Debug-iphoneos/PhotoScrollerNetwork libjpeg-turbo.build/DerivedSources"
+    setenv DERIVED_FILE_DIR "/Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Intermediates/PhotoScrollerNetwork.build/Debug-iphoneos/PhotoScrollerNetwork libjpeg-turbo.build/DerivedSources"
+    setenv DERIVED_SOURCES_DIR "/Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Intermediates/PhotoScrollerNetwork.build/Debug-iphoneos/PhotoScrollerNetwork libjpeg-turbo.build/DerivedSources"
+    setenv DEVELOPER_APPLICATIONS_DIR /Developer/Applications
+    setenv DEVELOPER_BIN_DIR /Developer/usr/bin
+    setenv DEVELOPER_DIR /Developer
+    setenv DEVELOPER_FRAMEWORKS_DIR /Developer/Library/Frameworks
+    setenv DEVELOPER_FRAMEWORKS_DIR_QUOTED "\"/Developer/Library/Frameworks\""
+    setenv DEVELOPER_LIBRARY_DIR /Developer/Library
+    setenv DEVELOPER_SDK_DIR /Developer/SDKs
+    setenv DEVELOPER_TOOLS_DIR /Developer/Tools
+    setenv DEVELOPER_USR_DIR /Developer/usr
+    setenv DEVELOPMENT_LANGUAGE English
+    setenv DOCUMENTATION_FOLDER_PATH "PhotoScrollerNetwork copy.app/English.lproj/Documentation"
+    setenv DO_HEADER_SCANNING_IN_JAM NO
+    setenv DSTROOT /tmp/PhotoScrollerNetwork.dst
+    setenv DWARF_DSYM_FILE_NAME "PhotoScrollerNetwork copy.app.dSYM"
+    setenv DWARF_DSYM_FILE_SHOULD_ACCOMPANY_PRODUCT NO
+    setenv DWARF_DSYM_FOLDER_PATH /Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Products/Debug-iphoneos
+    setenv EFFECTIVE_PLATFORM_NAME -iphoneos
+    setenv EMBEDDED_PROFILE_NAME embedded.mobileprovision
+    setenv ENABLE_HEADER_DEPENDENCIES YES
+    setenv ENABLE_OPENMP_SUPPORT NO
+    setenv ENTITLEMENTS_ALLOWED YES
+    setenv ENTITLEMENTS_REQUIRED YES
+    setenv EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS ".DS_Store .svn .git .hg CVS"
+    setenv EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES "*.nib *.lproj *.framework *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj"
+    setenv EXECUTABLES_FOLDER_PATH "PhotoScrollerNetwork copy.app/Executables"
+    setenv EXECUTABLE_FOLDER_PATH "PhotoScrollerNetwork copy.app"
+    setenv EXECUTABLE_NAME "PhotoScrollerNetwork copy"
+    setenv EXECUTABLE_PATH "PhotoScrollerNetwork copy.app/PhotoScrollerNetwork copy"
+    setenv FILE_LIST "/Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Intermediates/PhotoScrollerNetwork.build/Debug-iphoneos/PhotoScrollerNetwork libjpeg-turbo.build/Objects/LinkFileList"
+    setenv FIXED_FILES_DIR "/Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Intermediates/PhotoScrollerNetwork.build/Debug-iphoneos/PhotoScrollerNetwork libjpeg-turbo.build/FixedFiles"
+    setenv FRAMEWORKS_FOLDER_PATH "PhotoScrollerNetwork copy.app/Frameworks"
+    setenv FRAMEWORK_FLAG_PREFIX -framework
+    setenv FRAMEWORK_SEARCH_PATHS "\"/Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Products/Debug-iphoneos\" "
+    setenv FRAMEWORK_VERSION A
+    setenv FULL_PRODUCT_NAME "PhotoScrollerNetwork copy.app"
+    setenv GCC3_VERSION 3.3
+    setenv GCC_C_LANGUAGE_STANDARD c99
+    setenv GCC_DYNAMIC_NO_PIC NO
+    setenv GCC_INLINES_ARE_PRIVATE_EXTERN YES
+    setenv GCC_OPTIMIZATION_LEVEL 0
+    setenv GCC_PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"
+    setenv GCC_PRECOMPILE_PREFIX_HEADER YES
+    setenv GCC_PREFIX_HEADER PhotoScrollerNetwork/PhotoScrollerNetwork-Prefix.pch
+    setenv GCC_PREPROCESSOR_DEFINITIONS "DEBUG=1 "
+    setenv GCC_SYMBOLS_PRIVATE_EXTERN NO
+    setenv GCC_THUMB_SUPPORT YES
+    setenv GCC_TREAT_WARNINGS_AS_ERRORS NO
+    setenv GCC_VERSION com.apple.compilers.llvm.clang.1_0
+    setenv GCC_VERSION_IDENTIFIER com_apple_compilers_llvm_clang_1_0
+    setenv GCC_WARN_ABOUT_MISSING_PROTOTYPES YES
+    setenv GCC_WARN_ABOUT_RETURN_TYPE YES
+    setenv GCC_WARN_UNUSED_VARIABLE YES
+    setenv GENERATE_MASTER_OBJECT_FILE NO
+    setenv GENERATE_PKGINFO_FILE YES
+    setenv GENERATE_PROFILING_CODE NO
+    setenv GID 20
+    setenv GROUP staff
+    setenv HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT YES
+    setenv HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES YES
+    setenv HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS YES
+    setenv HEADERMAP_INCLUDES_PROJECT_HEADERS YES
+    setenv HEADER_SEARCH_PATHS "\"/Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Products/Debug-iphoneos/include\" /opt/libjpeg-turbo/include"
+    setenv ICONV /usr/bin/iconv
+    setenv INFOPLIST_EXPAND_BUILD_SETTINGS YES
+    setenv INFOPLIST_FILE "PhotoScrollerNetwork copy-Info.plist"
+    setenv INFOPLIST_OUTPUT_FORMAT binary
+    setenv INFOPLIST_PATH "PhotoScrollerNetwork copy.app/Info.plist"
+    setenv INFOPLIST_PREPROCESS NO
+    setenv INFOSTRINGS_PATH "PhotoScrollerNetwork copy.app/English.lproj/InfoPlist.strings"
+    setenv INSTALL_DIR /tmp/PhotoScrollerNetwork.dst/Applications
+    setenv INSTALL_GROUP staff
+    setenv INSTALL_MODE_FLAG u+w,go-w,a+rX
+    setenv INSTALL_OWNER dhoerl
+    setenv INSTALL_PATH /Applications
+    setenv INSTALL_ROOT /tmp/PhotoScrollerNetwork.dst
+    setenv IPHONEOS_DEPLOYMENT_TARGET 5.0
+    setenv JAVAC_DEFAULT_FLAGS "-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"
+    setenv JAVA_APP_STUB /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub
+    setenv JAVA_ARCHIVE_CLASSES YES
+    setenv JAVA_ARCHIVE_TYPE JAR
+    setenv JAVA_COMPILER /usr/bin/javac
+    setenv JAVA_FOLDER_PATH "PhotoScrollerNetwork copy.app/Java"
+    setenv JAVA_FRAMEWORK_RESOURCES_DIRS Resources
+    setenv JAVA_JAR_FLAGS cv
+    setenv JAVA_SOURCE_SUBDIR .
+    setenv JAVA_USE_DEPENDENCIES YES
+    setenv JAVA_ZIP_FLAGS -urg
+    setenv JIKES_DEFAULT_FLAGS "+E +OLDCSO"
+    setenv KEEP_PRIVATE_EXTERNS NO
+    setenv LD_GENERATE_MAP_FILE NO
+    setenv LD_MAP_FILE_PATH "/Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Intermediates/PhotoScrollerNetwork.build/Debug-iphoneos/PhotoScrollerNetwork libjpeg-turbo.build/PhotoScrollerNetwork copy-LinkMap-normal-armv7.txt"
+    setenv LD_NO_PIE NO
+    setenv LD_OPENMP_FLAGS -fopenmp
+    setenv LEGACY_DEVELOPER_DIR /Developer/Library/Xcode/PrivatePlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer
+    setenv LEX /Developer/usr/bin/lex
+    setenv LIBRARY_FLAG_NOSPACE YES
+    setenv LIBRARY_FLAG_PREFIX -l
+    setenv LIBRARY_SEARCH_PATHS "\"/Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Products/Debug-iphoneos\"  \"/Volumes/Data/git/PhotoScrollerNetwork\""
+    setenv LINKER_DISPLAYS_MANGLED_NAMES NO
+    setenv LINK_FILE_LIST_normal_armv7 "/Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Intermediates/PhotoScrollerNetwork.build/Debug-iphoneos/PhotoScrollerNetwork libjpeg-turbo.build/Objects-normal/armv7/PhotoScrollerNetwork copy.LinkFileList"
+    setenv LINK_WITH_STANDARD_LIBRARIES YES
+    setenv LOCALIZED_RESOURCES_FOLDER_PATH "PhotoScrollerNetwork copy.app/English.lproj"
+    setenv LOCAL_ADMIN_APPS_DIR /Applications/Utilities
+    setenv LOCAL_APPS_DIR /Applications
+    setenv LOCAL_DEVELOPER_DIR /Library/Developer
+    setenv LOCAL_LIBRARY_DIR /Library
+    setenv MACH_O_TYPE mh_execute
+    setenv MAC_OS_X_PRODUCT_BUILD_VERSION 11C74
+    setenv MAC_OS_X_VERSION_ACTUAL 1072
+    setenv MAC_OS_X_VERSION_MAJOR 1070
+    setenv MAC_OS_X_VERSION_MINOR 0702
+    setenv NATIVE_ARCH armv7
+    setenv NATIVE_ARCH_32_BIT i386
+    setenv NATIVE_ARCH_64_BIT x86_64
+    setenv NATIVE_ARCH_ACTUAL x86_64
+    setenv NO_COMMON YES
+    setenv OBJECT_FILE_DIR "/Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Intermediates/PhotoScrollerNetwork.build/Debug-iphoneos/PhotoScrollerNetwork libjpeg-turbo.build/Objects"
+    setenv OBJECT_FILE_DIR_normal "/Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Intermediates/PhotoScrollerNetwork.build/Debug-iphoneos/PhotoScrollerNetwork libjpeg-turbo.build/Objects-normal"
+    setenv OBJROOT /Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Intermediates
+    setenv ONLY_ACTIVE_ARCH NO
+    setenv OPTIMIZATION_LEVEL 0
+    setenv OS MACOS
+    setenv OSAC /usr/bin/osacompile
+    setenv OTHER_CFLAGS -DTURBO
+    setenv OTHER_CPLUSPLUSFLAGS -DTURBO
+    setenv PACKAGE_TYPE com.apple.package-type.wrapper.application
+    setenv PASCAL_STRINGS YES
+    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    setenv PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES "/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Developer/Headers /Developer/SDKs /Developer/Platforms"
+    setenv PBDEVELOPMENTPLIST_PATH "PhotoScrollerNetwork copy.app/pbdevelopment.plist"
+    setenv PFE_FILE_C_DIALECTS objective-c
+    setenv PKGINFO_FILE_PATH "/Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Intermediates/PhotoScrollerNetwork.build/Debug-iphoneos/PhotoScrollerNetwork libjpeg-turbo.build/PkgInfo"
+    setenv PKGINFO_PATH "PhotoScrollerNetwork copy.app/PkgInfo"
+    setenv PLATFORM_DEVELOPER_APPLICATIONS_DIR /Developer/Platforms/iPhoneOS.platform/Developer/Applications
+    setenv PLATFORM_DEVELOPER_BIN_DIR /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin
+    setenv PLATFORM_DEVELOPER_LIBRARY_DIR /Developer/Library/Xcode/PrivatePlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer/Library
+    setenv PLATFORM_DEVELOPER_SDK_DIR /Developer/Platforms/iPhoneOS.platform/Developer/SDKs
+    setenv PLATFORM_DEVELOPER_TOOLS_DIR /Developer/Platforms/iPhoneOS.platform/Developer/Tools
+    setenv PLATFORM_DEVELOPER_USR_DIR /Developer/Platforms/iPhoneOS.platform/Developer/usr
+    setenv PLATFORM_DIR /Developer/Platforms/iPhoneOS.platform
+    setenv PLATFORM_NAME iphoneos
+    setenv PLATFORM_PREFERRED_ARCH armv7
+    setenv PLATFORM_PRODUCT_BUILD_VERSION 9A334
+    setenv PLIST_FILE_OUTPUT_FORMAT binary
+    setenv PLUGINS_FOLDER_PATH "PhotoScrollerNetwork copy.app/PlugIns"
+    setenv PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR YES
+    setenv PRECOMP_DESTINATION_DIR "/Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Intermediates/PhotoScrollerNetwork.build/Debug-iphoneos/PhotoScrollerNetwork libjpeg-turbo.build/PrefixHeaders"
+    setenv PRESERVE_DEAD_CODE_INITS_AND_TERMS NO
+    setenv PRIVATE_HEADERS_FOLDER_PATH "PhotoScrollerNetwork copy.app/PrivateHeaders"
+    setenv PRODUCT_NAME "PhotoScrollerNetwork copy"
+    setenv PRODUCT_SETTINGS_PATH "/Volumes/Data/git/PhotoScrollerNetwork/PhotoScrollerNetwork copy-Info.plist"
+    setenv PRODUCT_TYPE com.apple.product-type.application
+    setenv PROFILING_CODE NO
+    setenv PROJECT PhotoScrollerNetwork
+    setenv PROJECT_DERIVED_FILE_DIR /Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Intermediates/PhotoScrollerNetwork.build/DerivedSources
+    setenv PROJECT_DIR /Volumes/Data/git/PhotoScrollerNetwork
+    setenv PROJECT_FILE_PATH /Volumes/Data/git/PhotoScrollerNetwork/PhotoScrollerNetwork.xcodeproj
+    setenv PROJECT_NAME PhotoScrollerNetwork
+    setenv PROJECT_TEMP_DIR /Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Intermediates/PhotoScrollerNetwork.build
+    setenv PROVISIONING_PROFILE_REQUIRED YES
+    setenv PUBLIC_HEADERS_FOLDER_PATH "PhotoScrollerNetwork copy.app/Headers"
+    setenv RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS YES
+    setenv REMOVE_CVS_FROM_RESOURCES YES
+    setenv REMOVE_GIT_FROM_RESOURCES YES
+    setenv REMOVE_HG_FROM_RESOURCES YES
+    setenv REMOVE_SVN_FROM_RESOURCES YES
+    setenv RESOURCE_RULES_REQUIRED YES
+    setenv REZ_COLLECTOR_DIR "/Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Intermediates/PhotoScrollerNetwork.build/Debug-iphoneos/PhotoScrollerNetwork libjpeg-turbo.build/ResourceManagerResources"
+    setenv REZ_OBJECTS_DIR "/Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Intermediates/PhotoScrollerNetwork.build/Debug-iphoneos/PhotoScrollerNetwork libjpeg-turbo.build/ResourceManagerResources/Objects"
+    setenv REZ_SEARCH_PATHS "\"/Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Products/Debug-iphoneos\" "
+    setenv RUN_CLANG_STATIC_ANALYZER NO
+    setenv SCAN_ALL_SOURCE_FILES_FOR_INCLUDES NO
+    setenv SCRIPTS_FOLDER_PATH "PhotoScrollerNetwork copy.app/Scripts"
+    setenv SCRIPT_INPUT_FILE_COUNT 0
+    setenv SCRIPT_OUTPUT_FILE_COUNT 0
+    setenv SDKROOT /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk
+    setenv SDK_DIR /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk
+    setenv SDK_NAME iphoneos5.0
+    setenv SDK_PRODUCT_BUILD_VERSION 9A334
+    setenv SED /usr/bin/sed
+    setenv SEPARATE_STRIP NO
+    setenv SEPARATE_SYMBOL_EDIT NO
+    setenv SET_DIR_MODE_OWNER_GROUP YES
+    setenv SET_FILE_MODE_OWNER_GROUP NO
+    setenv SHALLOW_BUNDLE YES
+    setenv SHARED_DERIVED_FILE_DIR /Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Products/Debug-iphoneos/DerivedSources
+    setenv SHARED_FRAMEWORKS_FOLDER_PATH "PhotoScrollerNetwork copy.app/SharedFrameworks"
+    setenv SHARED_PRECOMPS_DIR /Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/PrecompiledHeaders
+    setenv SHARED_SUPPORT_FOLDER_PATH "PhotoScrollerNetwork copy.app/SharedSupport"
+    setenv SKIP_INSTALL NO
+    setenv SOURCE_ROOT /Volumes/Data/git/PhotoScrollerNetwork
+    setenv SRCROOT /Volumes/Data/git/PhotoScrollerNetwork
+    setenv STRINGS_FILE_OUTPUT_ENCODING binary
+    setenv STRIP_INSTALLED_PRODUCT YES
+    setenv STRIP_STYLE all
+    setenv SUPPORTED_DEVICE_FAMILIES 1,2
+    setenv SUPPORTED_PLATFORMS "iphonesimulator iphoneos"
+    setenv SYMROOT /Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Products
+    setenv SYSTEM_ADMIN_APPS_DIR /Applications/Utilities
+    setenv SYSTEM_APPS_DIR /Applications
+    setenv SYSTEM_CORE_SERVICES_DIR /System/Library/CoreServices
+    setenv SYSTEM_DEMOS_DIR /Applications/Extras
+    setenv SYSTEM_DEVELOPER_APPS_DIR /Developer/Applications
+    setenv SYSTEM_DEVELOPER_BIN_DIR /Developer/usr/bin
+    setenv SYSTEM_DEVELOPER_DEMOS_DIR "/Developer/Applications/Utilities/Built Examples"
+    setenv SYSTEM_DEVELOPER_DIR /Developer
+    setenv SYSTEM_DEVELOPER_DOC_DIR "/Developer/ADC Reference Library"
+    setenv SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR "/Developer/Applications/Graphics Tools"
+    setenv SYSTEM_DEVELOPER_JAVA_TOOLS_DIR "/Developer/Applications/Java Tools"
+    setenv SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR "/Developer/Applications/Performance Tools"
+    setenv SYSTEM_DEVELOPER_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes"
+    setenv SYSTEM_DEVELOPER_TOOLS /Developer/Tools
+    setenv SYSTEM_DEVELOPER_TOOLS_DOC_DIR "/Developer/ADC Reference Library/documentation/DeveloperTools"
+    setenv SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes/DeveloperTools"
+    setenv SYSTEM_DEVELOPER_USR_DIR /Developer/usr
+    setenv SYSTEM_DEVELOPER_UTILITIES_DIR /Developer/Applications/Utilities
+    setenv SYSTEM_DOCUMENTATION_DIR /Library/Documentation
+    setenv SYSTEM_LIBRARY_DIR /System/Library
+    setenv TARGETED_DEVICE_FAMILY 1
+    setenv TARGETNAME "PhotoScrollerNetwork libjpeg-turbo"
+    setenv TARGET_BUILD_DIR /Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Products/Debug-iphoneos
+    setenv TARGET_NAME "PhotoScrollerNetwork libjpeg-turbo"
+    setenv TARGET_TEMP_DIR "/Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Intermediates/PhotoScrollerNetwork.build/Debug-iphoneos/PhotoScrollerNetwork libjpeg-turbo.build"
+    setenv TEMP_DIR "/Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Intermediates/PhotoScrollerNetwork.build/Debug-iphoneos/PhotoScrollerNetwork libjpeg-turbo.build"
+    setenv TEMP_FILES_DIR "/Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Intermediates/PhotoScrollerNetwork.build/Debug-iphoneos/PhotoScrollerNetwork libjpeg-turbo.build"
+    setenv TEMP_FILE_DIR "/Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Intermediates/PhotoScrollerNetwork.build/Debug-iphoneos/PhotoScrollerNetwork libjpeg-turbo.build"
+    setenv TEMP_ROOT /Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Intermediates
+    setenv TEST_AFTER_BUILD NO
+    setenv UID 502
+    setenv UNLOCALIZED_RESOURCES_FOLDER_PATH "PhotoScrollerNetwork copy.app"
+    setenv UNSTRIPPED_PRODUCT NO
+    setenv USER dhoerl
+    setenv USER_APPS_DIR /Volumes/Data/Users/dhoerl/Applications
+    setenv USER_LIBRARY_DIR /Volumes/Data/Users/dhoerl/Library
+    setenv USE_DYNAMIC_NO_PIC YES
+    setenv USE_HEADERMAP YES
+    setenv USE_HEADER_SYMLINKS NO
+    setenv VALIDATE_PRODUCT NO
+    setenv VALID_ARCHS "armv6 armv7"
+    setenv VERBOSE_PBXCP NO
+    setenv VERSIONPLIST_PATH "PhotoScrollerNetwork copy.app/version.plist"
+    setenv VERSION_INFO_BUILDER dhoerl
+    setenv VERSION_INFO_FILE "PhotoScrollerNetwork copy_vers.c"
+    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:PhotoScrollerNetwork copy  PROJECT:PhotoScrollerNetwork-\""
+    setenv WRAPPER_EXTENSION app
+    setenv WRAPPER_NAME "PhotoScrollerNetwork copy.app"
+    setenv WRAPPER_SUFFIX .app
+    setenv XCODE_APP_SUPPORT_DIR /Developer/Library/Xcode
+    setenv XCODE_PRODUCT_BUILD_VERSION 4D502
+    setenv XCODE_VERSION_ACTUAL 0421
+    setenv XCODE_VERSION_MAJOR 0400
+    setenv XCODE_VERSION_MINOR 0420
+    setenv YACC /Developer/usr/bin/yacc
+    /bin/sh -c "\"/Volumes/Data/Users/dhoerl/Library/Developer/Xcode/DerivedData/PhotoScrollerNetwork-aurpipxxecdfuuexqablpzdjatxp/Build/Intermediates/PhotoScrollerNetwork.build/Debug-iphoneos/PhotoScrollerNetwork libjpeg-turbo.build/Script-DE4ADA4F14E2A43100D63E5A.sh\""
+
+Hello World
+
+
+
+
+#---------------------------------------------------------------------------------------
+#  UniTiffBld created by David Hoerl on July 9th, 2008
+#  Version 1.0
+#
+#  Copyright (c) 2008 by David Hoerl. All rights reserved.
+#
+#  Permission to use, copy, modify and distribute this software and its documentation
+#  is hereby granted, provided that both the copyright notice and this permission
+#  notice appear in all copies of the software, derivative works or modified versions,
+#  and any portions thereof, and that both notices appear in supporting documentation,
+#  and that credit is given to David Hoerl in all documents and publicity
+#  pertaining to direct or indirect use of this code or its derivatives.
+#
+#  THIS IS EXPERIMENTAL SOFTWARE AND IT IS KNOWN TO HAVE BUGS, SOME OF WHICH MAY HAVE
+#  SERIOUS CONSEQUENCES. THE COPYRIGHT HOLDER ALLOWS FREE USE OF THIS SOFTWARE IN ITS
+#  "AS IS" CONDITION. THE COPYRIGHT HOLDER DISCLAIMS ANY LIABILITY OF ANY KIND FOR ANY
+#  DAMAGES WHATSOEVER RESULTING DIRECTLY OR INDIRECTLY FROM THE USE OF THIS SOFTWARE
+#  OR OF ANY DERIVATIVE WORK.
+#---------------------------------------------------------------------------------------
+
+#set -x  # trace execution
+
+machine=$(uname -p)
+
+# build 32 bit native last, as tools built with it get installed
+if [[ $machine == "i386" ]]
+then
+	#archs="ppc ppc64 x86_64 i386" 
+	archs="x86_64 i386" 
+else
+	#archs="i386 x86_64 ppc64 ppc"
+	archs="ppc64 ppc"
+fi
+
+for arch in $archs
+do
+	make -q clean
+	find -d . -type d -name .deps -exec rm -r {} ';'
+
+	if [[ $arch == "i386" || $arch == "x86_64" ]]
+	then
+		sedStr='s/_BIGENDIAN 1/_BIGENDIAN 0/' 
+	else
+		sedStr='s/_BIGENDIAN 0/_BIGENDIAN 1/' 
+	fi
+
+	./configure --target=$arch --disable-jpeg CFLAGS="-Os" CXXFLAGS="-Os" 
+	if [ $? != "0" ] ; then return $? ; fi
+
+	# sigh. only way I could figure out how to fix the ENDIAN issue
+	rm -f /tmp/${arch}_config.h  # -f == no complaints if not there
+	cp ./libtiff/tif_config.h /tmp/${arch}_config.h
+	rm ./libtiff/tif_config.h 
+	sed -e "$sedStr" < /tmp/${arch}_config.h > ./libtiff/tif_config.h 
+	rm /tmp/${arch}_config.h 
+	cp ./libtiff/tif_config.h /tmp/${arch}_config.h
+
+	rm -f /tmp/tiffconf.h
+	cp ./libtiff/tiffconf.h /tmp/tiffconf.h
+	rm ./libtiff/tiffconf.h
+	sed -e "$sedStr" < /tmp/tiffconf.h > ./libtiff/tiffconf.h 
+	rm /tmp/tiffconf.h
+
+	make "CC=gcc -arch $arch" \
+		 "CXX=g++ -arch $arch" \
+		 "LD=ld -arch $arch" 
+	if [ $? != "0" ] ; then return $? ; fi
+
+find . -name libtiff.a -exec ls -l {} \;
+
+	mv libtiff/.libs/libtiff.a ${arch}.a
+	if [ $? != "0" ] ; then return $? ; fi
+
+	#need to get version, which can change
+	lib=$(print libtiff/.libs/libtiff.?.dylib)
+	lib=${lib#libtiff/.libs/libtiff.}
+	lib=${lib%.dylib}
+
+	mv libtiff/.libs/libtiff.${lib}.dylib ${arch}.${lib}.dylib
+	if [ $? != "0" ] ; then return $? ; fi
+
+	rm libtiff/.libs/libtiff.*
+	if [ $? != "0" ] ; then return $? ; fi
+
+done
+
+
+afiles=""
+yfiles=""
+
+for arch in $archs
+do
+	afiles="${afiles}${arch}.a "
+	yfiles="${yfiles}${arch}.${lib}.dylib "
+done
+# now assemble the universal library
+lipo -create $afiles -output libtiff/.libs/libtiff.a 
+if [ $? != "0" ] ; then return $? ; fi
+
+lipo -create $yfiles -output libtiff/.libs/libtiff.${lib}.dylib 
+if [ $? != "0" ] ; then return $? ; fi
+
+# done with these now
+rm -r $afiles $yfiles
+
+ranlib libtiff/.libs/libtiff.a 
+if [ $? != "0" ] ; then return $? ; fi
+
+# just to prove it
+file libtiff/.libs/libtiff.a
+
+# just to prove it
+file libtiff/.libs/libtiff.${lib}.dylib
+
+find . -name libtiff.a -exec ls -l {} \;
+
+make install
+make -q clean
+
+find -d . -type d -name .deps -exec rm -r {} ';'
+
+exit 0
+
+
+

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/libjpeg-turbo/!svn/ver/719/tags/1.1.90/cmakescripts
+END
+testclean.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/libjpeg-turbo/!svn/ver/719/tags/1.1.90/cmakescripts/testclean.cmake
+END
+getdate.bat
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/libjpeg-turbo/!svn/ver/719/tags/1.1.90/cmakescripts/getdate.bat
+END

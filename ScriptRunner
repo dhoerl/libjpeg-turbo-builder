@@ -1,0 +1,131 @@
+#! /bin/ksh
+# KSH is the one shell language I know really well.
+
+# YOU CAN ONLY RUN THIS FROM THE BUILD PHASE - it sets oodles of environmental variables needed by the script
+
+
+#if you want to see every command execute, remove the # below as "set -x" causes a lot of helpful output
+#set -x
+
+# Read in the user selected variables
+. ./ScriptVariables
+
+# need to pickup the gas-assembler.pl executable
+PATH="$PWD:$PATH"
+
+# Make sure we have gas-preprocessor.pl per the libjpeg-turbo instructions for arm
+if [ ! -f gas-preprocessor.pl ]
+then
+    curl https://github.com/yuvi/gas-preprocessor/gas-preprocessor.pl -o gas-preprocessor.pl
+    chmod +x gas-preprocessor.pl # just be sure
+fi
+if [ ! -f gas-preprocessor.pl ]
+then
+    exit 1
+fi
+
+# Now lets get the source
+
+export FETCH=""
+if [ ${TURBO_VERSION} = "" ]
+then
+    # user wants latest svn code
+    if [ -d libjpeg-turbo ]
+    then
+        cd libjpeg-turbo
+        svn update
+        cd ..
+    else
+        FETCH="//libjpeg-turbo.svn.sourceforge.net/svnroot/libjpeg-turbo/trunk"
+    fi
+else
+    # user selected a numbered release
+    if [ ! -d libjpeg-turbo ]
+    then
+        FETCH="//libjpeg-turbo.svn.sourceforge.net/svnroot/libjpeg-turbo/tags/${TURBO_VERSION}"
+    else
+	echo "Using version $(cat ./libjpeg-turbo/VERSION)"
+    fi
+fi
+
+if [ ${FETCH} != "" ]
+then 
+    svn co https:${FETCH} libjpeg-turbo
+    echo ${FETCH} > libjpeg-turbo/VERSION
+    
+    # just do this once
+    cd libjpeg-turbo
+    autoreconf -fiv
+    cd ..
+fi
+
+export ARCHIVES=""
+
+cd libjpeg-turbo
+
+for a in ${VALID_ARCHS} ${NATIVE_ARCH_32_BIT}
+do
+    typeset -u ARCH=${a}
+    TCC=CC_${ARCH}
+    if [ ${TCC} = "" ]
+    then
+        continue
+    fi
+    
+    TCFLAGS=CFLAGS_${ARCH}
+    TLDFLAGS=LDFLAGS_${ARCH}
+
+    if [ ${TCFLAGS} = "" -o ${TLDFLAGS} = "" ]
+    then
+        continue
+    fi
+    
+    typeset -n TCC="${TCC}"
+    typeset -n TCFLAGS="${TCFLAGS}"
+    typeset -n TLDFLAGS="${TLDFLAGS}"
+
+    echo TCC $TCC
+    echo TCFLAGS $TCFLAGS
+    echo TCFLAGS $TLDFLAGS
+
+    make clean
+    
+    ./configure --host arm-apple-darwin10 --enable-static --disable-shared \
+        CC="${TCC}" LD="${TCC}" \
+        CFLAGS="${TCFLAGS}" \
+        LDFLAGS="${TLDFLAGS}"
+    if [ $? != "0" ] 
+    then 
+        echo "Config failed!"
+        exit 1
+    fi
+
+    make
+    if [ $? != "0" ] 
+    then 
+        echo "Make failed!"
+        exit 1
+    fi
+    
+    TMPLOC="/tmp/lib${ARCH}.a"
+    ARCHIVES="$ARCHIVES $TMPLOC"
+    
+    echo WORKING is $PWD
+    mv -f .libs/libturbojpeg.a $TMPLOC
+    
+    make clean
+    
+    echo "Just finished arch $ARCH"
+done
+
+echo "Lipo The Following Archives: $ARCHIVES"
+
+rm -f ../libturbojpeg.a
+lipo -create $ARCHIVES -output ../libturbojpeg.a
+if [ $? != "0" ] 
+then 
+    echo "Lipo failed!"
+    exit 1
+fi
+
+exit 0

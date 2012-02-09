@@ -1,0 +1,287 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE4ADA7214E2C9C400D63E5A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4ADA7114E2C9C400D63E5A /* UIKit.framework */; };
+		DE4ADA7414E2C9C400D63E5A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4ADA7314E2C9C400D63E5A /* Foundation.framework */; };
+		DE4ADA7614E2C9C400D63E5A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4ADA7514E2C9C400D63E5A /* CoreGraphics.framework */; };
+		DE4ADA7E14E2C9C400D63E5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4ADA7D14E2C9C400D63E5A /* main.m */; };
+		DE4ADA8B14E2E90D00D63E5A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4ADA8114E2C9C400D63E5A /* AppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DE4ADA6D14E2C9C400D63E5A /* libjpeg-turbo-builder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "libjpeg-turbo-builder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE4ADA7114E2C9C400D63E5A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DE4ADA7314E2C9C400D63E5A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DE4ADA7514E2C9C400D63E5A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DE4ADA7914E2C9C400D63E5A /* libjpeg-turbo-builder-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "libjpeg-turbo-builder-Info.plist"; sourceTree = "<group>"; };
+		DE4ADA7B14E2C9C400D63E5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DE4ADA7D14E2C9C400D63E5A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DE4ADA7F14E2C9C400D63E5A /* libjpeg-turbo-builder-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libjpeg-turbo-builder-Prefix.pch"; sourceTree = "<group>"; };
+		DE4ADA8014E2C9C400D63E5A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DE4ADA8114E2C9C400D63E5A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DE4ADA8814E2C9F900D63E5A /* ScriptVariables */ = {isa = PBXFileReference; lastKnownFileType = text; path = ScriptVariables; sourceTree = "<group>"; };
+		DE4ADA8914E2CCAE00D63E5A /* Scrap */ = {isa = PBXFileReference; lastKnownFileType = text; path = Scrap; sourceTree = "<group>"; };
+		DE4ADA9614E342AC00D63E5A /* Log */ = {isa = PBXFileReference; lastKnownFileType = text; path = Log; sourceTree = "<group>"; };
+		DE4ADA9714E3437000D63E5A /* ScriptRunner */ = {isa = PBXFileReference; lastKnownFileType = text; path = ScriptRunner; sourceTree = "<group>"; };
+		DE4ADA9814E3439A00D63E5A /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE4ADA6A14E2C9C400D63E5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE4ADA7214E2C9C400D63E5A /* UIKit.framework in Frameworks */,
+				DE4ADA7414E2C9C400D63E5A /* Foundation.framework in Frameworks */,
+				DE4ADA7614E2C9C400D63E5A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DE4ADA6214E2C9C400D63E5A = {
+			isa = PBXGroup;
+			children = (
+				DE4ADA9814E3439A00D63E5A /* README.txt */,
+				DE4ADA8814E2C9F900D63E5A /* ScriptVariables */,
+				DE4ADA9714E3437000D63E5A /* ScriptRunner */,
+				DE4ADA9614E342AC00D63E5A /* Log */,
+				DE4ADA8914E2CCAE00D63E5A /* Scrap */,
+				DE4ADA7714E2C9C400D63E5A /* libjpeg-turbo-builder */,
+				DE4ADA7014E2C9C400D63E5A /* Frameworks */,
+				DE4ADA6E14E2C9C400D63E5A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DE4ADA6E14E2C9C400D63E5A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE4ADA6D14E2C9C400D63E5A /* libjpeg-turbo-builder.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE4ADA7014E2C9C400D63E5A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE4ADA7114E2C9C400D63E5A /* UIKit.framework */,
+				DE4ADA7314E2C9C400D63E5A /* Foundation.framework */,
+				DE4ADA7514E2C9C400D63E5A /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE4ADA7714E2C9C400D63E5A /* libjpeg-turbo-builder */ = {
+			isa = PBXGroup;
+			children = (
+				DE4ADA8014E2C9C400D63E5A /* AppDelegate.h */,
+				DE4ADA8114E2C9C400D63E5A /* AppDelegate.m */,
+				DE4ADA7814E2C9C400D63E5A /* Supporting Files */,
+			);
+			path = "libjpeg-turbo-builder";
+			sourceTree = "<group>";
+		};
+		DE4ADA7814E2C9C400D63E5A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE4ADA7914E2C9C400D63E5A /* libjpeg-turbo-builder-Info.plist */,
+				DE4ADA7A14E2C9C400D63E5A /* InfoPlist.strings */,
+				DE4ADA7D14E2C9C400D63E5A /* main.m */,
+				DE4ADA7F14E2C9C400D63E5A /* libjpeg-turbo-builder-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE4ADA6C14E2C9C400D63E5A /* libjpeg-turbo-builder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE4ADA8514E2C9C400D63E5A /* Build configuration list for PBXNativeTarget "libjpeg-turbo-builder" */;
+			buildPhases = (
+				DE4ADA6914E2C9C400D63E5A /* Sources */,
+				DE4ADA6A14E2C9C400D63E5A /* Frameworks */,
+				DE4ADA6B14E2C9C400D63E5A /* Resources */,
+				DE4ADA8A14E2D3F200D63E5A /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "libjpeg-turbo-builder";
+			productName = "libjpeg-turbo-builder";
+			productReference = DE4ADA6D14E2C9C400D63E5A /* libjpeg-turbo-builder.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE4ADA6414E2C9C400D63E5A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = DE4ADA6714E2C9C400D63E5A /* Build configuration list for PBXProject "libjpeg-turbo-builder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DE4ADA6214E2C9C400D63E5A;
+			productRefGroup = DE4ADA6E14E2C9C400D63E5A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE4ADA6C14E2C9C400D63E5A /* libjpeg-turbo-builder */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE4ADA6B14E2C9C400D63E5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DE4ADA8A14E2D3F200D63E5A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/ksh;
+			shellScript = "> Log\n./scriptRunner | tee -a Log\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE4ADA6914E2C9C400D63E5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE4ADA8B14E2E90D00D63E5A /* AppDelegate.m in Sources */,
+				DE4ADA7E14E2C9C400D63E5A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DE4ADA7A14E2C9C400D63E5A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE4ADA7B14E2C9C400D63E5A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DE4ADA8314E2C9C400D63E5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DE4ADA8414E2C9C400D63E5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE4ADA8614E2C9C400D63E5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "libjpeg-turbo-builder/libjpeg-turbo-builder-Prefix.pch";
+				INFOPLIST_FILE = "libjpeg-turbo-builder/libjpeg-turbo-builder-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DE4ADA8714E2C9C400D63E5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "libjpeg-turbo-builder/libjpeg-turbo-builder-Prefix.pch";
+				INFOPLIST_FILE = "libjpeg-turbo-builder/libjpeg-turbo-builder-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE4ADA6714E2C9C400D63E5A /* Build configuration list for PBXProject "libjpeg-turbo-builder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE4ADA8314E2C9C400D63E5A /* Debug */,
+				DE4ADA8414E2C9C400D63E5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE4ADA8514E2C9C400D63E5A /* Build configuration list for PBXNativeTarget "libjpeg-turbo-builder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE4ADA8614E2C9C400D63E5A /* Debug */,
+				DE4ADA8714E2C9C400D63E5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DE4ADA6414E2C9C400D63E5A /* Project object */;
+}

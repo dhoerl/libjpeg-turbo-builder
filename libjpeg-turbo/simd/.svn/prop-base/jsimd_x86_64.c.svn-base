@@ -1,0 +1,5 @@
+K 13
+svn:mergeinfo
+V 51
+/branches/1.1.x/simd/jsimd_x86_64.c:378-380,382,387
+END

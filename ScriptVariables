@@ -1,0 +1,24 @@
+#
+# This file gets imorted by the shell and contains the data needed to build the final libjpegturbo libary for various ios processors and the mac
+# Look in the build phase for the Run Script that does all the work.
+# When this script finishes, if successful it will create a fat libjpegturbo.a file in the current project directory, which you can link to from one or more apps
+
+# Many of these variables are set by Xcode, so check  "Show Environmental Variables in Build Log" in the Run Script window
+# Either set the tagged version here, or comment it out with a leading '#' to get the latest svn code
+export TURBO_VERSION=1.1.90
+
+# you need one such line for every processor in the VALID_ARCHS that you want to build
+CFLAGS_ARMV6="-mfloat-abi=softfp -isysroot ${SDK_DIR} -O3 -march=armv6 -mcpu=arm1176jzf-s -mfpu=vfp"
+LDFLAGS_ARMV6="-mfloat-abi=softfp -isysroot ${SDK_DIR} $CFLAGS_ARMV6"
+CC_ARMV6="arm-apple-darwin10-llvm-gcc-4.2"
+
+# you need one such line for every VALID_ARCHS that you want to build
+CFLAGS_ARMV7="-mfloat-abi=softfp -isysroot ${SDK_DIR} -O3 -march=armv7 -mcpu=cortex-a8 -mtune=cortex-a8 -mfpu=neon"
+LDFLAGS_ARMV7="-mfloat-abi=softfp -isysroot ${SDK_DIR} $CFLAGS_ARMV7"
+CC_ARMV7="arm-apple-darwin10-llvm-gcc-4.2"
+
+# Simulator uses 32bit native processor
+# assuming that NATIVE_ARCH_32_BIT is i386, this is what you would use for the simulator
+CFLAGS_I386='-O3 -m32'
+LDFLAGS_I386='-m32'
+CC_I386='/usr/bin/cc'
