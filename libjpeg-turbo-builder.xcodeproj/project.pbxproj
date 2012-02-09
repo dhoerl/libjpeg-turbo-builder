@@ -29,7 +29,7 @@
 		DE4ADA8914E2CCAE00D63E5A /* Scrap */ = {isa = PBXFileReference; lastKnownFileType = text; path = Scrap; sourceTree = "<group>"; };
 		DE4ADA9614E342AC00D63E5A /* Log */ = {isa = PBXFileReference; lastKnownFileType = text; path = Log; sourceTree = "<group>"; };
 		DE4ADA9714E3437000D63E5A /* ScriptRunner */ = {isa = PBXFileReference; lastKnownFileType = text; path = ScriptRunner; sourceTree = "<group>"; };
-		DE4ADA9814E3439A00D63E5A /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		DE4ADA9814E3439A00D63E5A /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +49,7 @@
 		DE4ADA6214E2C9C400D63E5A = {
 			isa = PBXGroup;
 			children = (
-				DE4ADA9814E3439A00D63E5A /* README.txt */,
+				DE4ADA9814E3439A00D63E5A /* README */,
 				DE4ADA8814E2C9F900D63E5A /* ScriptVariables */,
 				DE4ADA9714E3437000D63E5A /* ScriptRunner */,
 				DE4ADA9614E342AC00D63E5A /* Log */,
@@ -280,6 +280,7 @@
 				DE4ADA8714E2C9C400D63E5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
