@@ -1,6 +1,0 @@
-K 13
-svn:mergeinfo
-V 90
-/branches/1.1.x/Makefile.am:378-380,382,387,391,408-409,436,528-535
-/trunk/configure.ac:77
-END
