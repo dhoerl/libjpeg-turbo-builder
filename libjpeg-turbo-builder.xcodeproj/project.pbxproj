@@ -26,10 +26,11 @@
 		DE4ADA8014E2C9C400D63E5A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DE4ADA8114E2C9C400D63E5A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DE4ADA8814E2C9F900D63E5A /* ScriptVariables */ = {isa = PBXFileReference; lastKnownFileType = text; path = ScriptVariables; sourceTree = "<group>"; };
-		DE4ADA8914E2CCAE00D63E5A /* Scrap */ = {isa = PBXFileReference; lastKnownFileType = text; path = Scrap; sourceTree = "<group>"; };
 		DE4ADA9614E342AC00D63E5A /* Log */ = {isa = PBXFileReference; lastKnownFileType = text; path = Log; sourceTree = "<group>"; };
 		DE4ADA9714E3437000D63E5A /* ScriptRunner */ = {isa = PBXFileReference; lastKnownFileType = text; path = ScriptRunner; sourceTree = "<group>"; };
 		DE4ADA9814E3439A00D63E5A /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		DE588D5514E5F53500C7E151 /* Log.configure */ = {isa = PBXFileReference; lastKnownFileType = text; path = Log.configure; sourceTree = "<group>"; };
+		DE588D5614E5F54B00C7E151 /* Log.make */ = {isa = PBXFileReference; lastKnownFileType = text; path = Log.make; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +52,10 @@
 			children = (
 				DE4ADA9814E3439A00D63E5A /* README */,
 				DE4ADA8814E2C9F900D63E5A /* ScriptVariables */,
-				DE4ADA9714E3437000D63E5A /* ScriptRunner */,
 				DE4ADA9614E342AC00D63E5A /* Log */,
-				DE4ADA8914E2CCAE00D63E5A /* Scrap */,
+				DE588D5514E5F53500C7E151 /* Log.configure */,
+				DE588D5614E5F54B00C7E151 /* Log.make */,
+				DE4ADA9714E3437000D63E5A /* ScriptRunner */,
 				DE4ADA7714E2C9C400D63E5A /* libjpeg-turbo-builder */,
 				DE4ADA7014E2C9C400D63E5A /* Frameworks */,
 				DE4ADA6E14E2C9C400D63E5A /* Products */,
@@ -167,7 +169,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/ksh;
-			shellScript = "> Log\n./scriptRunner | tee -a Log\n";
+			shellScript = "> Log\n> Log.configure\n> Log.make\n./scriptRunner | tee -a Log\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

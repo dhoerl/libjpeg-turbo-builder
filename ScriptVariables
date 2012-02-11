@@ -5,7 +5,7 @@
 
 # Many of these variables are set by Xcode, so check  "Show Environmental Variables in Build Log" in the Run Script window
 # Either set the tagged version here, or comment it out with a leading '#' to get the latest svn code
-export TURBO_VERSION=1.1.90
+TURBO_VERSION=1.2.0
 
 # you need one such line for every processor in the VALID_ARCHS that you want to build
 CFLAGS_ARMV6="-mfloat-abi=softfp -isysroot ${SDK_DIR} -O3 -march=armv6 -mcpu=arm1176jzf-s -mfpu=vfp"

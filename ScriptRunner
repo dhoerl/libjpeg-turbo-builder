@@ -3,63 +3,70 @@
 
 # YOU CAN ONLY RUN THIS FROM THE BUILD PHASE - it sets oodles of environmental variables needed by the script
 
-
 #if you want to see every command execute, remove the # below as "set -x" causes a lot of helpful output
-#set -x
+# set -x
+
+TURBO_VERSION=""
 
 # Read in the user selected variables
 . ./ScriptVariables
 
-# need to pickup the gas-assembler.pl executable
-PATH="$PWD:$PATH"
-
 # Make sure we have gas-preprocessor.pl per the libjpeg-turbo instructions for arm
-if [ ! -f gas-preprocessor.pl ]
+if [ ! -d ./gas-preprocessor ]
 then
-    curl https://github.com/yuvi/gas-preprocessor/gas-preprocessor.pl -o gas-preprocessor.pl
-    chmod +x gas-preprocessor.pl # just be sure
+    git clone git://github.com/yuvi/gas-preprocessor.git
 fi
-if [ ! -f gas-preprocessor.pl ]
+if [ ! -x ./gas-preprocessor/gas-preprocessor.pl ]
 then
-    exit 1
+    chmod +x ./gas-preprocessor/gas-preprocessor.pl # just be sure
 fi
+
+# need to pickup the gas-assembler.pl executable
+export PATH="${PWD}/gas-preprocessor:$PATH"
 
 # Now lets get the source
 
-export FETCH=""
-if [ ${TURBO_VERSION} = "" ]
+VERSION=""
+if [ -f ./libjpeg-turbo/VERSION ]
+then
+	VERSION=$(cat ./libjpeg-turbo/VERSION)
+fi
+
+FETCH=""
+if [[ ${TURBO_VERSION} == "" && ${VERSION} == "trunk" ]]
 then
     # user wants latest svn code
-    if [ -d libjpeg-turbo ]
+    if [ -d ./libjpeg-turbo ]
     then
-        cd libjpeg-turbo
+        cd ./libjpeg-turbo
         svn update
         cd ..
     else
         FETCH="//libjpeg-turbo.svn.sourceforge.net/svnroot/libjpeg-turbo/trunk"
+		TURBO_VERSION="trunk"
     fi
 else
     # user selected a numbered release
-    if [ ! -d libjpeg-turbo ]
+    if [[ ! -d ./libjpeg-turbo || ${TURBO_VERSION} != ${VERSION} ]]
     then
         FETCH="//libjpeg-turbo.svn.sourceforge.net/svnroot/libjpeg-turbo/tags/${TURBO_VERSION}"
     else
-	echo "Using version $(cat ./libjpeg-turbo/VERSION)"
+		echo "Using version $(cat ./libjpeg-turbo/VERSION)"
     fi
 fi
 
-if [ ${FETCH} != "" ]
+if [[ ${FETCH} != "" ]]
 then 
     svn co https:${FETCH} libjpeg-turbo
-    echo ${FETCH} > libjpeg-turbo/VERSION
+    echo ${TURBO_VERSION} > ./libjpeg-turbo/VERSION
     
     # just do this once
     cd libjpeg-turbo
-    autoreconf -fiv
+    autoreconf -fiv >> ../LOG.configure
     cd ..
 fi
 
-export ARCHIVES=""
+ARCHIVES=""
 
 cd libjpeg-turbo
 
@@ -67,40 +74,37 @@ for a in ${VALID_ARCHS} ${NATIVE_ARCH_32_BIT}
 do
     typeset -u ARCH=${a}
     TCC=CC_${ARCH}
-    if [ ${TCC} = "" ]
-    then
-        continue
-    fi
-    
     TCFLAGS=CFLAGS_${ARCH}
     TLDFLAGS=LDFLAGS_${ARCH}
 
-    if [ ${TCFLAGS} = "" -o ${TLDFLAGS} = "" ]
-    then
-        continue
-    fi
-    
     typeset -n TCC="${TCC}"
     typeset -n TCFLAGS="${TCFLAGS}"
     typeset -n TLDFLAGS="${TLDFLAGS}"
+	
+    if [[ ${TCC} == "" || ${TCFLAGS} == "" || ${TLDFLAGS} == "" ]]
+    then
+        continue
+    fi
 
-    echo TCC $TCC
-    echo TCFLAGS $TCFLAGS
-    echo TCFLAGS $TLDFLAGS
+    #echo TCC $TCC
+    #echo TCFLAGS $TCFLAGS
+    #echo TCFLAGS $TLDFLAGS
 
-    make clean
+    make clean > /dev/null
     
+	echo "Configure $a"
     ./configure --host arm-apple-darwin10 --enable-static --disable-shared \
         CC="${TCC}" LD="${TCC}" \
         CFLAGS="${TCFLAGS}" \
-        LDFLAGS="${TLDFLAGS}"
+        LDFLAGS="${TLDFLAGS}" >> ../Log.configure
     if [ $? != "0" ] 
     then 
         echo "Config failed!"
         exit 1
     fi
 
-    make
+	echo "Making $a..."
+    make >> ../Log.make
     if [ $? != "0" ] 
     then 
         echo "Make failed!"
@@ -111,11 +115,10 @@ do
     ARCHIVES="$ARCHIVES $TMPLOC"
     
     echo WORKING is $PWD
-    mv -f .libs/libturbojpeg.a $TMPLOC
+    mv -f .libs/libturbojpeg.a $TMPLOC  
+    make clean > /dev/null
     
-    make clean
-    
-    echo "Just finished arch $ARCH"
+    echo "Just finished arch $a"
 done
 
 echo "Lipo The Following Archives: $ARCHIVES"
