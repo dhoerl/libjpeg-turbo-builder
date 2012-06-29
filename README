@@ -11,3 +11,25 @@ If you opt to use a particular tagged release, then the script will look and see
 Finally, do a Build operation. You should be using the "IOS Device" not the Simulator when you do the build. IT WILL NOT WORK if you do not do this.
 
 You can select the Log file in the left pane. It will show the last build output before you start, then slowly fill as the build progresses. This is just a convenience so you don't have to look at the Build output in the pane and expand it to see what happened.
+
+
+
++ ./configure --host arm-apple-darwin10 --enable-static --disable-shared --with-gas-preprocessor 
+
+CC=arm-apple-darwin10-llvm-gcc LD=arm-apple-darwin10-llvm-gcc 
+
+CFLAGS='-mfloat-abi=softfp -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk -O3 -march=armv7 -mcpu=cortex-a8 -mtune=cortex-a8 -mfpu=neon' 
+LDFLAGS='-mfloat-abi=softfp -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk -march=armv7 -mcpu=cortex-a8 -mtune=cortex-a8 -mfpu=neon'
+
+
+export  IOS_PLATFORMDIR="/Developer/Platforms/iPhoneOS.platform"
+export  IOS_SYSROOT="$IOS_PLATFORMDIR/Developer/SDKs/iPhoneOS5.1.sdk"
+export  IOS_GCC="$IOS_PLATFORMDIR/Developer/usr/bin/arm-apple-darwin10-llvm-gcc"
+export  IOS_CFLAGS="-march=armv7 -mcpu=cortex-a8 -mtune=cortex-a8 -mfpu=neon"
+
+Follow the procedure under "Building libjpeg-turbo" above, adding
+
+  --host arm-apple-darwin10 --enable-static --disable-shared \
+    CC="$IOS_GCC" LD="$IOS_GCC" \
+    CFLAGS="-mfloat-abi=softfp -isysroot $IOS_SYSROOT -O3 $IOS_CFLAGS" \
+    LDFLAGS="-mfloat-abi=softfp -isysroot $IOS_SYSROOT $IOS_CFLAGS"

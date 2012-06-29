@@ -5,20 +5,18 @@
 
 # Many of these variables are set by Xcode, so check  "Show Environmental Variables in Build Log" in the Run Script window
 # Either set the tagged version here, or comment it out with a leading '#' to get the latest svn code
-TURBO_VERSION=1.2.0
-
-# you need one such line for every processor in the VALID_ARCHS that you want to build
-CFLAGS_ARMV6="-mfloat-abi=softfp -isysroot ${SDK_DIR} -O3 -march=armv6 -mcpu=arm1176jzf-s -mfpu=vfp"
-LDFLAGS_ARMV6="-mfloat-abi=softfp -isysroot ${SDK_DIR} $CFLAGS_ARMV6"
-CC_ARMV6="arm-apple-darwin10-llvm-gcc-4.2"
+#TURBO_VERSION=1.2.0
 
 # you need one such line for every VALID_ARCHS that you want to build
-CFLAGS_ARMV7="-mfloat-abi=softfp -isysroot ${SDK_DIR} -O3 -march=armv7 -mcpu=cortex-a8 -mtune=cortex-a8 -mfpu=neon"
-LDFLAGS_ARMV7="-mfloat-abi=softfp -isysroot ${SDK_DIR} $CFLAGS_ARMV7"
-CC_ARMV7="arm-apple-darwin10-llvm-gcc-4.2"
+FLAGS_ARMV7="-march=armv7 -mcpu=cortex-a8 -mtune=cortex-a8 -mfpu=neon"
+CFLAGS_ARMV7="-mfloat-abi=softfp -isysroot ${SDK_DIR} -O3 ${FLAGS_ARMV7}"
+LDFLAGS_ARMV7="-mfloat-abi=softfp -isysroot ${SDK_DIR} ${FLAGS_ARMV7}"
+CC_ARMV7="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2"
+OPTIONS_ARMV7="--host arm-apple-darwin --with-gas-preprocessor"
 
 # Simulator uses 32bit native processor
 # assuming that NATIVE_ARCH_32_BIT is i386, this is what you would use for the simulator
 CFLAGS_I386='-O3 -m32'
 LDFLAGS_I386='-m32'
-CC_I386='/usr/bin/cc'
+CC_I386='/usr/bin/gcc'
+OPTIONS_I386='--build i386-apple-darwin'

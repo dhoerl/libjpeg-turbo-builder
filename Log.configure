@@ -1,49 +1,43 @@
-glibtoolize: putting auxiliary files in `.'.
-glibtoolize: copying file `./ltmain.sh'
-glibtoolize: Consider adding `AC_CONFIG_MACRO_DIR([m4])' to configure.ac and
-glibtoolize: rerunning glibtoolize, to keep the correct libtool macros in-tree.
-glibtoolize: Consider adding `-I m4' to ACLOCAL_AMFLAGS in Makefile.am.
 checking for a BSD-compatible install... /usr/bin/install -c
 checking whether build environment is sane... yes
+checking for arm-apple-darwin-strip... no
+checking for strip... strip
 checking for a thread-safe mkdir -p... ./install-sh -c -d
 checking for gawk... no
 checking for mawk... no
 checking for nawk... no
 checking for awk... awk
 checking whether make sets $(MAKE)... yes
-checking for arm-apple-darwin10-strip... no
-checking for strip... strip
 checking for style of include used by make... GNU
-checking for arm-apple-darwin10-gcc... arm-apple-darwin10-llvm-gcc-4.2
-checking for C compiler default output file name... a.out
+checking for arm-apple-darwin-gcc... /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2
 checking whether the C compiler works... yes
-checking whether we are cross compiling... yes
+checking for C compiler default output file name... a.out
 checking for suffix of executables... 
+checking whether we are cross compiling... yes
 checking for suffix of object files... o
 checking whether we are using the GNU C compiler... yes
-checking whether arm-apple-darwin10-llvm-gcc-4.2 accepts -g... yes
-checking for arm-apple-darwin10-llvm-gcc-4.2 option to accept ISO C89... none needed
-checking dependency style of arm-apple-darwin10-llvm-gcc-4.2... gcc3
-checking how to run the C preprocessor... arm-apple-darwin10-llvm-gcc-4.2 -E -traditional-cpp
-checking for arm-apple-darwin10-gcc... (cached) arm-apple-darwin10-llvm-gcc-4.2
+checking whether /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2 accepts -g... yes
+checking for /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2 option to accept ISO C89... none needed
+checking dependency style of /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2... gcc3
+checking how to run the C preprocessor... /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2 -E -traditional-cpp
+checking for arm-apple-darwin-gcc... (cached) /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2
 checking whether we are using the GNU C compiler... (cached) yes
-checking whether arm-apple-darwin10-llvm-gcc-4.2 accepts -g... (cached) yes
-checking for arm-apple-darwin10-llvm-gcc-4.2 option to accept ISO C89... (cached) none needed
-checking dependency style of arm-apple-darwin10-llvm-gcc-4.2... (cached) gcc3
-checking dependency style of arm-apple-darwin10-llvm-gcc-4.2... gcc3
-checking for a BSD-compatible install... /usr/bin/install -c
-checking build system type... i386-apple-darwin11.2.0
-checking host system type... arm-apple-darwin10
+checking whether /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2 accepts -g... (cached) yes
+checking for /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2 option to accept ISO C89... (cached) none needed
+checking dependency style of /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2... (cached) gcc3
+checking dependency style of /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2... gcc3
+checking build system type... i386-apple-darwin11.4.0
+checking host system type... arm-apple-darwin
 checking how to print strings... printf
 checking for a sed that does not truncate output... /usr/bin/sed
 checking for grep that handles long lines and -e... /usr/bin/grep
 checking for egrep... /usr/bin/grep -E
 checking for fgrep... /usr/bin/grep -F
-checking for ld used by arm-apple-darwin10-llvm-gcc-4.2... arm-apple-darwin10-llvm-gcc-4.2
-checking if the linker (arm-apple-darwin10-llvm-gcc-4.2) is GNU ld... no
+checking for ld used by /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2... /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2
+checking if the linker (/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2) is GNU ld... no
 checking for BSD- or MS-compatible name lister (nm)... no
-checking for arm-apple-darwin10-dumpbin... no
-checking for arm-apple-darwin10-link... no
+checking for arm-apple-darwin-dumpbin... no
+checking for arm-apple-darwin-link... no
 checking for dumpbin... no
 checking for link... link -dump
 checking the name lister (nm) interface... BSD nm
@@ -51,25 +45,25 @@ checking whether ln -s works... yes
 checking the maximum length of command line arguments... 196608
 checking whether the shell understands some XSI constructs... yes
 checking whether the shell understands "+="... yes
-checking for arm-apple-darwin10-llvm-gcc-4.2 option to reload object files... -r
-checking for arm-apple-darwin10-objdump... no
+checking for /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2 option to reload object files... -r
+checking for arm-apple-darwin-objdump... no
 checking for objdump... no
 checking how to recognize dependent libraries... pass_all
-checking for arm-apple-darwin10-ar... no
+checking for arm-apple-darwin-ar... no
 checking for ar... ar
-checking for arm-apple-darwin10-strip... strip
-checking for arm-apple-darwin10-ranlib... no
+checking for arm-apple-darwin-strip... strip
+checking for arm-apple-darwin-ranlib... no
 checking for ranlib... ranlib
-checking command to parse nm output from arm-apple-darwin10-llvm-gcc-4.2 object... ok
-checking for arm-apple-darwin10-dsymutil... no
+checking command to parse nm output from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2 object... ok
+checking for arm-apple-darwin-dsymutil... no
 checking for dsymutil... dsymutil
-checking for arm-apple-darwin10-nmedit... no
+checking for arm-apple-darwin-nmedit... no
 checking for nmedit... nmedit
-checking for arm-apple-darwin10-lipo... no
+checking for arm-apple-darwin-lipo... no
 checking for lipo... lipo
-checking for arm-apple-darwin10-otool... no
+checking for arm-apple-darwin-otool... no
 checking for otool... otool
-checking for arm-apple-darwin10-otool64... no
+checking for arm-apple-darwin-otool64... no
 checking for otool64... no
 checking for -single_module linker flag... yes
 checking for -exported_symbols_list linker flag... yes
@@ -86,160 +80,14 @@ checking for stdint.h... yes
 checking for unistd.h... yes
 checking for dlfcn.h... yes
 checking for objdir... .libs
-checking if arm-apple-darwin10-llvm-gcc-4.2 supports -fno-rtti -fno-exceptions... no
-checking for arm-apple-darwin10-llvm-gcc-4.2 option to produce PIC... -fno-common -DPIC
-checking if arm-apple-darwin10-llvm-gcc-4.2 PIC flag -fno-common -DPIC works... yes
-checking if arm-apple-darwin10-llvm-gcc-4.2 static flag -static works... no
-checking if arm-apple-darwin10-llvm-gcc-4.2 supports -c -o file.o... yes
-checking if arm-apple-darwin10-llvm-gcc-4.2 supports -c -o file.o... (cached) yes
-checking whether the arm-apple-darwin10-llvm-gcc-4.2 linker (arm-apple-darwin10-llvm-gcc-4.2) supports shared libraries... yes
-checking dynamic linker characteristics... darwin10 dyld
-checking how to hardcode library paths into programs... immediate
-checking whether stripping libraries is possible... yes
-checking if libtool supports shared libraries... yes
-checking whether to build shared libraries... no
-checking whether to build static libraries... yes
-checking whether ln -s works... yes
-checking whether compiler supports pointers to undefined structures... yes
-checking whether __SUNPRO_C is declared... no
-checking for ANSI C header files... (cached) yes
-checking stddef.h usability... yes
-checking stddef.h presence... yes
-checking for stddef.h... yes
-checking for stdlib.h... (cached) yes
-checking for string.h... (cached) yes
-checking for sys/types.h... (cached) yes
-checking for an ANSI C-conforming const... yes
-checking whether char is unsigned... no
-checking for inline... inline
-checking for size_t... yes
-checking for unsigned char... yes
-checking for unsigned short... yes
-checking if right shift is signed... Assuming that right shift is signed on target machine.
-checking for short external names... ok
-checking for memset... yes
-checking for memcpy... yes
-checking libjpeg API version... 6.2
-checking libjpeg shared library version... 62:0
-checking whether the linker supports version scripts... yes (Sun style)
-checking whether to use version script when building libjpeg-turbo... yes
-checking for inline... __attribute__((always_inline))
-checking whether to include arithmetic encoding support... yes
-checking whether to include arithmetic decoding support... yes
-checking whether to build TurboJPEG/OSS Java wrapper... no
-checking if we have SIMD optimisations for cpu type... yes (arm)
-checking if the assembler is GNU-compatible and can be used... no
-configure: creating ./config.status
-config.status: creating pkgscripts/libjpeg-turbo.spec
-config.status: creating pkgscripts/makecygwinpkg
-config.status: creating pkgscripts/makedpkg
-config.status: creating pkgscripts/makemacpkg
-config.status: creating pkgscripts/Description.plist
-config.status: creating pkgscripts/Info.plist
-config.status: creating pkgscripts/uninstall
-config.status: creating pkgscripts/makesunpkg
-config.status: creating pkgscripts/pkginfo
-config.status: creating tjbenchtest
-config.status: creating tjexampletest
-config.status: creating libjpeg.map
-config.status: creating Makefile
-config.status: creating simd/Makefile
-config.status: creating java/Makefile
-config.status: creating config.h
-config.status: creating jconfig.h
-config.status: executing depfiles commands
-config.status: executing libtool commands
-checking for a BSD-compatible install... /usr/bin/install -c
-checking whether build environment is sane... yes
-checking for a thread-safe mkdir -p... ./install-sh -c -d
-checking for gawk... no
-checking for mawk... no
-checking for nawk... no
-checking for awk... awk
-checking whether make sets $(MAKE)... yes
-checking for arm-apple-darwin10-strip... no
-checking for strip... strip
-checking for style of include used by make... GNU
-checking for arm-apple-darwin10-gcc... arm-apple-darwin10-llvm-gcc-4.2
-checking for C compiler default output file name... a.out
-checking whether the C compiler works... yes
-checking whether we are cross compiling... yes
-checking for suffix of executables... 
-checking for suffix of object files... o
-checking whether we are using the GNU C compiler... yes
-checking whether arm-apple-darwin10-llvm-gcc-4.2 accepts -g... yes
-checking for arm-apple-darwin10-llvm-gcc-4.2 option to accept ISO C89... none needed
-checking dependency style of arm-apple-darwin10-llvm-gcc-4.2... gcc3
-checking how to run the C preprocessor... arm-apple-darwin10-llvm-gcc-4.2 -E -traditional-cpp
-checking for arm-apple-darwin10-gcc... (cached) arm-apple-darwin10-llvm-gcc-4.2
-checking whether we are using the GNU C compiler... (cached) yes
-checking whether arm-apple-darwin10-llvm-gcc-4.2 accepts -g... (cached) yes
-checking for arm-apple-darwin10-llvm-gcc-4.2 option to accept ISO C89... (cached) none needed
-checking dependency style of arm-apple-darwin10-llvm-gcc-4.2... (cached) gcc3
-checking dependency style of arm-apple-darwin10-llvm-gcc-4.2... gcc3
-checking for a BSD-compatible install... /usr/bin/install -c
-checking build system type... i386-apple-darwin11.2.0
-checking host system type... arm-apple-darwin10
-checking how to print strings... printf
-checking for a sed that does not truncate output... /usr/bin/sed
-checking for grep that handles long lines and -e... /usr/bin/grep
-checking for egrep... /usr/bin/grep -E
-checking for fgrep... /usr/bin/grep -F
-checking for ld used by arm-apple-darwin10-llvm-gcc-4.2... arm-apple-darwin10-llvm-gcc-4.2
-checking if the linker (arm-apple-darwin10-llvm-gcc-4.2) is GNU ld... no
-checking for BSD- or MS-compatible name lister (nm)... no
-checking for arm-apple-darwin10-dumpbin... no
-checking for arm-apple-darwin10-link... no
-checking for dumpbin... no
-checking for link... link -dump
-checking the name lister (nm) interface... BSD nm
-checking whether ln -s works... yes
-checking the maximum length of command line arguments... 196608
-checking whether the shell understands some XSI constructs... yes
-checking whether the shell understands "+="... yes
-checking for arm-apple-darwin10-llvm-gcc-4.2 option to reload object files... -r
-checking for arm-apple-darwin10-objdump... no
-checking for objdump... no
-checking how to recognize dependent libraries... pass_all
-checking for arm-apple-darwin10-ar... no
-checking for ar... ar
-checking for arm-apple-darwin10-strip... strip
-checking for arm-apple-darwin10-ranlib... no
-checking for ranlib... ranlib
-checking command to parse nm output from arm-apple-darwin10-llvm-gcc-4.2 object... ok
-checking for arm-apple-darwin10-dsymutil... no
-checking for dsymutil... dsymutil
-checking for arm-apple-darwin10-nmedit... no
-checking for nmedit... nmedit
-checking for arm-apple-darwin10-lipo... no
-checking for lipo... lipo
-checking for arm-apple-darwin10-otool... no
-checking for otool... otool
-checking for arm-apple-darwin10-otool64... no
-checking for otool64... no
-checking for -single_module linker flag... yes
-checking for -exported_symbols_list linker flag... yes
-checking for -force_load linker flag... yes
-checking for ANSI C header files... yes
-checking for sys/types.h... yes
-checking for sys/stat.h... yes
-checking for stdlib.h... yes
-checking for string.h... yes
-checking for memory.h... yes
-checking for strings.h... yes
-checking for inttypes.h... yes
-checking for stdint.h... yes
-checking for unistd.h... yes
-checking for dlfcn.h... yes
-checking for objdir... .libs
-checking if arm-apple-darwin10-llvm-gcc-4.2 supports -fno-rtti -fno-exceptions... no
-checking for arm-apple-darwin10-llvm-gcc-4.2 option to produce PIC... -fno-common -DPIC
-checking if arm-apple-darwin10-llvm-gcc-4.2 PIC flag -fno-common -DPIC works... yes
-checking if arm-apple-darwin10-llvm-gcc-4.2 static flag -static works... no
-checking if arm-apple-darwin10-llvm-gcc-4.2 supports -c -o file.o... yes
-checking if arm-apple-darwin10-llvm-gcc-4.2 supports -c -o file.o... (cached) yes
-checking whether the arm-apple-darwin10-llvm-gcc-4.2 linker (arm-apple-darwin10-llvm-gcc-4.2) supports shared libraries... yes
-checking dynamic linker characteristics... darwin10 dyld
+checking if /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2 supports -fno-rtti -fno-exceptions... no
+checking for /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2 option to produce PIC... -fno-common -DPIC
+checking if /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2 PIC flag -fno-common -DPIC works... yes
+checking if /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2 static flag -static works... no
+checking if /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2 supports -c -o file.o... yes
+checking if /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2 supports -c -o file.o... (cached) yes
+checking whether the /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2 linker (/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2) supports shared libraries... yes
+checking dynamic linker characteristics... darwin dyld
 checking how to hardcode library paths into programs... immediate
 checking whether stripping libraries is possible... yes
 checking if libtool supports shared libraries... yes
@@ -292,7 +140,9 @@ config.status: creating Makefile
 config.status: creating simd/Makefile
 config.status: creating java/Makefile
 config.status: creating config.h
+config.status: config.h is unchanged
 config.status: creating jconfig.h
+config.status: jconfig.h is unchanged
 config.status: executing depfiles commands
 config.status: executing libtool commands
 checking for a BSD-compatible install... /usr/bin/install -c
@@ -303,65 +153,50 @@ checking for mawk... no
 checking for nawk... no
 checking for awk... awk
 checking whether make sets $(MAKE)... yes
-checking for arm-apple-darwin10-strip... no
-checking for strip... strip
 checking for style of include used by make... GNU
-checking for arm-apple-darwin10-gcc... /usr/bin/cc
-checking for C compiler default output file name... a.out
+checking for gcc... /usr/bin/gcc
 checking whether the C compiler works... yes
-checking whether we are cross compiling... no
+checking for C compiler default output file name... a.out
 checking for suffix of executables... 
+checking whether we are cross compiling... no
 checking for suffix of object files... o
 checking whether we are using the GNU C compiler... yes
-checking whether /usr/bin/cc accepts -g... yes
-checking for /usr/bin/cc option to accept ISO C89... none needed
-checking dependency style of /usr/bin/cc... gcc3
-checking how to run the C preprocessor... /usr/bin/cc -E
-checking for arm-apple-darwin10-gcc... (cached) /usr/bin/cc
+checking whether /usr/bin/gcc accepts -g... yes
+checking for /usr/bin/gcc option to accept ISO C89... none needed
+checking dependency style of /usr/bin/gcc... gcc3
+checking how to run the C preprocessor... /usr/bin/gcc -E
+checking for gcc... (cached) /usr/bin/gcc
 checking whether we are using the GNU C compiler... (cached) yes
-checking whether /usr/bin/cc accepts -g... (cached) yes
-checking for /usr/bin/cc option to accept ISO C89... (cached) none needed
-checking dependency style of /usr/bin/cc... (cached) gcc3
-checking dependency style of /usr/bin/cc... gcc3
-checking for a BSD-compatible install... /usr/bin/install -c
-checking build system type... i386-apple-darwin11.2.0
-checking host system type... arm-apple-darwin10
+checking whether /usr/bin/gcc accepts -g... (cached) yes
+checking for /usr/bin/gcc option to accept ISO C89... (cached) none needed
+checking dependency style of /usr/bin/gcc... (cached) gcc3
+checking dependency style of /usr/bin/gcc... gcc3
+checking build system type... i386-apple-darwin
+checking host system type... i386-apple-darwin
 checking how to print strings... printf
 checking for a sed that does not truncate output... /usr/bin/sed
 checking for grep that handles long lines and -e... /usr/bin/grep
 checking for egrep... /usr/bin/grep -E
 checking for fgrep... /usr/bin/grep -F
-checking for ld used by /usr/bin/cc... /usr/bin/cc
-checking if the linker (/usr/bin/cc) is GNU ld... no
-checking for BSD- or MS-compatible name lister (nm)... no
-checking for arm-apple-darwin10-dumpbin... no
-checking for arm-apple-darwin10-link... no
-checking for dumpbin... no
-checking for link... link -dump
-checking the name lister (nm) interface... BSD nm
+checking for ld used by /usr/bin/gcc... /usr/bin/gcc
+checking if the linker (/usr/bin/gcc) is GNU ld... no
+checking for BSD- or MS-compatible name lister (nm)... /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/nm
+checking the name lister (/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/nm) interface... BSD nm
 checking whether ln -s works... yes
 checking the maximum length of command line arguments... 196608
 checking whether the shell understands some XSI constructs... yes
 checking whether the shell understands "+="... yes
-checking for /usr/bin/cc option to reload object files... -r
-checking for arm-apple-darwin10-objdump... no
+checking for /usr/bin/gcc option to reload object files... -r
 checking for objdump... no
 checking how to recognize dependent libraries... pass_all
-checking for arm-apple-darwin10-ar... no
 checking for ar... ar
-checking for arm-apple-darwin10-strip... strip
-checking for arm-apple-darwin10-ranlib... no
+checking for strip... strip
 checking for ranlib... ranlib
-checking command to parse nm output from /usr/bin/cc object... ok
-checking for arm-apple-darwin10-dsymutil... no
+checking command to parse /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/nm output from /usr/bin/gcc object... ok
 checking for dsymutil... dsymutil
-checking for arm-apple-darwin10-nmedit... no
 checking for nmedit... nmedit
-checking for arm-apple-darwin10-lipo... no
 checking for lipo... lipo
-checking for arm-apple-darwin10-otool... no
 checking for otool... otool
-checking for arm-apple-darwin10-otool64... no
 checking for otool64... no
 checking for -single_module linker flag... no
 checking for -exported_symbols_list linker flag... yes
@@ -378,14 +213,14 @@ checking for stdint.h... yes
 checking for unistd.h... yes
 checking for dlfcn.h... yes
 checking for objdir... .libs
-checking if /usr/bin/cc supports -fno-rtti -fno-exceptions... no
-checking for /usr/bin/cc option to produce PIC... -fno-common -DPIC
-checking if /usr/bin/cc PIC flag -fno-common -DPIC works... yes
-checking if /usr/bin/cc static flag -static works... no
-checking if /usr/bin/cc supports -c -o file.o... yes
-checking if /usr/bin/cc supports -c -o file.o... (cached) yes
-checking whether the /usr/bin/cc linker (/usr/bin/cc) supports shared libraries... yes
-checking dynamic linker characteristics... darwin10 dyld
+checking if /usr/bin/gcc supports -fno-rtti -fno-exceptions... no
+checking for /usr/bin/gcc option to produce PIC... -fno-common -DPIC
+checking if /usr/bin/gcc PIC flag -fno-common -DPIC works... yes
+checking if /usr/bin/gcc static flag -static works... no
+checking if /usr/bin/gcc supports -c -o file.o... yes
+checking if /usr/bin/gcc supports -c -o file.o... (cached) yes
+checking whether the /usr/bin/gcc linker (/usr/bin/gcc) supports shared libraries... yes
+checking dynamic linker characteristics... darwin dyld
 checking how to hardcode library paths into programs... immediate
 checking whether stripping libraries is possible... yes
 checking if libtool supports shared libraries... yes
@@ -419,8 +254,12 @@ checking for inline... __attribute__((always_inline))
 checking whether to include arithmetic encoding support... yes
 checking whether to include arithmetic decoding support... yes
 checking whether to build TurboJPEG/OSS Java wrapper... no
-checking if we have SIMD optimisations for cpu type... yes (arm)
-checking if the assembler is GNU-compatible and can be used... no
+checking if we have SIMD optimisations for cpu type... yes (i386)
+checking for nasm... nasm
+checking for object file format of host system... Mach-O
+checking for object file format specifier (NAFLAGS) ... -fmacho -DMACHO
+checking whether the assembler (nasm -fmacho -DMACHO) works... yes
+checking whether the linker accepts assembler output... yes
 configure: creating ./config.status
 config.status: creating pkgscripts/libjpeg-turbo.spec
 config.status: creating pkgscripts/makecygwinpkg
@@ -438,6 +277,8 @@ config.status: creating Makefile
 config.status: creating simd/Makefile
 config.status: creating java/Makefile
 config.status: creating config.h
+config.status: config.h is unchanged
 config.status: creating jconfig.h
+config.status: jconfig.h is unchanged
 config.status: executing depfiles commands
 config.status: executing libtool commands

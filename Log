@@ -1,13 +1,71 @@
-Configure armv6
-Making armv6...
-WORKING is /Volumes/Data/git/libjpeg-turbo-builder/libjpeg-turbo
-Just finished arch armv6
+Hello World
+At revision 848.
+whence
+/Volumes/Data/git/libjpeg-turbo-builder/gas-preprocessor/gas-preprocessor.pl
+DOING ARCH armv6
+DOING ARCH armv7
 Configure armv7
++ ./configure --host arm-apple-darwin --with-gas-preprocessor --enable-static --disable-shared CC=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2 LD=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2 CFLAGS='-mfloat-abi=softfp -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk -O3 -march=armv7 -mcpu=cortex-a8 -mtune=cortex-a8 -mfpu=neon' LDFLAGS='-mfloat-abi=softfp -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk -march=armv7 -mcpu=cortex-a8 -mtune=cortex-a8 -mfpu=neon'
++ 1>> ../Log.configure
+configure: WARNING: if you wanted to set the --build type, don't use --host.
+    If a cross compiler is detected then cross compile mode will be used
+configure: WARNING: using cross tools not prefixed with host triplet
++ [ 0 != 0 ]
 Making armv7...
+transupp.c:1167: warning: 'adjust_exif_parameters' defined but not used
+transupp.c:1167: warning: 'adjust_exif_parameters' defined but not used
 WORKING is /Volumes/Data/git/libjpeg-turbo-builder/libjpeg-turbo
 Just finished arch armv7
+DOING ARCH i386
 Configure i386
++ ./configure --build i386-apple-darwin --enable-static --disable-shared CC=/usr/bin/gcc LD=/usr/bin/gcc CFLAGS='-O3 -m32' LDFLAGS=-m32
++ 1>> ../Log.configure
++ [ 0 != 0 ]
 Making i386...
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+libtool: compile: ignoring unknown tag NASM
+transupp.c:1167: warning: 'adjust_exif_parameters' defined but not used
+ld: warning: building for iOS, but linking against dylib built for MacOSX: /usr/lib/libSystem.dylib
+ld: warning: building for iOS, but linking against dylib built for MacOSX: /usr/lib/libSystem.dylib
+transupp.c:1167: warning: 'adjust_exif_parameters' defined but not used
+ld: warning: building for iOS, but linking against dylib built for MacOSX: /usr/lib/libSystem.dylib
+ld: warning: building for iOS, but linking against dylib built for MacOSX: /usr/lib/libSystem.dylib
+ld: warning: building for iOS, but linking against dylib built for MacOSX: /usr/lib/libSystem.dylib
+ld: warning: building for iOS, but linking against dylib built for MacOSX: /usr/lib/libm.dylib
+ld: warning: building for iOS, but linking against dylib built for MacOSX: /usr/lib/libSystem.dylib
+ld: warning: building for iOS, but linking against dylib built for MacOSX: /usr/lib/libSystem.dylib
+ld: warning: building for iOS, but linking against dylib built for MacOSX: /usr/lib/libSystem.dylib
 WORKING is /Volumes/Data/git/libjpeg-turbo-builder/libjpeg-turbo
 Just finished arch i386
-Lipo The Following Archives:  /tmp/libARMV6.a /tmp/libARMV7.a /tmp/libI386.a
+Lipo The Following Archives:  /tmp/libARMV7.a /tmp/libI386.a

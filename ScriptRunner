@@ -4,12 +4,17 @@
 # YOU CAN ONLY RUN THIS FROM THE BUILD PHASE - it sets oodles of environmental variables needed by the script
 
 #if you want to see every command execute, remove the # below as "set -x" causes a lot of helpful output
-# set -x
+#set -x
+#set
+#echo $PATH
+
+echo "Hello World"
 
 TURBO_VERSION=""
 
 # Read in the user selected variables
 . ./ScriptVariables
+
 
 # Make sure we have gas-preprocessor.pl per the libjpeg-turbo instructions for arm
 if [ ! -d ./gas-preprocessor ]
@@ -22,7 +27,8 @@ then
 fi
 
 # need to pickup the gas-assembler.pl executable
-export PATH="${PWD}/gas-preprocessor:$PATH"
+export PATH="${PWD}/gas-preprocessor:/usr/local/bin:$PATH"
+
 
 # Now lets get the source
 
@@ -31,7 +37,7 @@ if [ -f ./libjpeg-turbo/VERSION ]
 then
 	VERSION=$(cat ./libjpeg-turbo/VERSION)
 fi
-
+VERSION="trunk" # HACK REMOVE
 FETCH=""
 if [[ ${TURBO_VERSION} == "" && ${VERSION} == "trunk" ]]
 then
@@ -44,6 +50,9 @@ then
     else
         FETCH="//libjpeg-turbo.svn.sourceforge.net/svnroot/libjpeg-turbo/trunk"
 		TURBO_VERSION="trunk"
+		# If you want to test a branch you can do it like this
+        #FETCH="//libjpeg-turbo.svn.sourceforge.net/svnroot/libjpeg-turbo/branches/1.2.x" # HACK REMOVE
+		#TURBO_VERSION="branches/1.2.x"
     fi
 else
     # user selected a numbered release
@@ -70,18 +79,37 @@ ARCHIVES=""
 
 cd libjpeg-turbo
 
-for a in ${VALID_ARCHS} ${NATIVE_ARCH_32_BIT}
+#env
+
+echo whence
+whence gas-preprocessor.pl
+
+for a in ${NATIVE_ARCH_32_BIT} ${VALID_ARCHS} 
 do
+	echo "DOING ARCH $a"
+
     typeset -u ARCH=${a}
     TCC=CC_${ARCH}
     TCFLAGS=CFLAGS_${ARCH}
     TLDFLAGS=LDFLAGS_${ARCH}
+	TOPTIONS=OPTIONS_${ARCH}
+
+    #echo TCC $TCC
+    #echo TCFLAGS $TCFLAGS
+    #echo TCFLAGS $TLDFLAGS
+    #echo TOPTIONS $TOPTIONS
 
     typeset -n TCC="${TCC}"
     typeset -n TCFLAGS="${TCFLAGS}"
     typeset -n TLDFLAGS="${TLDFLAGS}"
+    typeset -n TOPTIONS="${TOPTIONS}"
+
+    #echo 2 TCC $TCC
+    #echo 2 TCFLAGS $TCFLAGS
+    #echo 2 TLDFLAGS $TLDFLAGS
+	#echo 2 TOPTIONS $TOPTIONS
 	
-    if [[ ${TCC} == "" || ${TCFLAGS} == "" || ${TLDFLAGS} == "" ]]
+    if [[ ${TCC} == "" || ${TCFLAGS} == "" || ${TLDFLAGS} == "" || ${TOPTIONS} == "" ]]
     then
         continue
     fi
@@ -89,11 +117,15 @@ do
     #echo TCC $TCC
     #echo TCFLAGS $TCFLAGS
     #echo TCFLAGS $TLDFLAGS
+    #echo TOPTIONS $TOPTIONS
 
     make clean > /dev/null
     
 	echo "Configure $a"
-    ./configure --host arm-apple-darwin10 --enable-static --disable-shared \
+
+	# Uncomment to see this get executed - most likely place of failure
+	#set -x
+    ./configure ${TOPTIONS} --enable-static --disable-shared   \
         CC="${TCC}" LD="${TCC}" \
         CFLAGS="${TCFLAGS}" \
         LDFLAGS="${TLDFLAGS}" >> ../Log.configure
@@ -102,6 +134,7 @@ do
         echo "Config failed!"
         exit 1
     fi
+	#set +x
 
 	echo "Making $a..."
     make >> ../Log.make
