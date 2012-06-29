@@ -1,5 +1,9 @@
 How to Build libjpeg-turbo for multiple ARM architectures and the Simulator.
 
+*****
+MARCH 29 2012: It looks like changes in Xcode 4.3.1 have made it impossible to build the library. Working on it...
+*****
+
 First, look at the build setting to make sure that you've selected the approprate SDK if you have more than one. Otherwise leave it at "Latest" and the sciprt will use the appropriate one with no change from you required.
 
 Second, edit the ScriptVariables file. Essentially you need to construct  the appropriate flags for each architecture as described there.
