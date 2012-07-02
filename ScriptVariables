@@ -5,7 +5,7 @@
 
 # Many of these variables are set by Xcode, so check  "Show Environmental Variables in Build Log" in the Run Script window
 # Either set the tagged version here, or comment it out with a leading '#' to get the latest svn code
-#TURBO_VERSION=1.2.0
+TURBO_VERSION=1.2.0
 
 # you need one such line for every VALID_ARCHS that you want to build
 FLAGS_ARMV7="-march=armv7 -mcpu=cortex-a8 -mtune=cortex-a8 -mfpu=neon"
@@ -16,6 +16,7 @@ OPTIONS_ARMV7="--host arm-apple-darwin --with-gas-preprocessor"
 
 # Simulator uses 32bit native processor
 # assuming that NATIVE_ARCH_32_BIT is i386, this is what you would use for the simulator
+FLAGS_I386=""
 CFLAGS_I386='-O3 -m32'
 LDFLAGS_I386='-m32'
 CC_I386='/usr/bin/gcc'

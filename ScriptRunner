@@ -84,7 +84,7 @@ cd libjpeg-turbo
 echo whence
 whence gas-preprocessor.pl
 
-for a in ${NATIVE_ARCH_32_BIT} ${VALID_ARCHS} 
+for a in ${VALID_ARCHS} ${NATIVE_ARCH_32_BIT} 
 do
 	echo "DOING ARCH $a"
 
