@@ -5,7 +5,14 @@
 
 # Many of these variables are set by Xcode, so check  "Show Environmental Variables in Build Log" in the Run Script window
 # Either set the tagged version here, or comment it out with a leading '#' to get the latest svn code
-TURBO_VERSION=1.2.0
+TURBO_VERSION=1.2.1
+
+# you need one such line for every VALID_ARCHS that you want to build 
+FLAGS_ARMV7S="-march=armv7s -mcpu=swift -mtune=cortex-a9 -mfpu=neon"
+CFLAGS_ARMV7S="-mfloat-abi=softfp -isysroot ${SDK_DIR} -O3 ${FLAGS_ARMV7S}"
+LDFLAGS_ARMV7S="-mfloat-abi=softfp -isysroot ${SDK_DIR} ${FLAGS_ARMV7S}"
+CC_ARMV7S="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2"
+OPTIONS_ARMV7S="--host arm-apple-darwin --with-gas-preprocessor"
 
 # you need one such line for every VALID_ARCHS that you want to build
 FLAGS_ARMV7="-march=armv7 -mcpu=cortex-a8 -mtune=cortex-a8 -mfpu=neon"
