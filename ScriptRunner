@@ -137,7 +137,7 @@ do
 	#set +x
 
 	echo "Making $a..."
-    make >> ../Log.make
+    make >> ../Log.make #--debug=i 
     if [ $? != "0" ] 
     then 
         echo "Make failed!"
