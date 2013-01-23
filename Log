@@ -1,71 +1,94 @@
++ echo 'Hello World'
 Hello World
-At revision 848.
++ TURBO_VERSION=''
++ . ./ScriptVariables
++ FLAGS_ARMV7S='-march=armv7s -mcpu=cortex-a8 -mtune=cortex-a8 -mfpu=neon'
++ CFLAGS_ARMV7S='-mfloat-abi=softfp -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk -O3 -march=armv7s -mcpu=cortex-a8 -mtune=cortex-a8 -mfpu=neon'
++ LDFLAGS_ARMV7S='-mfloat-abi=softfp -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk -march=armv7s -mcpu=cortex-a8 -mtune=cortex-a8 -mfpu=neon /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/llvm-gcc-4.2/lib/gcc/arm-apple-darwin10/4.2.1/v7s/libgcc.a'
++ CC_ARMV7S=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2
++ OPTIONS_ARMV7S='--host arm-apple-darwin --with-gas-preprocessor'
++ [ ! -d ./gas-preprocessor ]
++ [ ! -x ./gas-preprocessor/gas-preprocessor.pl ]
++ PATH=/Volumes/Data/git/libjpeg-turbo-builder/gas-preprocessor:/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin
++ export PATH
++ VERSION=''
++ [ -f ./libjpeg-turbo/VERSION ]
++ cat ./libjpeg-turbo/VERSION
++ VERSION=1.2.1
++ VERSION=trunk
++ FETCH=''
++ [[ '' == '' ]]
++ [[ trunk == trunk ]]
++ [ -d ./libjpeg-turbo ]
++ cd ./libjpeg-turbo
++ svn update
+At revision 866.
++ cd ..
++ [[ '' != '' ]]
++ ARCHIVES=''
++ cd libjpeg-turbo
++ echo whence
 whence
++ whence gas-preprocessor.pl
 /Volumes/Data/git/libjpeg-turbo-builder/gas-preprocessor/gas-preprocessor.pl
-DOING ARCH armv6
++ echo 'DOING ARCH armv7'
 DOING ARCH armv7
-Configure armv7
-+ ./configure --host arm-apple-darwin --with-gas-preprocessor --enable-static --disable-shared CC=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2 LD=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2 CFLAGS='-mfloat-abi=softfp -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk -O3 -march=armv7 -mcpu=cortex-a8 -mtune=cortex-a8 -mfpu=neon' LDFLAGS='-mfloat-abi=softfp -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk -march=armv7 -mcpu=cortex-a8 -mtune=cortex-a8 -mfpu=neon'
++ ARCH=armv7
++ typeset -u ARCH
++ TCC=CC_ARMV7
++ TCFLAGS=CFLAGS_ARMV7
++ TLDFLAGS=LDFLAGS_ARMV7
++ TOPTIONS=OPTIONS_ARMV7
++ TCC=CC_ARMV7
++ typeset -n TCC
++ TCFLAGS=CFLAGS_ARMV7
++ typeset -n TCFLAGS
++ TLDFLAGS=LDFLAGS_ARMV7
++ typeset -n TLDFLAGS
++ TOPTIONS=OPTIONS_ARMV7
++ typeset -n TOPTIONS
++ [[ '' == '' ]]
++ continue
++ echo 'DOING ARCH armv7s'
+DOING ARCH armv7s
++ ARCH=armv7s
++ typeset -u ARCH
++ CC_ARMV7=CC_ARMV7S
++ CFLAGS_ARMV7=CFLAGS_ARMV7S
++ LDFLAGS_ARMV7=LDFLAGS_ARMV7S
++ OPTIONS_ARMV7=OPTIONS_ARMV7S
++ TCC=CC_ARMV7S
++ typeset -n TCC
++ TCFLAGS=CFLAGS_ARMV7S
++ typeset -n TCFLAGS
++ TLDFLAGS=LDFLAGS_ARMV7S
++ typeset -n TLDFLAGS
++ TOPTIONS=OPTIONS_ARMV7S
++ typeset -n TOPTIONS
++ [[ /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2 == '' ]]
++ [[ '-mfloat-abi=softfp -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk -O3 -march=armv7s -mcpu=cortex-a8 -mtune=cortex-a8 -mfpu=neon' == '' ]]
++ [[ '-mfloat-abi=softfp -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk -march=armv7s -mcpu=cortex-a8 -mtune=cortex-a8 -mfpu=neon /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/llvm-gcc-4.2/lib/gcc/arm-apple-darwin10/4.2.1/v7s/libgcc.a' == '' ]]
++ [[ '--host arm-apple-darwin --with-gas-preprocessor' == '' ]]
++ make clean
++ 1> /dev/null
++ echo 'Configure armv7s'
+Configure armv7s
++ ./configure --host arm-apple-darwin --with-gas-preprocessor --enable-static --disable-shared CC=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2 LD=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2 CFLAGS='-mfloat-abi=softfp -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk -O3 -march=armv7s -mcpu=cortex-a8 -mtune=cortex-a8 -mfpu=neon' LDFLAGS='-mfloat-abi=softfp -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk -march=armv7s -mcpu=cortex-a8 -mtune=cortex-a8 -mfpu=neon /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/llvm-gcc-4.2/lib/gcc/arm-apple-darwin10/4.2.1/v7s/libgcc.a'
 + 1>> ../Log.configure
 configure: WARNING: if you wanted to set the --build type, don't use --host.
     If a cross compiler is detected then cross compile mode will be used
 configure: WARNING: using cross tools not prefixed with host triplet
-+ [ 0 != 0 ]
-Making armv7...
-transupp.c:1167: warning: 'adjust_exif_parameters' defined but not used
-transupp.c:1167: warning: 'adjust_exif_parameters' defined but not used
-WORKING is /Volumes/Data/git/libjpeg-turbo-builder/libjpeg-turbo
-Just finished arch armv7
-DOING ARCH i386
-Configure i386
-+ ./configure --build i386-apple-darwin --enable-static --disable-shared CC=/usr/bin/gcc LD=/usr/bin/gcc CFLAGS='-O3 -m32' LDFLAGS=-m32
-+ 1>> ../Log.configure
-+ [ 0 != 0 ]
-Making i386...
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-libtool: compile: ignoring unknown tag NASM
-transupp.c:1167: warning: 'adjust_exif_parameters' defined but not used
-ld: warning: building for iOS, but linking against dylib built for MacOSX: /usr/lib/libSystem.dylib
-ld: warning: building for iOS, but linking against dylib built for MacOSX: /usr/lib/libSystem.dylib
-transupp.c:1167: warning: 'adjust_exif_parameters' defined but not used
-ld: warning: building for iOS, but linking against dylib built for MacOSX: /usr/lib/libSystem.dylib
-ld: warning: building for iOS, but linking against dylib built for MacOSX: /usr/lib/libSystem.dylib
-ld: warning: building for iOS, but linking against dylib built for MacOSX: /usr/lib/libSystem.dylib
-ld: warning: building for iOS, but linking against dylib built for MacOSX: /usr/lib/libm.dylib
-ld: warning: building for iOS, but linking against dylib built for MacOSX: /usr/lib/libSystem.dylib
-ld: warning: building for iOS, but linking against dylib built for MacOSX: /usr/lib/libSystem.dylib
-ld: warning: building for iOS, but linking against dylib built for MacOSX: /usr/lib/libSystem.dylib
-WORKING is /Volumes/Data/git/libjpeg-turbo-builder/libjpeg-turbo
-Just finished arch i386
-Lipo The Following Archives:  /tmp/libARMV7.a /tmp/libI386.a
++ [ 0 '!=' 0 ]
++ echo 'Making armv7s...'
+Making armv7s...
++ make
++ 1>> ../Log.make
+ranlib: library member: .libs/libsimd.a(libgcc.a) is not an object file (not allowed in a library with multiple architectures)
+make[3]: *** [libsimd.la] Error 1
+make[2]: *** [all] Error 2
+make[1]: *** [all-recursive] Error 1
+make: *** [all] Error 2
++ [ 2 '!=' 0 ]
++ echo 'Make failed!'
+Make failed!
++ exit 1
