@@ -1,5 +1,10 @@
+*****
+11-15-2014 ARM64 Support (unofficially)
+*****
 
-USAGE:
+You can just grab the library, libturbojpeg.a (with armv7, arm84, i386, and x86_64, or build it from scratch.
+
+BUILDING FROM SCRATCH:
 
 1) The ScriptRunner will try to svn the lastest source into a directory. If you want to avoid problems,
    cd /tmp and run "svn co svn://svn.code.sf.net/p/libjpeg-turbo/code/trunk libjpeg-turbo" to verify
@@ -21,11 +26,9 @@ USAGE:
    and run it from Xcode. The project runs the exact same tests as 'make test' does (same source),
    I tested on both 32 and 64 bit devices.
 
+
 How to Build libjpeg-turbo for multiple ARM architectures and the Simulator.
 
-*****
-11-15-2014 ARM64 Support (unofficially)
-*****
 
 The clang assembler does not provide the macro capabilities that gas does, and so the libav
 team created a pre-processor, gas-preprocessor.pl. Its supported and can be found at:
