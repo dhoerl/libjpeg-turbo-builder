@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE1184061A181722008229E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1184051A181722008229E5 /* AppDelegate.swift */; };
+		DE1184081A181722008229E5 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1184071A181722008229E5 /* MasterViewController.swift */; };
+		DE11840A1A181722008229E5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1184091A181722008229E5 /* DetailViewController.swift */; };
+		DE11840D1A181722008229E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE11840B1A181722008229E5 /* Main.storyboard */; };
+		DE11840F1A181722008229E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE11840E1A181722008229E5 /* Images.xcassets */; };
+		DE1184121A181722008229E5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE1184101A181722008229E5 /* LaunchScreen.xib */; };
+		DE11841E1A181722008229E5 /* TurboTesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE11841D1A181722008229E5 /* TurboTesterTests.swift */; };
+		DE11842C1A18185C008229E5 /* tjunittest.c in Sources */ = {isa = PBXBuildFile; fileRef = DE1184291A18185C008229E5 /* tjunittest.c */; };
+		DE11842D1A18185C008229E5 /* tjutil.c in Sources */ = {isa = PBXBuildFile; fileRef = DE11842A1A18185C008229E5 /* tjutil.c */; };
+		DE1184301A181892008229E5 /* turbojpeg.c in Sources */ = {isa = PBXBuildFile; fileRef = DE11842E1A181892008229E5 /* turbojpeg.c */; };
+		DE1184321A1819AB008229E5 /* libturbojpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1184311A1819AB008229E5 /* libturbojpeg.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DE1184181A181722008229E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE1183F81A181722008229E5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE1183FF1A181722008229E5;
+			remoteInfo = TurboTester;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DE1184001A181722008229E5 /* TurboTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TurboTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE1184041A181722008229E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE1184051A181722008229E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE1184071A181722008229E5 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		DE1184091A181722008229E5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		DE11840C1A181722008229E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DE11840E1A181722008229E5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DE1184111A181722008229E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		DE1184171A181722008229E5 /* TurboTesterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TurboTesterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE11841C1A181722008229E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE11841D1A181722008229E5 /* TurboTesterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurboTesterTests.swift; sourceTree = "<group>"; };
+		DE1184271A1817FA008229E5 /* TurboTester-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TurboTester-Bridging-Header.h"; sourceTree = "<group>"; };
+		DE1184291A18185C008229E5 /* tjunittest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = tjunittest.c; path = "../../libjpeg-turbo/tjunittest.c"; sourceTree = "<group>"; };
+		DE11842A1A18185C008229E5 /* tjutil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = tjutil.c; path = "../../libjpeg-turbo/tjutil.c"; sourceTree = "<group>"; };
+		DE11842B1A18185C008229E5 /* tjutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tjutil.h; path = "../../libjpeg-turbo/tjutil.h"; sourceTree = "<group>"; };
+		DE11842E1A181892008229E5 /* turbojpeg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = turbojpeg.c; path = "../../libjpeg-turbo/turbojpeg.c"; sourceTree = "<group>"; };
+		DE11842F1A181892008229E5 /* turbojpeg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = turbojpeg.h; path = "../../libjpeg-turbo/turbojpeg.h"; sourceTree = "<group>"; };
+		DE1184311A1819AB008229E5 /* libturbojpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libturbojpeg.a; path = ../../libturbojpeg.a; sourceTree = "<group>"; };
+		DE1184331A181C15008229E5 /* jconfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jconfig.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE1183FD1A181722008229E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE1184321A1819AB008229E5 /* libturbojpeg.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE1184141A181722008229E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DE1183F71A181722008229E5 = {
+			isa = PBXGroup;
+			children = (
+				DE1184021A181722008229E5 /* TurboTester */,
+				DE11841A1A181722008229E5 /* TurboTesterTests */,
+				DE1184011A181722008229E5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DE1184011A181722008229E5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE1184001A181722008229E5 /* TurboTester.app */,
+				DE1184171A181722008229E5 /* TurboTesterTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE1184021A181722008229E5 /* TurboTester */ = {
+			isa = PBXGroup;
+			children = (
+				DE1184281A181809008229E5 /* TurboTests */,
+				DE1184051A181722008229E5 /* AppDelegate.swift */,
+				DE1184071A181722008229E5 /* MasterViewController.swift */,
+				DE1184091A181722008229E5 /* DetailViewController.swift */,
+				DE11840B1A181722008229E5 /* Main.storyboard */,
+				DE11840E1A181722008229E5 /* Images.xcassets */,
+				DE1184101A181722008229E5 /* LaunchScreen.xib */,
+				DE1184031A181722008229E5 /* Supporting Files */,
+				DE1184271A1817FA008229E5 /* TurboTester-Bridging-Header.h */,
+			);
+			path = TurboTester;
+			sourceTree = "<group>";
+		};
+		DE1184031A181722008229E5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE1184041A181722008229E5 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DE11841A1A181722008229E5 /* TurboTesterTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE11841D1A181722008229E5 /* TurboTesterTests.swift */,
+				DE11841B1A181722008229E5 /* Supporting Files */,
+			);
+			path = TurboTesterTests;
+			sourceTree = "<group>";
+		};
+		DE11841B1A181722008229E5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE11841C1A181722008229E5 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DE1184281A181809008229E5 /* TurboTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE1184331A181C15008229E5 /* jconfig.h */,
+				DE1184291A18185C008229E5 /* tjunittest.c */,
+				DE11842A1A18185C008229E5 /* tjutil.c */,
+				DE11842B1A18185C008229E5 /* tjutil.h */,
+				DE11842E1A181892008229E5 /* turbojpeg.c */,
+				DE11842F1A181892008229E5 /* turbojpeg.h */,
+				DE1184311A1819AB008229E5 /* libturbojpeg.a */,
+			);
+			name = TurboTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE1183FF1A181722008229E5 /* TurboTester */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE1184211A181722008229E5 /* Build configuration list for PBXNativeTarget "TurboTester" */;
+			buildPhases = (
+				DE1183FC1A181722008229E5 /* Sources */,
+				DE1183FD1A181722008229E5 /* Frameworks */,
+				DE1183FE1A181722008229E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TurboTester;
+			productName = TurboTester;
+			productReference = DE1184001A181722008229E5 /* TurboTester.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DE1184161A181722008229E5 /* TurboTesterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE1184241A181722008229E5 /* Build configuration list for PBXNativeTarget "TurboTesterTests" */;
+			buildPhases = (
+				DE1184131A181722008229E5 /* Sources */,
+				DE1184141A181722008229E5 /* Frameworks */,
+				DE1184151A181722008229E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE1184191A181722008229E5 /* PBXTargetDependency */,
+			);
+			name = TurboTesterTests;
+			productName = TurboTesterTests;
+			productReference = DE1184171A181722008229E5 /* TurboTesterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE1183F81A181722008229E5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = dhoerl;
+				TargetAttributes = {
+					DE1183FF1A181722008229E5 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					DE1184161A181722008229E5 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = DE1183FF1A181722008229E5;
+					};
+				};
+			};
+			buildConfigurationList = DE1183FB1A181722008229E5 /* Build configuration list for PBXProject "TurboTester" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE1183F71A181722008229E5;
+			productRefGroup = DE1184011A181722008229E5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE1183FF1A181722008229E5 /* TurboTester */,
+				DE1184161A181722008229E5 /* TurboTesterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE1183FE1A181722008229E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE11840D1A181722008229E5 /* Main.storyboard in Resources */,
+				DE1184121A181722008229E5 /* LaunchScreen.xib in Resources */,
+				DE11840F1A181722008229E5 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE1184151A181722008229E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE1183FC1A181722008229E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE1184301A181892008229E5 /* turbojpeg.c in Sources */,
+				DE11840A1A181722008229E5 /* DetailViewController.swift in Sources */,
+				DE1184081A181722008229E5 /* MasterViewController.swift in Sources */,
+				DE1184061A181722008229E5 /* AppDelegate.swift in Sources */,
+				DE11842C1A18185C008229E5 /* tjunittest.c in Sources */,
+				DE11842D1A18185C008229E5 /* tjutil.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE1184131A181722008229E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE11841E1A181722008229E5 /* TurboTesterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE1184191A181722008229E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE1183FF1A181722008229E5 /* TurboTester */;
+			targetProxy = DE1184181A181722008229E5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DE11840B1A181722008229E5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE11840C1A181722008229E5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DE1184101A181722008229E5 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE1184111A181722008229E5 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DE11841F1A181722008229E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DE1184201A181722008229E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE1184221A181722008229E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"main=XMAIN",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"../../libjpeg-turbo/",
+				);
+				INFOPLIST_FILE = TurboTester/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					../../,
+					"/Volumes/Data/git/libjpeg-turbo-builder",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TurboTester/TurboTester-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		DE1184231A181722008229E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_PREPROCESSOR_DEFINITIONS = "main=XMAIN";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"../../libjpeg-turbo/",
+				);
+				INFOPLIST_FILE = TurboTester/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					../../,
+					"/Volumes/Data/git/libjpeg-turbo-builder",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TurboTester/TurboTester-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		DE1184251A181722008229E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TurboTesterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TurboTester.app/TurboTester";
+			};
+			name = Debug;
+		};
+		DE1184261A181722008229E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TurboTesterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TurboTester.app/TurboTester";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE1183FB1A181722008229E5 /* Build configuration list for PBXProject "TurboTester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE11841F1A181722008229E5 /* Debug */,
+				DE1184201A181722008229E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE1184211A181722008229E5 /* Build configuration list for PBXNativeTarget "TurboTester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE1184221A181722008229E5 /* Debug */,
+				DE1184231A181722008229E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DE1184241A181722008229E5 /* Build configuration list for PBXNativeTarget "TurboTesterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE1184251A181722008229E5 /* Debug */,
+				DE1184261A181722008229E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DE1183F81A181722008229E5 /* Project object */;
+}

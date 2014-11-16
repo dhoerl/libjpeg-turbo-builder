@@ -4,12 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Library Builder.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
-		<key>libjpeg-turbo-builder.xcscheme</key>
+		<key>TurboTester.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -17,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>DE4ADA6C14E2C9C400D63E5A</key>
+		<key>DE1183FF1A181722008229E5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DEDEC1A31A16A6E0001C8EE3</key>
+		<key>DE1184161A181722008229E5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

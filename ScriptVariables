@@ -5,26 +5,49 @@
 
 # Many of these variables are set by Xcode, so check  "Show Environmental Variables in Build Log" in the Run Script window
 # Either set the tagged version here, or comment it out with a leading '#' to get the latest svn code
-TURBO_VERSION=1.2.1
 
-# you need one such line for every VALID_ARCHS that you want to build 
-FLAGS_ARMV7S="-march=armv7s -mcpu=swift -mtune=cortex-a9 -mfpu=neon"
-CFLAGS_ARMV7S="-mfloat-abi=softfp -isysroot ${SDK_DIR} -O3 ${FLAGS_ARMV7S}"
-LDFLAGS_ARMV7S="-mfloat-abi=softfp -isysroot ${SDK_DIR} ${FLAGS_ARMV7S}"
-CC_ARMV7S="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2"
-OPTIONS_ARMV7S="--host arm-apple-darwin --with-gas-preprocessor"
+TURBO_VERSION=trunk
+CLANG="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang"
+SDK_LOC="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk" # SDK_DIR
+SCRIPT_ARCHES="armv7 arm64 i386 x86_64" # armv7 arm64 i386 x86_64
 
-# you need one such line for every VALID_ARCHS that you want to build
-FLAGS_ARMV7="-march=armv7 -mcpu=cortex-a8 -mtune=cortex-a8 -mfpu=neon"
-CFLAGS_ARMV7="-mfloat-abi=softfp -isysroot ${SDK_DIR} -O3 ${FLAGS_ARMV7}"
-LDFLAGS_ARMV7="-mfloat-abi=softfp -isysroot ${SDK_DIR} ${FLAGS_ARMV7}"
-CC_ARMV7="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2"
-OPTIONS_ARMV7="--host arm-apple-darwin --with-gas-preprocessor"
+FLAGS_ARMV7="-arch armv7 -miphoneos-version-min=8.0 -mfloat-abi=softfp"
+CFLAGS_ARMV7="-isysroot ${SDK_LOC} -O3 ${FLAGS_ARMV7}"
+CCASFLAGS_ARMV7="-no-integrated-as"
+LDFLAGS_ARMV7="-isysroot ${SDK_LOC} ${FLAGS_ARMV7}"
+FINALFLAGS_ARMV7="--with-simd --with-gas-preprocessor"
+CC_ARMV7="${CLANG}"
+OPTIONS_ARMV7="--host arm-apple-darwin10 --enable-static --disable-shared"
 
-# Simulator uses 32bit native processor
+FLAGS_ARM64="-arch arm64 -miphoneos-version-min=8.0"
+CFLAGS_ARM64="-isysroot ${SDK_LOC} -O3 ${FLAGS_ARM64}"
+CCASFLAGS_ARM64=""
+LDFLAGS_ARM64="-isysroot ${SDK_LOC} ${FLAGS_ARM64}"
+FINALFLAGS_ARM64="--with-simd --with-gas-preprocessor"
+CC_ARM64="${CLANG}"
+OPTIONS_ARM64="--host aarch64-apple-darwin"
+
+# Simulator 32bit
 # assuming that NATIVE_ARCH_32_BIT is i386, this is what you would use for the simulator
-FLAGS_I386=""
-CFLAGS_I386='-O3 -m32'
-LDFLAGS_I386='-m32'
+FLAGS_I386="-arch i386"
+CFLAGS_I386="-O3 -m32 ${FLAGS_I386}"
+CCASFLAGS_I386=""
+LDFLAGS_I386="-m32 ${FLAGS_I386}"
+FINALFLAGS_I386="" # --with-simd
 CC_I386='/usr/bin/gcc'
-OPTIONS_I386='--build i386-apple-darwin'
+OPTIONS_I386='--host i686-apple-darwin --enable-static --disable-shared' # --build i386-apple-darwin
+
+# Simulator 64bit
+# assuming that NATIVE_ARCH_32_BIT is x86_64, this is what you would use for the simulator
+FLAGS_X86_64="-arch x86_64"
+CFLAGS_X86_64="-O3 ${FLAGS_X86_64}"
+CCASFLAGS_X86_64=""
+LDFLAGS_X86_64="${FLAGS_X86_64}"
+FINALFLAGS_X86_64="" # --with-simd
+CC_X86_64='/usr/bin/gcc'
+OPTIONS_X86_64='--host x86_64-apple-darwin --enable-static --disable-shared' # --build i386-apple-darwin  NASM=/usr/local/bin/nasm
+
+
+# --host x86_64-apple-darwin NASM=/opt/local/bin/nasm
+
+# make test > /dev/null 2>&1

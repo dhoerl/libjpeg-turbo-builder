@@ -1,12 +1,57 @@
+
+USAGE:
+
+1) The ScriptRunner will try to svn the lastest source into a directory. If you want to avoid problems,
+   cd /tmp and run "svn co svn://svn.code.sf.net/p/libjpeg-turbo/code/trunk libjpeg-turbo" to verify
+   svn is working for you.
+
+2) open the Filer project, and build Filter. This application tweaks the gas-preprocessor.pl
+   output to keep current clang happy (it basically re-writes a handful of assembler expressions.
+
+3) You need 'nasm', you can get it from http://www.nasm.us/pub/nasm/releasebuilds/ (click lastest version
+   then click on OSX. I installed mine in /usr/local/bin, if you use another directory then change the
+   NASM=.... in ScriptsVariables
+
+4) set device to "iOS Device", then CMD-B (Build). Switch to Logs mode and watch it. Lots of warnings
+   get generated, that's the way it is.
+
+5) You should now have a libturbojpeg.a in the project directory.
+
+6) Not sure it works? Open the TurboTester project, build, connect to a real arm64 or arm7 device,
+   and run it from Xcode. The project runs the exact same tests as 'make test' does (same source),
+   I tested on both 32 and 64 bit devices.
+
 How to Build libjpeg-turbo for multiple ARM architectures and the Simulator.
 
 *****
-1.6.2013 Last tested with Xcode 4.5.2, armv7, armv7s, and i386 for SDK6
+11-15-2014 ARM64 Support (unofficially)
 *****
 
-First, look at the build setting to make sure that you've selected the approprate SDK if you have more than one. Otherwise leave it at "Latest" and the sciprt will use the appropriate one with no change from you required.
+The clang assembler does not provide the macro capabilities that gas does, and so the libav
+team created a pre-processor, gas-preprocessor.pl. Its supported and can be found at:
+  https://github.com/libav/gas-preprocessor/blob/master/gas-preprocessor.pl
+The program takes an assembler file targetted to gas, and performs a number of translations so
+it runs on clang (macros expansion, etc).
 
-Second, edit the ScriptVariables file. Essentially you need to construct  the appropriate flags for each architecture as described there.
+However, as of the date above, the clang compiler is still missing some features that gas has.
+I sorted them all, and asked on an internal apple form for help, and got critical help from Tim
+Northcott, an Apple Engineer. Using the info he provided, I wrote a CLI program in Swift to
+post-process the output from gas-processor.pl, to convert about 6 types of instructions into
+legal syntax: see the Filter project. The clang community evidently has addressed all of them,
+except one minor issue that I've reported to DRC (double indirection on a macro), that he needs
+to fix before he can build the arm64 library with a future updated clang.
+
+To provide the most transparency, all code that is used for this is included in this project:
+
+ nasm					- http://www.nasm.us/pub/nasm/releasebuilds/
+ orig-gas-preprocess.pl - the libav preprocess grabbed today
+ gas-preprocess.pl      - the modified program, with 3 new lines in it (search for DFH)
+ Filter                 - a Swift CLI program (filter), that modifies the code gas-preprocessor.pl generates
+ gas-post-filter        - an executable build by the Filter program (it gets installed in the same directory
+ TurboTester			- runs the libjpeg-turbo test suite (as 'make test' does)
+
+In addition to all the code here, there is a lipo'd binary with arm7,, arm64, i386, and x86_64 architectures,
+built from "trunk" Nov 15, 2014: libturbojpeg.a, in the top folder.
 
 You can opt to use the latest SVN source code or a tagged release - again refer to the SourceVariables file. If you use the latest SVN trunk code, then on each build this project will do an "svn update" in the source folder.
 
@@ -15,4 +60,7 @@ If you opt to use a particular tagged release, then the script will look and see
 Finally, do a Build operation. You should be using the "IOS Device" not the Simulator when you do the build. IT WILL NOT WORK if you do not do this.
 
 You can select the Log file in the left pane. It will show the last build output before you start, then slowly fill as the build progresses. This is just a convenience so you don't have to look at the Build output in the pane and expand it to see what happened.
+
+Set TURBO_VERSION to either a version (like 1.3.0), or if not defined is set to "trunk" and pulls the latest. (That is, TURBO_VERSION=1.3.0)
+
 

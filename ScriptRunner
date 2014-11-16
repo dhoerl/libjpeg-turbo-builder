@@ -1,34 +1,42 @@
-#! /bin/ksh
+#! /usr/bin/env -i /bin/ksh
+# Copyright (c) 2014 David Hoerl, all rights reserved
+#
+# I needed to clean the environment - some Xcode defines were messing up the build (this as of Xcode 6)
+# above from http://crashingdaily.wordpress.com/2008/03/07/clearing-environment-variables-in-bash-scripts/ (Search on Gordon)
+# and http://unix.stackexchange.com/questions/48994/how-to-run-a-program-in-a-clean-environment-in-bash
+
 # KSH is the one shell language I know really well.
 
-# YOU CAN ONLY RUN THIS FROM THE BUILD PHASE - it sets oodles of environmental variables needed by the script
+PWD=$(pwd)
+export PATH="${PWD}:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+#echo $PATH
 
 #if you want to see every command execute, remove the # below as "set -x" causes a lot of helpful output
 #set -x
 #set
-#echo $PATH
 
-echo "Hello World"
-
-TURBO_VERSION=""
+date
 
 # Read in the user selected variables
 . ./ScriptVariables
-
+# set
 
 # Make sure we have gas-preprocessor.pl per the libjpeg-turbo instructions for arm
-if [ ! -d ./gas-preprocessor ]
+if [ ! -f ./gas-preprocessor.pl ]
 then
-    git clone git://github.com/yuvi/gas-preprocessor.git
+pwd
+ls -l gas-preprocessor.pl
+	print "Please download Special gas-processor.git"
+	exit 1
+    # https://raw.githubusercontent.com/libav/gas-preprocessor/master/gas-preprocessor.pl
 fi
-if [ ! -x ./gas-preprocessor/gas-preprocessor.pl ]
+if [ ! -x ./gas-preprocessor.pl ]
 then
-    chmod +x ./gas-preprocessor/gas-preprocessor.pl # just be sure
+    chmod +x ./gas-preprocessor.pl # just be sure
 fi
 
 # need to pickup the gas-assembler.pl executable
-export PATH="${PWD}/gas-preprocessor:/usr/local/bin:$PATH"
-
+# export PATH="${PWD}:/usr/local/bin:$PATH"
 
 # Now lets get the source
 
@@ -37,9 +45,9 @@ if [ -f ./libjpeg-turbo/VERSION ]
 then
 	VERSION=$(cat ./libjpeg-turbo/VERSION)
 fi
-VERSION="trunk" # HACK REMOVE
+
 FETCH=""
-if [[ ${TURBO_VERSION} == "" && ${VERSION} == "trunk" ]]
+if [[ ${TURBO_VERSION} == "trunk" && ( ${VERSION} == "" || ${VERSION} == "trunk" ) ]]
 then
     # user wants latest svn code
     if [ -d ./libjpeg-turbo ]
@@ -48,7 +56,7 @@ then
         svn update
         cd ..
     else
-        FETCH="//libjpeg-turbo.svn.sourceforge.net/svnroot/libjpeg-turbo/trunk"
+        FETCH="trunk"
 		TURBO_VERSION="trunk"
 		# If you want to test a branch you can do it like this
         #FETCH="//libjpeg-turbo.svn.sourceforge.net/svnroot/libjpeg-turbo/branches/1.2.x" # HACK REMOVE
@@ -58,20 +66,24 @@ else
     # user selected a numbered release
     if [[ ! -d ./libjpeg-turbo || ${TURBO_VERSION} != ${VERSION} ]]
     then
-        FETCH="//libjpeg-turbo.svn.sourceforge.net/svnroot/libjpeg-turbo/tags/${TURBO_VERSION}"
+        FETCH="tags/${TURBO_VERSION}"
     else
 		echo "Using version $(cat ./libjpeg-turbo/VERSION)"
     fi
 fi
 
+echo FETCH IS ${FETCH}
+
 if [[ ${FETCH} != "" ]]
 then 
-    svn co https:${FETCH} libjpeg-turbo
+    svn co svn://svn.code.sf.net/p/libjpeg-turbo/code/${FETCH} libjpeg-turbo
     echo ${TURBO_VERSION} > ./libjpeg-turbo/VERSION
     
     # just do this once
     cd libjpeg-turbo
-    autoreconf -fiv >> ../LOG.configure
+	date >> ../Log.configure
+	echo 'autoreconf -fiv' >> ../Log.configure
+    autoreconf -fiv >> ../Log.configure
     cd ..
 fi
 
@@ -81,34 +93,39 @@ cd libjpeg-turbo
 
 #env
 
-echo whence
-whence gas-preprocessor.pl
-
-for a in ${VALID_ARCHS} ${NATIVE_ARCH_32_BIT} 
+for a in ${SCRIPT_ARCHES} # ${NATIVE_ARCH_32_BIT}
 do
 	echo "DOING ARCH $a"
 
     typeset -u ARCH=${a}
     TCC=CC_${ARCH}
     TCFLAGS=CFLAGS_${ARCH}
+	TCCASFLAGS=CCASFLAGS_${ARCH}
     TLDFLAGS=LDFLAGS_${ARCH}
 	TOPTIONS=OPTIONS_${ARCH}
+	TFINALFLAGS=FINALFLAGS_${ARCH}
 
     #echo TCC $TCC
     #echo TCFLAGS $TCFLAGS
-    #echo TCFLAGS $TLDFLAGS
+    #echo TCCASFLAGS $TCCASFLAGS
+    #echo TCCASFLAGS $TLDFLAGS
     #echo TOPTIONS $TOPTIONS
+    #echo TFINALFLAGS $TFINALFLAGS
 
     typeset -n TCC="${TCC}"
     typeset -n TCFLAGS="${TCFLAGS}"
+	typeset -n TCCASFLAGS="${TCCASFLAGS}"
     typeset -n TLDFLAGS="${TLDFLAGS}"
     typeset -n TOPTIONS="${TOPTIONS}"
+    typeset -n TFINALFLAGS="${TFINALFLAGS}"
 
     #echo 2 TCC $TCC
     #echo 2 TCFLAGS $TCFLAGS
+    #echo 2 TCCASFLAGS $TCCASFLAGS
     #echo 2 TLDFLAGS $TLDFLAGS
 	#echo 2 TOPTIONS $TOPTIONS
-	
+    #echo 2 TFINALFLAGS $TFINALFLAGS
+
     if [[ ${TCC} == "" || ${TCFLAGS} == "" || ${TLDFLAGS} == "" || ${TOPTIONS} == "" ]]
     then
         continue
@@ -118,29 +135,47 @@ do
     #echo TCFLAGS $TCFLAGS
     #echo TCFLAGS $TLDFLAGS
     #echo TOPTIONS $TOPTIONS
-
-    make clean > /dev/null
     
 	echo "Configure $a"
 
 	# Uncomment to see this get executed - most likely place of failure
-	#set -x
-    ./configure ${TOPTIONS} --enable-static --disable-shared   \
+
+	rm -rf build
+	mkdir build
+	cd build
+
+# To just see the config scipt, uncomment the echo, the CONFIG_DEBUG line, and the exit 0
+#set -x
+#echo <<CONFIG_DEBUG
+	date >> ../../Log.configure
+
+    ../configure ${TOPTIONS} --enable-static --disable-shared \
         CC="${TCC}" LD="${TCC}" \
         CFLAGS="${TCFLAGS}" \
-        LDFLAGS="${TLDFLAGS}" >> ../Log.configure
+        LDFLAGS="${TLDFLAGS}" \
+		CCASFLAGS="${TCCASFLAGS} ${TCFLAGS}" \
+		${TFINALFLAGS} \
+		>> ../../Log.configure
+#CONFIG_DEBUG
     if [ $? != "0" ] 
     then 
         echo "Config failed!"
+		cd ..
+		rm -rf build
         exit 1
+	else
+		echo "Config SUCCEEDED!"
     fi
-	#set +x
+#exit 0
+#set +x
 
 	echo "Making $a..."
-    make >> ../Log.make #--debug=i 
+    make >> ../../Log.make #--debug=i
     if [ $? != "0" ] 
     then 
         echo "Make failed!"
+		cd ..
+		rm -rf build
         exit 1
     fi
     
@@ -149,9 +184,10 @@ do
     
     echo WORKING is $PWD
     mv -f .libs/libturbojpeg.a $TMPLOC  
-    make clean > /dev/null
-    
+
     echo "Just finished arch $a"
+	cd ..
+	rm -rf build
 done
 
 echo "Lipo The Following Archives: $ARCHIVES"
