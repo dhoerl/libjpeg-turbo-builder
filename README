@@ -38,7 +38,7 @@ it runs on clang (macros expansion, etc).
 
 However, as of the date above, the clang compiler is still missing some features that gas has.
 I sorted them all, and asked on an internal apple form for help, and got critical help from Tim
-Northcott, an Apple Engineer. Using the info he provided, I wrote a CLI program in Swift to
+Northover, an Apple Engineer. Using the info he provided, I wrote a CLI program in Swift to
 post-process the output from gas-processor.pl, to convert about 6 types of instructions into
 legal syntax: see the Filter project. The clang community evidently has addressed all of them,
 except one minor issue that I've reported to DRC (double indirection on a macro), that he needs
