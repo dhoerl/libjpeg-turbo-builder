@@ -1,8 +1,10 @@
 *****
-11-15-2014 ARM64 Support (unofficially)
+12-06-2014 ARM64 Support (unofficially)
 *****
 
-You can just grab the library, libturbojpeg.a (with armv7, arm84, i386, and x86_64, or build it from scratch.
+UPDATE: the November release had an unresolved reference to putenv$UNIX2003, now resolved.
+
+You can just grab the library, libturbojpeg.a (with armv7, arm64, i386, and x86_64, or build it from scratch.
 
 BUILDING FROM SCRATCH:
 

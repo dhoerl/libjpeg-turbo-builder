@@ -16,7 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		// Override point for customization after application launch.
-		
+
+#if __LP64__
+println("Running 64 bi")
+#else
+println("Running 32 bit")
+#endif
+	
 		let dir: String = applicationAppCachesDirectory()
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
 			chdir(dir)

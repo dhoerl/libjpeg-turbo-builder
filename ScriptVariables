@@ -6,6 +6,10 @@
 # Many of these variables are set by Xcode, so check  "Show Environmental Variables in Build Log" in the Run Script window
 # Either set the tagged version here, or comment it out with a leading '#' to get the latest svn code
 
+
+# IMPORTANT: note the location of NASM: NASM=/usr/local/bin/nasm used below - change as need be!
+
+
 TURBO_VERSION=trunk
 CLANG="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang"
 SDK_LOC="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk" # SDK_DIR
@@ -27,27 +31,24 @@ FINALFLAGS_ARM64="--with-simd --with-gas-preprocessor"
 CC_ARM64="${CLANG}"
 OPTIONS_ARM64="--host aarch64-apple-darwin"
 
+# The -D_ANSI_SOURCE below prevents the compiler from turning putenv into putenv$UNIX2003, which then fails to link.
+
 # Simulator 32bit
 # assuming that NATIVE_ARCH_32_BIT is i386, this is what you would use for the simulator
-FLAGS_I386="-arch i386"
+FLAGS_I386="-arch i386 -mmacosx-version-min=10.9 -D_ANSI_SOURCE"
 CFLAGS_I386="-O3 -m32 ${FLAGS_I386}"
 CCASFLAGS_I386=""
 LDFLAGS_I386="-m32 ${FLAGS_I386}"
-FINALFLAGS_I386="" # --with-simd
-CC_I386='/usr/bin/gcc'
-OPTIONS_I386='--host i686-apple-darwin --enable-static --disable-shared' # --build i386-apple-darwin
+FINALFLAGS_I386="--with-simd" # --with-simd
+CC_I386='/usr/bin/clang'
+OPTIONS_I386='--host i686-apple-darwin --enable-static --disable-shared NASM=/usr/local/bin/nasm'
 
 # Simulator 64bit
 # assuming that NATIVE_ARCH_32_BIT is x86_64, this is what you would use for the simulator
-FLAGS_X86_64="-arch x86_64"
-CFLAGS_X86_64="-O3 ${FLAGS_X86_64}"
+FLAGS_X86_64="-arch x86_64 -mmacosx-version-min=10.9 -D_ANSI_SOURCE" #  -flto
+CFLAGS_X86_64="-O3 ${FLAGS_X86_64}" # -Ofast
 CCASFLAGS_X86_64=""
 LDFLAGS_X86_64="${FLAGS_X86_64}"
-FINALFLAGS_X86_64="" # --with-simd
-CC_X86_64='/usr/bin/gcc'
-OPTIONS_X86_64='--host x86_64-apple-darwin --enable-static --disable-shared' # --build i386-apple-darwin  NASM=/usr/local/bin/nasm
-
-
-# --host x86_64-apple-darwin NASM=/opt/local/bin/nasm
-
-# make test > /dev/null 2>&1
+FINALFLAGS_X86_64="--with-simd" # --with-simd
+CC_X86_64='/usr/bin/clang'
+OPTIONS_X86_64='--disable-silent-rules --host x86_64-apple-darwin --enable-static --disable-shared NASM=/usr/local/bin/nasm'

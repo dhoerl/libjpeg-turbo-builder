@@ -1,11 +1,5 @@
-Sat Nov 15 21:20:23 EST 2014
-autoreconf -fiv
-libtoolize: putting auxiliary files in `.'.
-libtoolize: copying file `./ltmain.sh'
-libtoolize: Consider adding `AC_CONFIG_MACRO_DIR([m4])' to configure.ac and
-libtoolize: rerunning libtoolize, to keep the correct libtool macros in-tree.
-libtoolize: Consider adding `-I m4' to ACLOCAL_AMFLAGS in Makefile.am.
-Sat Nov 15 21:20:32 EST 2014
+Sat Dec  6 14:11:32 EST 2014
+    ../configure --host arm-apple-darwin10 --enable-static --disable-shared --enable-static --disable-shared         CC="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" LD="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang"         CFLAGS="-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -O3 -arch armv7 -miphoneos-version-min=8.0 -mfloat-abi=softfp"         LDFLAGS="-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -arch armv7 -miphoneos-version-min=8.0 -mfloat-abi=softfp" 		CCASFLAGS="-no-integrated-as -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -O3 -arch armv7 -miphoneos-version-min=8.0 -mfloat-abi=softfp" 		--with-simd --with-gas-preprocessor 
 checking for a BSD-compatible install... /usr/bin/install -c
 checking whether build environment is sane... yes
 checking for arm-apple-darwin10-strip... no
@@ -42,7 +36,7 @@ checking for ar... ar
 checking the archiver (ar) interface... ar
 checking dependency style of /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang... gcc3
 checking whether /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang and cc understand -c and -o together... yes
-checking build system type... x86_64-apple-darwin14.0.0
+checking build system type... x86_64-apple-darwin14.1.0
 checking host system type... arm-apple-darwin10
 checking how to print strings... printf
 checking for a sed that does not truncate output... /usr/bin/sed
@@ -161,7 +155,8 @@ config.status: creating jconfig.h
 config.status: creating jconfigint.h
 config.status: executing depfiles commands
 config.status: executing libtool commands
-Sat Nov 15 21:21:01 EST 2014
+Sat Dec  6 14:12:03 EST 2014
+    ../configure --host aarch64-apple-darwin --enable-static --disable-shared         CC="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" LD="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang"         CFLAGS="-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -O3 -arch arm64 -miphoneos-version-min=8.0"         LDFLAGS="-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -arch arm64 -miphoneos-version-min=8.0" 		CCASFLAGS=" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk -O3 -arch arm64 -miphoneos-version-min=8.0" 		--with-simd --with-gas-preprocessor 
 checking for a BSD-compatible install... /usr/bin/install -c
 checking whether build environment is sane... yes
 checking for aarch64-apple-darwin-strip... no
@@ -198,7 +193,7 @@ checking for ar... ar
 checking the archiver (ar) interface... ar
 checking dependency style of /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang... gcc3
 checking whether /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang and cc understand -c and -o together... yes
-checking build system type... x86_64-apple-darwin14.0.0
+checking build system type... x86_64-apple-darwin14.1.0
 checking host system type... aarch64-apple-darwin
 checking how to print strings... printf
 checking for a sed that does not truncate output... /usr/bin/sed
@@ -317,7 +312,8 @@ config.status: creating jconfig.h
 config.status: creating jconfigint.h
 config.status: executing depfiles commands
 config.status: executing libtool commands
-Sat Nov 15 21:21:31 EST 2014
+Sat Dec  6 14:12:36 EST 2014
+    ../configure --host i686-apple-darwin --enable-static --disable-shared NASM=/usr/local/bin/nasm --enable-static --disable-shared         CC="/usr/bin/clang" LD="/usr/bin/clang"         CFLAGS="-O3 -m32 -arch i386 -mmacosx-version-min=10.9 -D_ANSI_SOURCE"         LDFLAGS="-m32 -arch i386 -mmacosx-version-min=10.9 -D_ANSI_SOURCE" 		CCASFLAGS=" -O3 -m32 -arch i386 -mmacosx-version-min=10.9 -D_ANSI_SOURCE" 		--with-simd 
 checking for a BSD-compatible install... /usr/bin/install -c
 checking whether build environment is sane... yes
 checking for i686-apple-darwin-strip... no
@@ -331,38 +327,38 @@ checking whether make sets $(MAKE)... yes
 checking whether make supports nested variables... yes
 checking whether make supports nested variables... (cached) yes
 checking for style of include used by make... GNU
-checking for i686-apple-darwin-gcc... /usr/bin/gcc
+checking for i686-apple-darwin-gcc... /usr/bin/clang
 checking whether the C compiler works... yes
 checking for C compiler default output file name... a.out
 checking for suffix of executables... 
 checking whether we are cross compiling... no
 checking for suffix of object files... o
 checking whether we are using the GNU C compiler... yes
-checking whether /usr/bin/gcc accepts -g... yes
-checking for /usr/bin/gcc option to accept ISO C89... none needed
-checking dependency style of /usr/bin/gcc... gcc3
-checking how to run the C preprocessor... /usr/bin/gcc -E
-checking for i686-apple-darwin-gcc... (cached) /usr/bin/gcc
+checking whether /usr/bin/clang accepts -g... yes
+checking for /usr/bin/clang option to accept ISO C89... none needed
+checking dependency style of /usr/bin/clang... gcc3
+checking how to run the C preprocessor... /usr/bin/clang -E
+checking for i686-apple-darwin-gcc... (cached) /usr/bin/clang
 checking whether we are using the GNU C compiler... (cached) yes
-checking whether /usr/bin/gcc accepts -g... (cached) yes
-checking for /usr/bin/gcc option to accept ISO C89... (cached) none needed
-checking dependency style of /usr/bin/gcc... (cached) gcc3
+checking whether /usr/bin/clang accepts -g... (cached) yes
+checking for /usr/bin/clang option to accept ISO C89... (cached) none needed
+checking dependency style of /usr/bin/clang... (cached) gcc3
 checking for i686-apple-darwin-ar... no
 checking for i686-apple-darwin-lib... no
 checking for i686-apple-darwin-link... no
 checking for ar... ar
 checking the archiver (ar) interface... ar
-checking dependency style of /usr/bin/gcc... gcc3
-checking whether /usr/bin/gcc and cc understand -c and -o together... yes
-checking build system type... x86_64-apple-darwin14.0.0
+checking dependency style of /usr/bin/clang... gcc3
+checking whether /usr/bin/clang and cc understand -c and -o together... yes
+checking build system type... x86_64-apple-darwin14.1.0
 checking host system type... i686-apple-darwin
 checking how to print strings... printf
 checking for a sed that does not truncate output... /usr/bin/sed
 checking for grep that handles long lines and -e... /usr/bin/grep
 checking for egrep... /usr/bin/grep -E
 checking for fgrep... /usr/bin/grep -F
-checking for ld used by /usr/bin/gcc... /usr/bin/gcc
-checking if the linker (/usr/bin/gcc) is GNU ld... no
+checking for ld used by /usr/bin/clang... /usr/bin/clang
+checking if the linker (/usr/bin/clang) is GNU ld... no
 checking for BSD- or MS-compatible name lister (nm)... no
 checking for i686-apple-darwin-dumpbin... no
 checking for i686-apple-darwin-link... no
@@ -373,7 +369,7 @@ checking whether ln -s works... yes
 checking the maximum length of command line arguments... 196608
 checking whether the shell understands some XSI constructs... yes
 checking whether the shell understands "+="... yes
-checking for /usr/bin/gcc option to reload object files... -r
+checking for /usr/bin/clang option to reload object files... -r
 checking for i686-apple-darwin-objdump... no
 checking for objdump... no
 checking how to recognize dependent libraries... pass_all
@@ -381,7 +377,7 @@ checking for i686-apple-darwin-ar... ar
 checking for i686-apple-darwin-strip... strip
 checking for i686-apple-darwin-ranlib... no
 checking for ranlib... ranlib
-checking command to parse nm output from /usr/bin/gcc object... ok
+checking command to parse nm output from /usr/bin/clang object... ok
 checking for i686-apple-darwin-dsymutil... no
 checking for dsymutil... dsymutil
 checking for i686-apple-darwin-nmedit... no
@@ -407,13 +403,13 @@ checking for stdint.h... yes
 checking for unistd.h... yes
 checking for dlfcn.h... yes
 checking for objdir... .libs
-checking if /usr/bin/gcc supports -fno-rtti -fno-exceptions... yes
-checking for /usr/bin/gcc option to produce PIC... -fno-common -DPIC
-checking if /usr/bin/gcc PIC flag -fno-common -DPIC works... yes
-checking if /usr/bin/gcc static flag -static works... no
-checking if /usr/bin/gcc supports -c -o file.o... yes
-checking if /usr/bin/gcc supports -c -o file.o... (cached) yes
-checking whether the /usr/bin/gcc linker (/usr/bin/gcc) supports shared libraries... yes
+checking if /usr/bin/clang supports -fno-rtti -fno-exceptions... yes
+checking for /usr/bin/clang option to produce PIC... -fno-common -DPIC
+checking if /usr/bin/clang PIC flag -fno-common -DPIC works... yes
+checking if /usr/bin/clang static flag -static works... no
+checking if /usr/bin/clang supports -c -o file.o... yes
+checking if /usr/bin/clang supports -c -o file.o... (cached) yes
+checking whether the /usr/bin/clang linker (/usr/bin/clang) supports shared libraries... yes
 checking dynamic linker characteristics... darwin dyld
 checking how to hardcode library paths into programs... immediate
 checking whether stripping libraries is possible... yes
@@ -454,10 +450,10 @@ checking whether to use 12-bit samples... no
 checking whether to build TurboJPEG C wrapper... yes
 checking whether to build TurboJPEG Java wrapper... no
 checking if we have SIMD optimisations for cpu type... yes (i386)
-checking for nasm... nasm
+checking for nasm... /usr/local/bin/nasm
 checking for object file format of host system... Mach-O
 checking for object file format specifier (NAFLAGS) ... -fmacho -DMACHO
-checking whether the assembler (nasm -fmacho -DMACHO) works... yes
+checking whether the assembler (/usr/local/bin/nasm -fmacho -DMACHO) works... yes
 checking whether the linker accepts assembler output... yes
 checking that generated files are newer than configure... done
 configure: creating ./config.status
@@ -477,7 +473,8 @@ config.status: creating jconfig.h
 config.status: creating jconfigint.h
 config.status: executing depfiles commands
 config.status: executing libtool commands
-Sat Nov 15 21:22:04 EST 2014
+Sat Dec  6 14:13:10 EST 2014
+    ../configure --disable-silent-rules --host x86_64-apple-darwin --enable-static --disable-shared NASM=/usr/local/bin/nasm --enable-static --disable-shared         CC="/usr/bin/clang" LD="/usr/bin/clang"         CFLAGS="-O3 -arch x86_64 -mmacosx-version-min=10.9 -D_ANSI_SOURCE"         LDFLAGS="-arch x86_64 -mmacosx-version-min=10.9 -D_ANSI_SOURCE" 		CCASFLAGS=" -O3 -arch x86_64 -mmacosx-version-min=10.9 -D_ANSI_SOURCE" 		--with-simd 
 checking for a BSD-compatible install... /usr/bin/install -c
 checking whether build environment is sane... yes
 checking for x86_64-apple-darwin-strip... no
@@ -491,38 +488,38 @@ checking whether make sets $(MAKE)... yes
 checking whether make supports nested variables... yes
 checking whether make supports nested variables... (cached) yes
 checking for style of include used by make... GNU
-checking for x86_64-apple-darwin-gcc... /usr/bin/gcc
+checking for x86_64-apple-darwin-gcc... /usr/bin/clang
 checking whether the C compiler works... yes
 checking for C compiler default output file name... a.out
 checking for suffix of executables... 
 checking whether we are cross compiling... no
 checking for suffix of object files... o
 checking whether we are using the GNU C compiler... yes
-checking whether /usr/bin/gcc accepts -g... yes
-checking for /usr/bin/gcc option to accept ISO C89... none needed
-checking dependency style of /usr/bin/gcc... gcc3
-checking how to run the C preprocessor... /usr/bin/gcc -E
-checking for x86_64-apple-darwin-gcc... (cached) /usr/bin/gcc
+checking whether /usr/bin/clang accepts -g... yes
+checking for /usr/bin/clang option to accept ISO C89... none needed
+checking dependency style of /usr/bin/clang... gcc3
+checking how to run the C preprocessor... /usr/bin/clang -E
+checking for x86_64-apple-darwin-gcc... (cached) /usr/bin/clang
 checking whether we are using the GNU C compiler... (cached) yes
-checking whether /usr/bin/gcc accepts -g... (cached) yes
-checking for /usr/bin/gcc option to accept ISO C89... (cached) none needed
-checking dependency style of /usr/bin/gcc... (cached) gcc3
+checking whether /usr/bin/clang accepts -g... (cached) yes
+checking for /usr/bin/clang option to accept ISO C89... (cached) none needed
+checking dependency style of /usr/bin/clang... (cached) gcc3
 checking for x86_64-apple-darwin-ar... no
 checking for x86_64-apple-darwin-lib... no
 checking for x86_64-apple-darwin-link... no
 checking for ar... ar
 checking the archiver (ar) interface... ar
-checking dependency style of /usr/bin/gcc... gcc3
-checking whether /usr/bin/gcc and cc understand -c and -o together... yes
-checking build system type... x86_64-apple-darwin14.0.0
+checking dependency style of /usr/bin/clang... gcc3
+checking whether /usr/bin/clang and cc understand -c and -o together... yes
+checking build system type... x86_64-apple-darwin14.1.0
 checking host system type... x86_64-apple-darwin
 checking how to print strings... printf
 checking for a sed that does not truncate output... /usr/bin/sed
 checking for grep that handles long lines and -e... /usr/bin/grep
 checking for egrep... /usr/bin/grep -E
 checking for fgrep... /usr/bin/grep -F
-checking for ld used by /usr/bin/gcc... /usr/bin/gcc
-checking if the linker (/usr/bin/gcc) is GNU ld... no
+checking for ld used by /usr/bin/clang... /usr/bin/clang
+checking if the linker (/usr/bin/clang) is GNU ld... no
 checking for BSD- or MS-compatible name lister (nm)... no
 checking for x86_64-apple-darwin-dumpbin... no
 checking for x86_64-apple-darwin-link... no
@@ -533,7 +530,7 @@ checking whether ln -s works... yes
 checking the maximum length of command line arguments... 196608
 checking whether the shell understands some XSI constructs... yes
 checking whether the shell understands "+="... yes
-checking for /usr/bin/gcc option to reload object files... -r
+checking for /usr/bin/clang option to reload object files... -r
 checking for x86_64-apple-darwin-objdump... no
 checking for objdump... no
 checking how to recognize dependent libraries... pass_all
@@ -541,7 +538,7 @@ checking for x86_64-apple-darwin-ar... ar
 checking for x86_64-apple-darwin-strip... strip
 checking for x86_64-apple-darwin-ranlib... no
 checking for ranlib... ranlib
-checking command to parse nm output from /usr/bin/gcc object... ok
+checking command to parse nm output from /usr/bin/clang object... ok
 checking for x86_64-apple-darwin-dsymutil... no
 checking for dsymutil... dsymutil
 checking for x86_64-apple-darwin-nmedit... no
@@ -567,13 +564,13 @@ checking for stdint.h... yes
 checking for unistd.h... yes
 checking for dlfcn.h... yes
 checking for objdir... .libs
-checking if /usr/bin/gcc supports -fno-rtti -fno-exceptions... yes
-checking for /usr/bin/gcc option to produce PIC... -fno-common -DPIC
-checking if /usr/bin/gcc PIC flag -fno-common -DPIC works... yes
-checking if /usr/bin/gcc static flag -static works... no
-checking if /usr/bin/gcc supports -c -o file.o... yes
-checking if /usr/bin/gcc supports -c -o file.o... (cached) yes
-checking whether the /usr/bin/gcc linker (/usr/bin/gcc) supports shared libraries... yes
+checking if /usr/bin/clang supports -fno-rtti -fno-exceptions... yes
+checking for /usr/bin/clang option to produce PIC... -fno-common -DPIC
+checking if /usr/bin/clang PIC flag -fno-common -DPIC works... yes
+checking if /usr/bin/clang static flag -static works... no
+checking if /usr/bin/clang supports -c -o file.o... yes
+checking if /usr/bin/clang supports -c -o file.o... (cached) yes
+checking whether the /usr/bin/clang linker (/usr/bin/clang) supports shared libraries... yes
 checking dynamic linker characteristics... darwin dyld
 checking how to hardcode library paths into programs... immediate
 checking whether stripping libraries is possible... yes
@@ -614,10 +611,10 @@ checking whether to use 12-bit samples... no
 checking whether to build TurboJPEG C wrapper... yes
 checking whether to build TurboJPEG Java wrapper... no
 checking if we have SIMD optimisations for cpu type... yes (x86_64)
-checking for nasm... nasm
+checking for nasm... /usr/local/bin/nasm
 checking for object file format of host system... Mach-O64
 checking for object file format specifier (NAFLAGS) ... -fmacho64 -DMACHO -D__x86_64__
-checking whether the assembler (nasm -fmacho64 -DMACHO -D__x86_64__) works... yes
+checking whether the assembler (/usr/local/bin/nasm -fmacho64 -DMACHO -D__x86_64__) works... yes
 checking whether the linker accepts assembler output... yes
 checking that generated files are newer than configure... done
 configure: creating ./config.status

@@ -1,0 +1,417 @@
+RELEASE -Ofast, -lto
+Bitmap     JPEG     JPEG  Image  Image   Comp    Comp    Decomp
+Format     Subsamp  Qual  Width  Height  Perf    Ratio   Perf    
+
+RGB  (TD)  GRAY     95    3072   2048    164.7   24.13   
+RGB  (TD)  4:2:0    95    3072   2048    112.8   18.75   
+RGB  (TD)  4:2:2    95    3072   2048    90.38   16.70   
+RGB  (TD)  4:4:4    95    3072   2048    67.30   14.30   
+Program ended with exit code: 0
+
+RELEASE -Os
+Bitmap     JPEG     JPEG  Image  Image   Comp    Comp    Decomp  
+Format     Subsamp  Qual  Width  Height  Perf    Ratio   Perf    
+
+RGB  (TD)  GRAY     95    3072   2048    161.0   24.13   
+RGB  (TD)  4:2:0    95    3072   2048    108.1   18.75   
+RGB  (TD)  4:2:2    95    3072   2048    87.64   16.70   
+RGB  (TD)  4:4:4    95    3072   2048    63.72   14.30   
+Program ended with exit code: 0
+
+DEBUG:
+Bitmap     JPEG     JPEG  Image  Image   Comp    Comp    Decomp  
+Format     Subsamp  Qual  Width  Height  Perf    Ratio   Perf    
+
+RGB  (TD)  GRAY     95    3072   2048    92.23   24.13   99.87   
+
+RGB  (TD)  4:2:0    95    3072   2048    67.93   18.75   105.6   
+
+RGB  (TD)  4:2:2    95    3072   2048    55.07   16.70   86.58   
+
+RGB  (TD)  4:4:4    95    3072   2048    40.23   14.30   69.98   
+
+Program ended with exit code: 0
+
+
+{ if ((temp = block[1]) == 0) { r++; } else { temp2 = temp; temp3 = temp >> (8 * sizeof(int) - 1); temp ^= temp3; temp -= temp3; temp2 += temp3; nbits = (jpeg_nbits_table[temp]); while (r > 15) { { { if (put_bits > 47) { { JOCTET c; put_bits -= 8; c = (JOCTET)(put_buffer >> put_bits); *buffer++ = c; if (c == 0xFF) *buffer++ = 0; } { JOCTET c; put_bits -= 8; c = (JOCTET)(put_buffer >> put_bits); *buffer++ = c; if (c == 0xFF) *buffer++ = 0; } { JOCTET c; put_bits -= 8; c = (JOCTET)(put_buffer >> put_bits); *buffer++ = c; if (c == 0xFF) *buffer++ = 0; } { JOCTET c; put_bits -= 8; c = (JOCTET)(put_buffer >> put_bits); *buffer++ = c; if (c == 0xFF) *buffer++ = 0; } { JOCTET c; put_bits -= 8; c = (JOCTET)(put_buffer >> put_bits); *buffer++ = c; if (c == 0xFF) *buffer++ = 0; } { JOCTET c; put_bits -= 8; c = (JOCTET)(put_buffer >> put_bits); *buffer++ = c; if (c == 0xFF) *buffer++ = 0; } } } { put_bits += size_0xf0; put_buffer = (put_buffer << size_0xf0) | code_0xf0; } } r -= 16; } temp3 = (r << 4) + nbits; code = actbl->ehufco[temp3]; size = actbl->ehufsi[temp3]; { temp2 &= (((INT32) 1)<<nbits) - 1; { if (put_bits > 31) { { JOCTET c; put_bits -= 8; c = (JOCTET)(put_buffer >> put_bits); *buffer++ = c; if (c == 0xFF) *buffer++ = 0; } { JOCTET c; put_bits -= 8; c = (JOCTET)(put_buffer >> put_bits); *buffer++ = c; if (c == 0xFF) *buffer++ = 0; } { JOCTET c; put_bits -= 8; c = (JOCTET)(put_buffer >> put_bits); *buffer++ = c; if (c == 0xFF) *buffer++ = 0; } { JOCTET c; put_bits -= 8; c = (JOCTET)(put_buffer >> put_bits); *buffer++ = c; if (c == 0xFF) *buffer++ = 0; } } } { put_bits += size; put_buffer = (put_buffer << size) | code; } { put_bits += nbits; put_buffer = (put_buffer << nbits) | temp2; } } r = 0; } }
+
+BASE COMPILE
+
+
+All performance values in Mpixels/sec
+
+Bitmap     JPEG     JPEG  Image  Image   Comp    Comp    Decomp  
+Format     Subsamp  Qual  Width  Height  Perf    Ratio   Perf    
+
+RGB  (TD)  GRAY     95    3072   2048    155.4   24.13   212.6   
+
+RGB  (TD)  4:2:0    95    3072   2048    108.3   18.75   176.8   
+
+RGB  (TD)  4:2:2    95    3072   2048    87.02   16.70   153.2   
+
+RGB  (TD)  4:4:4    95    3072   2048    63.72   14.30   127.7   
+
+-flto and Ofast
+
+All performance values in Mpixels/sec
+
+Bitmap     JPEG     JPEG  Image  Image   Comp    Comp    Decomp  
+Format     Subsamp  Qual  Width  Height  Perf    Ratio   Perf    
+
+RGB  (TD)  GRAY     95    3072   2048    162.9   24.13   215.4   
+
+RGB  (TD)  4:2:0    95    3072   2048    111.1   18.75   177.5   
+
+RGB  (TD)  4:2:2    95    3072   2048    89.73   16.70   154.8   
+
+RGB  (TD)  4:4:4    95    3072   2048    67.02   14.30   128.7   
+
+Program ended with exit code: 0
+
+-Os
+
+All performance values in Mpixels/sec
+
+Bitmap     JPEG     JPEG  Image  Image   Comp    Comp    Decomp  
+Format     Subsamp  Qual  Width  Height  Perf    Ratio   Perf    
+
+RGB  (TD)  GRAY     95    3072   2048    159.1   24.13   212.0   
+
+RGB  (TD)  4:2:0    95    3072   2048    107.5   18.75   175.4   
+
+RGB  (TD)  4:2:2    95    3072   2048    87.50   16.70   153.4   
+
+RGB  (TD)  4:4:4    95    3072   2048    63.95   14.30   127.2   
+
+Program ended with exit code: 0
+
+
+Macro Expansion:
+
+{
+if ((temp = block[1]) == 0) {
+	r++;
+} else {
+	temp2 = temp;
+	temp3 = temp >> (8 * sizeof(int) - 1);
+	temp ^= temp3;
+	temp -= temp3;
+	temp2 += temp3;
+	nbits = (jpeg_nbits_table[temp]);
+	while (r > 15) {
+		{
+			{
+				if (put_bits > 47) {
+					{
+						JOCTET c;
+						put_bits -= 8;
+						c = (JOCTET)(put_buffer >> put_bits);
+						*buffer++ = c;
+						if (c == 0xFF) *buffer++ = 0;
+						} { JOCTET c;
+						put_bits -= 8;
+						c = (JOCTET)(put_buffer >> put_bits);
+						*buffer++ = c;
+						if (c == 0xFF) *buffer++ = 0;
+						} { JOCTET c;
+						put_bits -= 8;
+						c = (JOCTET)(put_buffer >> put_bits);
+						*buffer++ = c;
+						if (c == 0xFF) *buffer++ = 0;
+						} { JOCTET c;
+						put_bits -= 8;
+						c = (JOCTET)(put_buffer >> put_bits);
+						*buffer++ = c;
+						if (c == 0xFF) *buffer++ = 0;
+						} { JOCTET c;
+						put_bits -= 8;
+						c = (JOCTET)(put_buffer >> put_bits);
+						*buffer++ = c;
+						if (c == 0xFF) *buffer++ = 0;
+						} { JOCTET c;
+						put_bits -= 8;
+						c = (JOCTET)(put_buffer >> put_bits);
+						*buffer++ = c;
+						if (c == 0xFF) *buffer++ = 0;
+					}
+				}
+			}
+			{
+				put_bits += size_0xf0;
+				put_buffer = (put_buffer << size_0xf0) | code_0xf0;
+			}
+		}
+		r -= 16;
+	}
+	temp3 = (r << 4) + nbits;
+	code = actbl->ehufco[temp3];
+	size = actbl->ehufsi[temp3];
+	{
+		temp2 &= (((INT32) 1)<<nbits) - 1;
+		{
+			if (put_bits > 31) {
+				{
+					JOCTET c;
+					put_bits -= 8;
+					c = (JOCTET)(put_buffer >> put_bits);
+					*buffer++ = c;
+					if (c == 0xFF) *buffer++ = 0;
+					} { JOCTET c;
+					put_bits -= 8;
+					c = (JOCTET)(put_buffer >> put_bits);
+					*buffer++ = c;
+					if (c == 0xFF) *buffer++ = 0;
+					} { JOCTET c;
+					put_bits -= 8;
+					c = (JOCTET)(put_buffer >> put_bits);
+					*buffer++ = c;
+					if (c == 0xFF) *buffer++ = 0;
+					} { JOCTET c;
+					put_bits -= 8;
+					c = (JOCTET)(put_buffer >> put_bits);
+					*buffer++ = c;
+					if (c == 0xFF) *buffer++ = 0;
+				}
+			}
+		}
+		{
+			put_bits += size;
+			put_buffer = (put_buffer << size) | code;
+		}
+		{
+			put_bits += nbits;
+			put_buffer = (put_buffer << nbits) | temp2;
+		}
+	}
+	r = 0;
+}
+}
+
+
+#define kloop0(jpeg_natural_order_of_k, label) {  \
+  if ((temp = block[jpeg_natural_order_of_k]) != 0) { \
+    labelPtr = &&label; \
+	goto L_KLOOP ; \
+  } \
+  r++; \
+}  \
+label:
+
+#define kloop() {  \
+	L_KLOOP : \
+    temp2 = temp; \
+    /* Branch-less absolute value, bitwise complement, etc., same as above */ \
+    temp3 = temp >> (CHAR_BIT * sizeof(int) - 1); \
+    temp ^= temp3; \
+    temp -= temp3; \
+    temp2 += temp3; \
+    nbits = JPEG_NBITS_NONZERO(temp); \
+    /* if run length > 15, must emit special run-length-16 codes (0xF0) */ \
+    while (r > 15) { \
+      EMIT_BITS(code_0xf0, size_0xf0) \
+      r -= 16; \
+    } \
+    /* Emit Huffman symbol for run length / number of bits */ \
+    temp3 = (r << 4) + nbits;  \
+    code = X1[temp3]; \
+    size = X2[temp3]; \
+    EMIT_CODE(code, size) \
+    r = 0;  \
+/* totalTime += (mach_absolute_time() - t0);*/ \
+   goto *labelPtr; \
+}
+
+
+kloop0(1, LKLOOP_1);
+kloop0(8, LKLOOP_8);
+kloop0(16, LKLOOP_16);
+kloop0(9, LKLOOP_9);
+kloop0(2, LKLOOP_2);
+kloop0(3, LKLOOP_3);
+kloop0(10, LKLOOP_10);
+kloop0(17, LKLOOP_17);
+kloop0(24, LKLOOP_24);
+kloop0(32, LKLOOP_32);
+kloop0(25, LKLOOP_25);
+kloop0(18, LKLOOP_18);
+kloop0(11, LKLOOP_11);
+kloop0(4, LKLOOP_4);
+kloop0(5, LKLOOP_5);
+kloop0(12, LKLOOP_12);
+kloop0(19, LKLOOP_19);
+kloop0(26, LKLOOP_26);
+kloop0(33, LKLOOP_33);
+kloop0(40, LKLOOP_40);
+kloop0(48, LKLOOP_48);
+kloop0(41, LKLOOP_41);
+kloop0(34, LKLOOP_34);
+kloop0(27, LKLOOP_27);
+kloop0(20, LKLOOP_20);
+kloop0(13, LKLOOP_13);
+kloop0(6, LKLOOP_6);
+kloop0(7, LKLOOP_7);
+kloop0(14, LKLOOP_14);
+kloop0(21, LKLOOP_21);
+kloop0(23, LKLOOP_23);
+kloop0(30, LKLOOP_30);
+kloop0(37, LKLOOP_37);
+kloop0(44, LKLOOP_44);
+kloop0(51, LKLOOP_51);
+kloop0(58, LKLOOP_58);
+kloop0(59, LKLOOP_59);
+kloop0(52, LKLOOP_52);
+kloop0(45, LKLOOP_45);
+kloop0(38, LKLOOP_38);
+kloop0(31, LKLOOP_31);
+kloop0(39, LKLOOP_39);
+kloop0(46, LKLOOP_46);
+kloop0(53, LKLOOP_53);
+kloop0(60, LKLOOP_60);
+kloop0(61, LKLOOP_61);
+kloop0(54, LKLOOP_54);
+kloop0(47, LKLOOP_47);
+kloop0(55, LKLOOP_55);
+kloop0(62, LKLOOP_62);
+kloop0(63, LKLOOP_63);
+	
+goto L_KLOOP_DONE;
+	
+ kloop();
+
+L_KLOOP_DONE:
+
+
+
+
+
+
+
+#if TRIED THIS WAS SLOWER
+#define kloop0(jpeg_natural_order_of_k, label_ret, label_jump) {  \
+  if ((temp = block[jpeg_natural_order_of_k]) != 0) { \
+	goto label_jump ; \
+  } \
+  r++; \
+}  \
+label_ret:
+
+#define kloop1(jpeg_natural_order_of_k, label_ret, label_jump) {  \
+	label_jump : \
+    temp2 = temp; \
+    /* Branch-less absolute value, bitwise complement, etc., same as above */ \
+    temp3 = temp >> (CHAR_BIT * sizeof(int) - 1); \
+    temp ^= temp3; \
+    temp -= temp3; \
+    temp2 += temp3; \
+    nbits = JPEG_NBITS_NONZERO(temp); \
+    /* if run length > 15, must emit special run-length-16 codes (0xF0) */ \
+    while (r > 15) { \
+      EMIT_BITS(code_0xf0, size_0xf0) \
+      r -= 16; \
+    } \
+    /* Emit Huffman symbol for run length / number of bits */ \
+    temp3 = (r << 4) + nbits;  \
+    code = X1[temp3]; \
+    size = X2[temp3]; \
+    EMIT_CODE(code, size) \
+    r = 0;  \
+/* totalTime += (mach_absolute_time() - t0);*/ \
+   goto label_ret; \
+}
+
+	const unsigned int *X1 = actbl->ehufco;
+	const char *X2 = actbl->ehufsi;
+
+kloop0( 1, L_KLOOP_RET_01, L_KLOOP_JMP_01); kloop0( 8, L_KLOOP_RET_08, L_KLOOP_JMP_08); kloop0(16, L_KLOOP_RET_16, L_KLOOP_JMP_16); 
+kloop0( 9, L_KLOOP_RET_09, L_KLOOP_JMP_09); kloop0( 2, L_KLOOP_RET_02, L_KLOOP_JMP_02); kloop0( 3, L_KLOOP_RET_03, L_KLOOP_JMP_03); 
+kloop0(10, L_KLOOP_RET_10, L_KLOOP_JMP_10); kloop0(17, L_KLOOP_RET_17, L_KLOOP_JMP_17); kloop0(24, L_KLOOP_RET_24, L_KLOOP_JMP_24); 
+kloop0(32, L_KLOOP_RET_32, L_KLOOP_JMP_32); kloop0(25, L_KLOOP_RET_25, L_KLOOP_JMP_25); kloop0(18, L_KLOOP_RET_18, L_KLOOP_JMP_18); 
+kloop0(11, L_KLOOP_RET_11, L_KLOOP_JMP_11); kloop0( 4, L_KLOOP_RET_04, L_KLOOP_JMP_04); kloop0( 5, L_KLOOP_RET_05, L_KLOOP_JMP_05); 
+kloop0(12, L_KLOOP_RET_12, L_KLOOP_JMP_12); kloop0(19, L_KLOOP_RET_19, L_KLOOP_JMP_19); kloop0(26, L_KLOOP_RET_26, L_KLOOP_JMP_26); 
+kloop0(33, L_KLOOP_RET_33, L_KLOOP_JMP_33); kloop0(40, L_KLOOP_RET_40, L_KLOOP_JMP_40); kloop0(48, L_KLOOP_RET_48, L_KLOOP_JMP_48); 
+kloop0(41, L_KLOOP_RET_41, L_KLOOP_JMP_41); kloop0(34, L_KLOOP_RET_34, L_KLOOP_JMP_34); kloop0(27, L_KLOOP_RET_27, L_KLOOP_JMP_27); 
+kloop0(20, L_KLOOP_RET_20, L_KLOOP_JMP_20); kloop0(13, L_KLOOP_RET_13, L_KLOOP_JMP_13); kloop0( 6, L_KLOOP_RET_06, L_KLOOP_JMP_06); 
+kloop0( 7, L_KLOOP_RET_07, L_KLOOP_JMP_07); kloop0(14, L_KLOOP_RET_14, L_KLOOP_JMP_14); kloop0(21, L_KLOOP_RET_21, L_KLOOP_JMP_21); 
+kloop0(23, L_KLOOP_RET_23, L_KLOOP_JMP_23); kloop0(30, L_KLOOP_RET_30, L_KLOOP_JMP_30); kloop0(37, L_KLOOP_RET_37, L_KLOOP_JMP_37); 
+kloop0(44, L_KLOOP_RET_44, L_KLOOP_JMP_44); kloop0(51, L_KLOOP_RET_51, L_KLOOP_JMP_51); kloop0(58, L_KLOOP_RET_58, L_KLOOP_JMP_58); 
+kloop0(59, L_KLOOP_RET_59, L_KLOOP_JMP_59); kloop0(52, L_KLOOP_RET_52, L_KLOOP_JMP_52); kloop0(45, L_KLOOP_RET_45, L_KLOOP_JMP_45); 
+kloop0(38, L_KLOOP_RET_38, L_KLOOP_JMP_38); kloop0(31, L_KLOOP_RET_31, L_KLOOP_JMP_31); kloop0(39, L_KLOOP_RET_39, L_KLOOP_JMP_39); 
+kloop0(46, L_KLOOP_RET_46, L_KLOOP_JMP_46); kloop0(53, L_KLOOP_RET_53, L_KLOOP_JMP_53); kloop0(60, L_KLOOP_RET_60, L_KLOOP_JMP_60); 
+kloop0(61, L_KLOOP_RET_61, L_KLOOP_JMP_61); kloop0(54, L_KLOOP_RET_54, L_KLOOP_JMP_54); kloop0(47, L_KLOOP_RET_47, L_KLOOP_JMP_47); 
+kloop0(55, L_KLOOP_RET_55, L_KLOOP_JMP_55); kloop0(62, L_KLOOP_RET_62, L_KLOOP_JMP_62); kloop0(63, L_KLOOP_RET_63, L_KLOOP_JMP_63); 
+/* One iteration for each value in jpeg_natural_order[] */
+
+goto L_KLOOP_DONE;
+kloop1( 1, L_KLOOP_RET_01, L_KLOOP_JMP_01); kloop1( 8, L_KLOOP_RET_08, L_KLOOP_JMP_08); kloop1(16, L_KLOOP_RET_16, L_KLOOP_JMP_16); 
+kloop1( 9, L_KLOOP_RET_09, L_KLOOP_JMP_09); kloop1( 2, L_KLOOP_RET_02, L_KLOOP_JMP_02); kloop1( 3, L_KLOOP_RET_03, L_KLOOP_JMP_03); 
+kloop1(10, L_KLOOP_RET_10, L_KLOOP_JMP_10); kloop1(17, L_KLOOP_RET_17, L_KLOOP_JMP_17); kloop1(24, L_KLOOP_RET_24, L_KLOOP_JMP_24); 
+kloop1(32, L_KLOOP_RET_32, L_KLOOP_JMP_32); kloop1(25, L_KLOOP_RET_25, L_KLOOP_JMP_25); kloop1(18, L_KLOOP_RET_18, L_KLOOP_JMP_18); 
+kloop1(11, L_KLOOP_RET_11, L_KLOOP_JMP_11); kloop1( 4, L_KLOOP_RET_04, L_KLOOP_JMP_04); kloop1( 5, L_KLOOP_RET_05, L_KLOOP_JMP_05); 
+kloop1(12, L_KLOOP_RET_12, L_KLOOP_JMP_12); kloop1(19, L_KLOOP_RET_19, L_KLOOP_JMP_19); kloop1(26, L_KLOOP_RET_26, L_KLOOP_JMP_26); 
+kloop1(33, L_KLOOP_RET_33, L_KLOOP_JMP_33); kloop1(40, L_KLOOP_RET_40, L_KLOOP_JMP_40); kloop1(48, L_KLOOP_RET_48, L_KLOOP_JMP_48); 
+kloop1(41, L_KLOOP_RET_41, L_KLOOP_JMP_41); kloop1(34, L_KLOOP_RET_34, L_KLOOP_JMP_34); kloop1(27, L_KLOOP_RET_27, L_KLOOP_JMP_27); 
+kloop1(20, L_KLOOP_RET_20, L_KLOOP_JMP_20); kloop1(13, L_KLOOP_RET_13, L_KLOOP_JMP_13); kloop1( 6, L_KLOOP_RET_06, L_KLOOP_JMP_06); 
+kloop1( 7, L_KLOOP_RET_07, L_KLOOP_JMP_07); kloop1(14, L_KLOOP_RET_14, L_KLOOP_JMP_14); kloop1(21, L_KLOOP_RET_21, L_KLOOP_JMP_21); 
+kloop1(23, L_KLOOP_RET_23, L_KLOOP_JMP_23); kloop1(30, L_KLOOP_RET_30, L_KLOOP_JMP_30); kloop1(37, L_KLOOP_RET_37, L_KLOOP_JMP_37); 
+kloop1(44, L_KLOOP_RET_44, L_KLOOP_JMP_44); kloop1(51, L_KLOOP_RET_51, L_KLOOP_JMP_51); kloop1(58, L_KLOOP_RET_58, L_KLOOP_JMP_58); 
+kloop1(59, L_KLOOP_RET_59, L_KLOOP_JMP_59); kloop1(52, L_KLOOP_RET_52, L_KLOOP_JMP_52); kloop1(45, L_KLOOP_RET_45, L_KLOOP_JMP_45); 
+kloop1(38, L_KLOOP_RET_38, L_KLOOP_JMP_38); kloop1(31, L_KLOOP_RET_31, L_KLOOP_JMP_31); kloop1(39, L_KLOOP_RET_39, L_KLOOP_JMP_39); 
+kloop1(46, L_KLOOP_RET_46, L_KLOOP_JMP_46); kloop1(53, L_KLOOP_RET_53, L_KLOOP_JMP_53); kloop1(60, L_KLOOP_RET_60, L_KLOOP_JMP_60); 
+kloop1(61, L_KLOOP_RET_61, L_KLOOP_JMP_61); kloop1(54, L_KLOOP_RET_54, L_KLOOP_JMP_54); kloop1(47, L_KLOOP_RET_47, L_KLOOP_JMP_47); 
+kloop1(55, L_KLOOP_RET_55, L_KLOOP_JMP_55); kloop1(62, L_KLOOP_RET_62, L_KLOOP_JMP_62); kloop1(63, L_KLOOP_RET_63, L_KLOOP_JMP_63); 
+L_KLOOP_DONE:
+#endif
+
+
+#DEFINE THIS ONE WORKS BETTER
+#define kloop0(jpeg_natural_order_of_k, label) {  \
+  if ((temp = block[jpeg_natural_order_of_k]) != 0) { \
+    labelPtr = &&label; \
+	goto L_KLOOP ; \
+  } \
+  r++; \
+}  \
+label:
+
+#define kloop() {  \
+	L_KLOOP : \
+    temp2 = temp; \
+    /* Branch-less absolute value, bitwise complement, etc., same as above */ \
+    temp3 = temp >> (CHAR_BIT * sizeof(int) - 1); \
+    temp ^= temp3; \
+    temp -= temp3; \
+    temp2 += temp3; \
+    nbits = JPEG_NBITS_NONZERO(temp); \
+    /* if run length > 15, must emit special run-length-16 codes (0xF0) */ \
+    while (r > 15) { \
+      EMIT_BITS(code_0xf0, size_0xf0) \
+      r -= 16; \
+    } \
+    /* Emit Huffman symbol for run length / number of bits */ \
+    temp3 = (r << 4) + nbits;  \
+    code = X1[temp3]; \
+    size = X2[temp3]; \
+    EMIT_CODE(code, size) \
+    r = 0;  \
+/* totalTime += (mach_absolute_time() - t0);*/ \
+   goto *labelPtr; \
+}
+
+
+
+kloop0( 1, L_KLOOP_01); kloop0( 8, L_KLOOP_08); kloop0(16, L_KLOOP_16); kloop0( 9, L_KLOOP_09); kloop0( 2, L_KLOOP_02); kloop0( 3, L_KLOOP_03); 
+kloop0(10, L_KLOOP_10); kloop0(17, L_KLOOP_17); kloop0(24, L_KLOOP_24); kloop0(32, L_KLOOP_32); kloop0(25, L_KLOOP_25); kloop0(18, L_KLOOP_18); 
+kloop0(11, L_KLOOP_11); kloop0( 4, L_KLOOP_04); kloop0( 5, L_KLOOP_05); kloop0(12, L_KLOOP_12); kloop0(19, L_KLOOP_19); kloop0(26, L_KLOOP_26); 
+kloop0(33, L_KLOOP_33); kloop0(40, L_KLOOP_40); kloop0(48, L_KLOOP_48); kloop0(41, L_KLOOP_41); kloop0(34, L_KLOOP_34); kloop0(27, L_KLOOP_27); 
+kloop0(20, L_KLOOP_20); kloop0(13, L_KLOOP_13); kloop0( 6, L_KLOOP_06); kloop0( 7, L_KLOOP_07); kloop0(14, L_KLOOP_14); kloop0(21, L_KLOOP_21); 
+kloop0(23, L_KLOOP_23); kloop0(30, L_KLOOP_30); kloop0(37, L_KLOOP_37); kloop0(44, L_KLOOP_44); kloop0(51, L_KLOOP_51); kloop0(58, L_KLOOP_58); 
+kloop0(59, L_KLOOP_59); kloop0(52, L_KLOOP_52); kloop0(45, L_KLOOP_45); kloop0(38, L_KLOOP_38); kloop0(31, L_KLOOP_31); kloop0(39, L_KLOOP_39); 
+kloop0(46, L_KLOOP_46); kloop0(53, L_KLOOP_53); kloop0(60, L_KLOOP_60); kloop0(61, L_KLOOP_61); kloop0(54, L_KLOOP_54); kloop0(47, L_KLOOP_47); 
+kloop0(55, L_KLOOP_55); kloop0(62, L_KLOOP_62); kloop0(63, L_KLOOP_63); 
+
+goto L_KLOOP_DONE;
+	
+ kloop();
+
+L_KLOOP_DONE:
+#endif

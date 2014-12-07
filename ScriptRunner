@@ -149,6 +149,15 @@ do
 #echo <<CONFIG_DEBUG
 	date >> ../../Log.configure
 
+cat <<CONFIG_LOG >> ../../Log.configure
+    ../configure ${TOPTIONS} --enable-static --disable-shared \
+        CC="${TCC}" LD="${TCC}" \
+        CFLAGS="${TCFLAGS}" \
+        LDFLAGS="${TLDFLAGS}" \
+		CCASFLAGS="${TCCASFLAGS} ${TCFLAGS}" \
+		${TFINALFLAGS} \
+
+CONFIG_LOG
     ../configure ${TOPTIONS} --enable-static --disable-shared \
         CC="${TCC}" LD="${TCC}" \
         CFLAGS="${TCFLAGS}" \
@@ -170,7 +179,7 @@ do
 #set +x
 
 	echo "Making $a..."
-    make >> ../../Log.make #--debug=i
+    make >> ../../Log.make #--debug=j
     if [ $? != "0" ] 
     then 
         echo "Make failed!"
@@ -187,7 +196,7 @@ do
 
     echo "Just finished arch $a"
 	cd ..
-	rm -rf build
+	# rm -rf build
 done
 
 echo "Lipo The Following Archives: $ARCHIVES"

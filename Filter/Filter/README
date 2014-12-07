@@ -1,1 +1,27 @@
-	.section	__TEXT,__text,regular,pure_instructions
+THESE ARE APPLIED TO THE GAS-PREPROCESSOR OUTPUT:
+
+I reported 10 issues. There is one additional one below.
+
+Clang will add this shortly (expansion of lanes specifiers, now must be comma separated list)
+st1 {v0.8b - v3.8b}, [sp], 32 -> "st1 {v0.8b, v1.8b, v2.8b, v3.8b}, [sp], 32 // Issue 2
+"\\{v([0-9]+)\\.8b - v([0-9]+)\\.8b\\}" // RegEx
+"\\{v([0-9]+)\\.4h - v([0-9]+)\\.4h\\}" // RegEx
+
+Clang is not going to ever accept this ('2' is over specification to the lane instruction)
+// ins v16.2d[1], v17.2d[0] -> ins v16.d[1], v17.d[0]
+"v([0-9]+)\\.[248]([dsh])\\["	// Issues 3, 4, 6, 7
+
+Change local lables so they have a 'L' prefix (Clang will accept them without an L soon) // Issue 1
+
+Clang will add this shortly
+beq and friends to b.eq			// Issue 5
+
+Clang will add this shortly
+ldr x6, [x1, 8] ->  ldr x6, [x1, #8]// Issues 8, 9
+
+Clang will add this shortly:
+PLDL1KEEP -> pldl1keep			// Issue 10
+
+Other:
+Double indirect macro usage 'INPUT_BUF' -> x1
+

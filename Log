@@ -1,571 +1,7 @@
-Sat Nov 15 21:20:19 EST 2014
-FETCH IS trunk
-A    libjpeg-turbo/release
-A    libjpeg-turbo/release/libjpeg-turbo.nsi.in
-A    libjpeg-turbo/release/deb-control.tmpl
-A    libjpeg-turbo/release/libjpeg-turbo.spec.in
-A    libjpeg-turbo/release/Welcome.rtf
-A    libjpeg-turbo/release/makecygwinpkg.in
-A    libjpeg-turbo/release/makemacpkg.in
-A    libjpeg-turbo/release/makedpkg.in
-A    libjpeg-turbo/release/ReadMe.txt
-A    libjpeg-turbo/release/License.rtf
-A    libjpeg-turbo/release/Distribution.xml
-A    libjpeg-turbo/release/uninstall.in
-A    libjpeg-turbo/jconfigint.h.in
-A    libjpeg-turbo/jchuff.c
-A    libjpeg-turbo/djpeg.1
-A    libjpeg-turbo/jchuff.h
-A    libjpeg-turbo/turbojpeg-mapfile.jni
-A    libjpeg-turbo/transupp.c
-A    libjpeg-turbo/jcparam.c
-A    libjpeg-turbo/transupp.h
-A    libjpeg-turbo/configure.ac
-A    libjpeg-turbo/jquant1.c
-A    libjpeg-turbo/doc
-A    libjpeg-turbo/doc/html
-A    libjpeg-turbo/doc/html/tabs.css
-A    libjpeg-turbo/doc/html/ftv2folderopen.png
-A    libjpeg-turbo/doc/html/structtjscalingfactor.html
-A    libjpeg-turbo/doc/html/ftv2mnode.png
-A    libjpeg-turbo/doc/html/sync_off.png
-A    libjpeg-turbo/doc/html/jquery.js
-A    libjpeg-turbo/doc/html/ftv2pnode.png
-A    libjpeg-turbo/doc/html/ftv2doc.png
-A    libjpeg-turbo/doc/html/sync_on.png
-A    libjpeg-turbo/doc/html/closed.png
-A    libjpeg-turbo/doc/html/doxygen.png
-A    libjpeg-turbo/doc/html/ftv2splitbar.png
-A    libjpeg-turbo/doc/html/ftv2ns.png
-A    libjpeg-turbo/doc/html/search
-A    libjpeg-turbo/doc/html/search/all_63.html
-A    libjpeg-turbo/doc/html/search/variables_72.html
-A    libjpeg-turbo/doc/html/search/nomatches.html
-A    libjpeg-turbo/doc/html/search/variables_64.html
-A    libjpeg-turbo/doc/html/search/variables_74.html
-A    libjpeg-turbo/doc/html/search/all_77.html
-A    libjpeg-turbo/doc/html/search/variables_68.html
-A    libjpeg-turbo/doc/html/search/variables_78.html
-A    libjpeg-turbo/doc/html/search/all_79.html
-A    libjpeg-turbo/doc/html/search/all_63.js
-A    libjpeg-turbo/doc/html/search/variables_72.js
-A    libjpeg-turbo/doc/html/search/groups_74.html
-A    libjpeg-turbo/doc/html/search/variables_64.js
-A    libjpeg-turbo/doc/html/search/variables_74.js
-A    libjpeg-turbo/doc/html/search/variables_68.js
-A    libjpeg-turbo/doc/html/search/all_77.js
-A    libjpeg-turbo/doc/html/search/typedefs_74.html
-A    libjpeg-turbo/doc/html/search/variables_78.js
-A    libjpeg-turbo/doc/html/search/enumvalues_74.html
-A    libjpeg-turbo/doc/html/search/all_79.js
-A    libjpeg-turbo/doc/html/search/groups_74.js
-A    libjpeg-turbo/doc/html/search/variables_6e.html
-A    libjpeg-turbo/doc/html/search/all_6f.html
-A    libjpeg-turbo/doc/html/search/typedefs_74.js
-A    libjpeg-turbo/doc/html/search/enumvalues_74.js
-A    libjpeg-turbo/doc/html/search/classes_74.html
-A    libjpeg-turbo/doc/html/search/variables_6e.js
-A    libjpeg-turbo/doc/html/search/all_6f.js
-A    libjpeg-turbo/doc/html/search/search.js
-A    libjpeg-turbo/doc/html/search/classes_74.js
-A    libjpeg-turbo/doc/html/search/variables_63.html
-A    libjpeg-turbo/doc/html/search/all_72.html
-A    libjpeg-turbo/doc/html/search/all_64.html
-A    libjpeg-turbo/doc/html/search/functions_74.html
-A    libjpeg-turbo/doc/html/search/all_74.html
-A    libjpeg-turbo/doc/html/search/close.png
-A    libjpeg-turbo/doc/html/search/all_68.html
-A    libjpeg-turbo/doc/html/search/variables_77.html
-A    libjpeg-turbo/doc/html/search/all_78.html
-A    libjpeg-turbo/doc/html/search/mag_sel.png
-A    libjpeg-turbo/doc/html/search/variables_79.html
-A    libjpeg-turbo/doc/html/search/all_72.js
-A    libjpeg-turbo/doc/html/search/variables_63.js
-A    libjpeg-turbo/doc/html/search/all_64.js
-A    libjpeg-turbo/doc/html/search/search.css
-A    libjpeg-turbo/doc/html/search/functions_74.js
-A    libjpeg-turbo/doc/html/search/all_74.js
-A    libjpeg-turbo/doc/html/search/all_68.js
-A    libjpeg-turbo/doc/html/search/variables_77.js
-A    libjpeg-turbo/doc/html/search/all_78.js
-A    libjpeg-turbo/doc/html/search/variables_79.js
-A    libjpeg-turbo/doc/html/search/search_l.png
-A    libjpeg-turbo/doc/html/search/enums_74.html
-A    libjpeg-turbo/doc/html/search/search_m.png
-A    libjpeg-turbo/doc/html/search/all_6e.html
-A    libjpeg-turbo/doc/html/search/variables_6f.html
-A    libjpeg-turbo/doc/html/search/search_r.png
-A    libjpeg-turbo/doc/html/search/enums_74.js
-A    libjpeg-turbo/doc/html/search/all_6e.js
-A    libjpeg-turbo/doc/html/search/variables_6f.js
-A    libjpeg-turbo/doc/html/group___turbo_j_p_e_g.html
-A    libjpeg-turbo/doc/html/ftv2node.png
-A    libjpeg-turbo/doc/html/ftv2mlastnode.png
-A    libjpeg-turbo/doc/html/functions.html
-A    libjpeg-turbo/doc/html/dynsections.js
-A    libjpeg-turbo/doc/html/ftv2vertline.png
-A    libjpeg-turbo/doc/html/ftv2plastnode.png
-A    libjpeg-turbo/doc/html/annotated.html
-A    libjpeg-turbo/doc/html/structtjtransform.html
-A    libjpeg-turbo/doc/html/ftv2link.png
-A    libjpeg-turbo/doc/html/ftv2cl.png
-A    libjpeg-turbo/doc/html/open.png
-A    libjpeg-turbo/doc/html/doxygen-extra.css
-A    libjpeg-turbo/doc/html/tab_a.png
-A    libjpeg-turbo/doc/html/structtjregion.html
-A    libjpeg-turbo/doc/html/bc_s.png
-A    libjpeg-turbo/doc/html/tab_b.png
-A    libjpeg-turbo/doc/html/ftv2folderclosed.png
-A    libjpeg-turbo/doc/html/ftv2lastnode.png
-A    libjpeg-turbo/doc/html/ftv2mo.png
-A    libjpeg-turbo/doc/html/classes.html
-A    libjpeg-turbo/doc/html/tab_h.png
-A    libjpeg-turbo/doc/html/doxygen.css
-A    libjpeg-turbo/doc/html/functions_vars.html
-A    libjpeg-turbo/doc/html/index.html
-A    libjpeg-turbo/doc/html/modules.html
-A    libjpeg-turbo/doc/html/tab_s.png
-A    libjpeg-turbo/doc/html/nav_f.png
-A    libjpeg-turbo/doc/html/ftv2blank.png
-A    libjpeg-turbo/doc/html/bdwn.png
-A    libjpeg-turbo/doc/html/nav_g.png
-A    libjpeg-turbo/doc/html/nav_h.png
-A    libjpeg-turbo/jcphuff.c
-A    libjpeg-turbo/wrjpgcom.c
-A    libjpeg-turbo/jcsample.c
-A    libjpeg-turbo/jmemmgr.c
-A    libjpeg-turbo/jcmarker.c
-A    libjpeg-turbo/jdmarker.c
-A    libjpeg-turbo/jdsample.c
-A    libjpeg-turbo/jpeg_nbits_table.h
-A    libjpeg-turbo/usage.txt
-A    libjpeg-turbo/jmorecfg.h
-A    libjpeg-turbo/rdcolmap.c
-A    libjpeg-turbo/jinclude.h
-A    libjpeg-turbo/doxygen-extra.css
-A    libjpeg-turbo/jpegint.h
-A    libjpeg-turbo/jsimddct.h
-A    libjpeg-turbo/rdrle.c
-A    libjpeg-turbo/libjpeg.txt
-A    libjpeg-turbo/jsimd.h
-A    libjpeg-turbo/win
-A    libjpeg-turbo/win/jconfigint.h.in
-A    libjpeg-turbo/win/jpeg7-memsrcdst.def
-A    libjpeg-turbo/win/jpeg62-memsrcdst.def
-A    libjpeg-turbo/win/jpeg7.def
-A    libjpeg-turbo/win/jconfig.h.in
-A    libjpeg-turbo/win/jpeg62.def
-A    libjpeg-turbo/win/jpeg8.def
-A    libjpeg-turbo/win/jsimdcfg.inc
-A    libjpeg-turbo/jdinput.c
-A    libjpeg-turbo/jpeglib.h
-A    libjpeg-turbo/rdjpgcom.1
-A    libjpeg-turbo/testimages
-A    libjpeg-turbo/testimages/nightshot_iso_100.txt
-A    libjpeg-turbo/testimages/testorig.jpg
-A    libjpeg-turbo/testimages/testorig12.jpg
-A    libjpeg-turbo/testimages/vgl_6548_0026a.bmp
-A    libjpeg-turbo/testimages/testimgint.jpg
-A    libjpeg-turbo/testimages/testimgari.jpg
-A    libjpeg-turbo/testimages/vgl_5674_0098.bmp
-A    libjpeg-turbo/testimages/testorig.ppm
-A    libjpeg-turbo/testimages/nightshot_iso_100.bmp
-A    libjpeg-turbo/testimages/vgl_6434_0018a.bmp
-A    libjpeg-turbo/rdtarga.c
-A    libjpeg-turbo/djpeg.c
-A    libjpeg-turbo/jdpostct.c
-A    libjpeg-turbo/jmemsys.h
-A    libjpeg-turbo/cdjpeg.c
-A    libjpeg-turbo/cdjpeg.h
-A    libjpeg-turbo/rdbmp.c
-A    libjpeg-turbo/wrppm.c
-A    libjpeg-turbo/cjpeg.1
-A    libjpeg-turbo/jfdctfst.c
-A    libjpeg-turbo/jcmaster.c
-A    libjpeg-turbo/jdmaster.c
-A    libjpeg-turbo/jidctfst.c
-A    libjpeg-turbo/tjunittest.c
-A    libjpeg-turbo/wrgif.c
-A    libjpeg-turbo/jcstest.c
-A    libjpeg-turbo/coderules.txt
-A    libjpeg-turbo/README-turbo.txt
-A    libjpeg-turbo/jquant2.c
-A    libjpeg-turbo/jdct.h
-A    libjpeg-turbo/jdatasrc.c
-A    libjpeg-turbo/java
-A    libjpeg-turbo/java/org_libjpegturbo_turbojpeg_TJCompressor.h
-A    libjpeg-turbo/java/org_libjpegturbo_turbojpeg_TJ.h
-A    libjpeg-turbo/java/doc
-A    libjpeg-turbo/java/doc/serialized-form.html
-A    libjpeg-turbo/java/doc/index-all.html
-A    libjpeg-turbo/java/doc/stylesheet.css
-A    libjpeg-turbo/java/doc/allclasses-frame.html
-A    libjpeg-turbo/java/doc/package-list
-A    libjpeg-turbo/java/doc/overview-tree.html
-A    libjpeg-turbo/java/doc/org
-A    libjpeg-turbo/java/doc/org/libjpegturbo
-A    libjpeg-turbo/java/doc/org/libjpegturbo/turbojpeg
-A    libjpeg-turbo/java/doc/org/libjpegturbo/turbojpeg/TJ.html
-A    libjpeg-turbo/java/doc/org/libjpegturbo/turbojpeg/TJScalingFactor.html
-A    libjpeg-turbo/java/doc/org/libjpegturbo/turbojpeg/TJCustomFilter.html
-A    libjpeg-turbo/java/doc/org/libjpegturbo/turbojpeg/TJTransformer.html
-A    libjpeg-turbo/java/doc/org/libjpegturbo/turbojpeg/TJDecompressor.html
-A    libjpeg-turbo/java/doc/org/libjpegturbo/turbojpeg/package-frame.html
-A    libjpeg-turbo/java/doc/org/libjpegturbo/turbojpeg/YUVImage.html
-A    libjpeg-turbo/java/doc/org/libjpegturbo/turbojpeg/package-summary.html
-A    libjpeg-turbo/java/doc/org/libjpegturbo/turbojpeg/package-tree.html
-A    libjpeg-turbo/java/doc/org/libjpegturbo/turbojpeg/TJTransform.html
-A    libjpeg-turbo/java/doc/org/libjpegturbo/turbojpeg/TJCompressor.html
-A    libjpeg-turbo/java/doc/constant-values.html
-A    libjpeg-turbo/java/doc/index.html
-A    libjpeg-turbo/java/doc/resources
-A    libjpeg-turbo/java/doc/resources/titlebar_end.gif
-A    libjpeg-turbo/java/doc/resources/background.gif
-A    libjpeg-turbo/java/doc/resources/tab.gif
-A    libjpeg-turbo/java/doc/resources/titlebar.gif
-A    libjpeg-turbo/java/doc/deprecated-list.html
-A    libjpeg-turbo/java/doc/allclasses-noframe.html
-A    libjpeg-turbo/java/doc/help-doc.html
-A    libjpeg-turbo/java/org_libjpegturbo_turbojpeg_TJTransformer.h
-A    libjpeg-turbo/java/MANIFEST.MF
-A    libjpeg-turbo/java/org
-A    libjpeg-turbo/java/org/libjpegturbo
-A    libjpeg-turbo/java/org/libjpegturbo/turbojpeg
-A    libjpeg-turbo/java/org/libjpegturbo/turbojpeg/TJLoader.java.tmpl
-A    libjpeg-turbo/java/org/libjpegturbo/turbojpeg/TJTransformer.java
-A    libjpeg-turbo/java/org/libjpegturbo/turbojpeg/TJDecompressor.java
-A    libjpeg-turbo/java/org/libjpegturbo/turbojpeg/YUVImage.java
-A    libjpeg-turbo/java/org/libjpegturbo/turbojpeg/TJLoader.java.in
-A    libjpeg-turbo/java/org/libjpegturbo/turbojpeg/TJTransform.java
-A    libjpeg-turbo/java/org/libjpegturbo/turbojpeg/TJCompressor.java
-A    libjpeg-turbo/java/org/libjpegturbo/turbojpeg/TJ.java
-A    libjpeg-turbo/java/org/libjpegturbo/turbojpeg/TJScalingFactor.java
-A    libjpeg-turbo/java/org/libjpegturbo/turbojpeg/TJCustomFilter.java
-A    libjpeg-turbo/java/Makefile.am
-A    libjpeg-turbo/java/TJExample.java
-A    libjpeg-turbo/java/org_libjpegturbo_turbojpeg_TJDecompressor.h
-A    libjpeg-turbo/java/CMakeLists.txt
-A    libjpeg-turbo/java/README
-A    libjpeg-turbo/java/TJBench.java
-A    libjpeg-turbo/java/TJUnitTest.java
-A    libjpeg-turbo/jcapistd.c
-A    libjpeg-turbo/jdapistd.c
-A    libjpeg-turbo/jversion.h
-A    libjpeg-turbo/rdjpgcom.c
-A    libjpeg-turbo/jdatasrc-tj.c
-A    libjpeg-turbo/tjutil.c
-A    libjpeg-turbo/jconfig.txt
-A    libjpeg-turbo/README
-A    libjpeg-turbo/libjpeg.map.in
-A    libjpeg-turbo/jdmerge.c
-A    libjpeg-turbo/tjexampletest.in
-A    libjpeg-turbo/bmp.c
-A    libjpeg-turbo/tjutil.h
-A    libjpeg-turbo/bmp.h
-A    libjpeg-turbo/acinclude.m4
-A    libjpeg-turbo/cjpeg.c
-A    libjpeg-turbo/Makefile.am
-A    libjpeg-turbo/jdcolor.c
-A    libjpeg-turbo/jdatadst.c
-A    libjpeg-turbo/jdmrg565.c
-A    libjpeg-turbo/jdtrans.c
-A    libjpeg-turbo/wrtarga.c
-A    libjpeg-turbo/change.log
-A    libjpeg-turbo/jaricom.c
-A    libjpeg-turbo/jsimd_none.c
-A    libjpeg-turbo/rdswitch.c
-A    libjpeg-turbo/turbojpeg-mapfile
-A    libjpeg-turbo/jdcol565.c
-A    libjpeg-turbo/jccolor.c
-A    libjpeg-turbo/jfdctflt.c
-A    libjpeg-turbo/turbojpeg.c
-A    libjpeg-turbo/tjbenchtest.in
-A    libjpeg-turbo/jidctflt.c
-A    libjpeg-turbo/jctrans.c
-A    libjpeg-turbo/turbojpeg.h
-A    libjpeg-turbo/jdatadst-tj.c
-A    libjpeg-turbo/jcprepct.c
-A    libjpeg-turbo/jutils.c
-A    libjpeg-turbo/simd
-A    libjpeg-turbo/simd/jidctred-sse2.asm
-A    libjpeg-turbo/simd/jsimd_arm_neon.S
-A    libjpeg-turbo/simd/jdcolor-sse2.asm
-A    libjpeg-turbo/simd/jfdctfst-mmx.asm
-A    libjpeg-turbo/simd/jccolext-mmx.asm
-A    libjpeg-turbo/simd/jidctfst-sse2-64.asm
-A    libjpeg-turbo/simd/jdcolext-sse2-64.asm
-A    libjpeg-turbo/simd/jsimdcpu.asm
-A    libjpeg-turbo/simd/jsimd_powerpc_altivec.c
-A    libjpeg-turbo/simd/jcgray-mmx.asm
-A    libjpeg-turbo/simd/jquantf-sse2.asm
-A    libjpeg-turbo/simd/jidctfst-sse2.asm
-A    libjpeg-turbo/simd/jidctflt-sse.asm
-A    libjpeg-turbo/simd/jccolor-sse2-64.asm
-A    libjpeg-turbo/simd/jcsample-mmx.asm
-A    libjpeg-turbo/simd/jdsample-sse2-64.asm
-A    libjpeg-turbo/simd/jidctflt-sse2-64.asm
-A    libjpeg-turbo/simd/jfdctint-mmx.asm
-A    libjpeg-turbo/simd/jsimdcfg.inc.h
-A    libjpeg-turbo/simd/jsimd_arm.c
-A    libjpeg-turbo/simd/jsimd_powerpc.c
-A    libjpeg-turbo/simd/jidctint-sse2-64.asm
-A    libjpeg-turbo/simd/jdmerge-mmx.asm
-A    libjpeg-turbo/simd/jsimd.h
-A    libjpeg-turbo/simd/jfdctflt-3dn.asm
-A    libjpeg-turbo/simd/jdmrgext-mmx.asm
-A    libjpeg-turbo/simd/jidctred-sse2-64.asm
-A    libjpeg-turbo/simd/jdcolor-sse2-64.asm
-A    libjpeg-turbo/simd/jdmrgext-sse2.asm
-A    libjpeg-turbo/simd/jcgryext-sse2-64.asm
-A    libjpeg-turbo/simd/jsimd_mips.c
-A    libjpeg-turbo/simd/jquant-mmx.asm
-A    libjpeg-turbo/simd/jccolor-sse2.asm
-A    libjpeg-turbo/simd/jfdctfst-sse2-64.asm
-A    libjpeg-turbo/simd/jdsample-sse2.asm
-A    libjpeg-turbo/simd/jidctfst-mmx.asm
-A    libjpeg-turbo/simd/jquantf-sse2-64.asm
-A    libjpeg-turbo/simd/jdcolext-mmx.asm
-A    libjpeg-turbo/simd/jccolext-sse2-64.asm
-A    libjpeg-turbo/simd/jquanti-sse2-64.asm
-A    libjpeg-turbo/simd/jidctflt-sse2.asm
-A    libjpeg-turbo/simd/jfdctflt-sse-64.asm
-A    libjpeg-turbo/simd/jfdctint-sse2.asm
-A    libjpeg-turbo/simd/jcgray-sse2-64.asm
-A    libjpeg-turbo/simd/jsimd_i386.c
-A    libjpeg-turbo/simd/jsimd_arm64.c
-A    libjpeg-turbo/simd/jquant-3dn.asm
-A    libjpeg-turbo/simd/jsimd_x86_64.c
-A    libjpeg-turbo/simd/jdcolext-sse2.asm
-A    libjpeg-turbo/simd/nasm_lt.sh
-A    libjpeg-turbo/simd/jdmerge-sse2.asm
-A    libjpeg-turbo/simd/jfdctflt-sse.asm
-A    libjpeg-turbo/simd/jccolor-mmx.asm
-A    libjpeg-turbo/simd/jdsample-mmx.asm
-A    libjpeg-turbo/simd/CMakeLists.txt
-A    libjpeg-turbo/simd/jcsample-sse2-64.asm
-A    libjpeg-turbo/simd/jcolsamp.inc
-A    libjpeg-turbo/simd/jfdctint-sse2-64.asm
-A    libjpeg-turbo/simd/jidctint-mmx.asm
-A    libjpeg-turbo/simd/jcsample-sse2.asm
-A    libjpeg-turbo/simd/jcgryext-sse2.asm
-A    libjpeg-turbo/simd/jdct.inc
-A    libjpeg-turbo/simd/jdmerge-sse2-64.asm
-A    libjpeg-turbo/simd/jsimd_mips_dspr2_asm.h
-A    libjpeg-turbo/simd/jsimd_arm64_neon.S
-A    libjpeg-turbo/simd/jsimdext.inc
-A    libjpeg-turbo/simd/jfdctfst-sse2.asm
-A    libjpeg-turbo/simd/jidctint-sse2.asm
-A    libjpeg-turbo/simd/jquanti-sse2.asm
-A    libjpeg-turbo/simd/jidctflt-3dn.asm
-A    libjpeg-turbo/simd/jccolext-sse2.asm
-A    libjpeg-turbo/simd/jdmrgext-sse2-64.asm
-A    libjpeg-turbo/simd/jidctred-mmx.asm
-A    libjpeg-turbo/simd/jcgray-sse2.asm
-A    libjpeg-turbo/simd/jquant-sse.asm
-A    libjpeg-turbo/simd/Makefile.am
-A    libjpeg-turbo/simd/jsimd_mips_dspr2.S
-A    libjpeg-turbo/simd/jdcolor-mmx.asm
-A    libjpeg-turbo/simd/jcgryext-mmx.asm
-A    libjpeg-turbo/jstdhuff.c
-A    libjpeg-turbo/tjbench.c
-A    libjpeg-turbo/turbojpeg-jni.c
-A    libjpeg-turbo/rdppm.c
-A    libjpeg-turbo/jdmrgext.c
-A    libjpeg-turbo/jdarith.c
-A    libjpeg-turbo/jcmainct.c
-A    libjpeg-turbo/jpegtran.1
-A    libjpeg-turbo/jdmainct.c
-A    libjpeg-turbo/BUILDING.txt
-A    libjpeg-turbo/jcapimin.c
-A    libjpeg-turbo/wrrle.c
-A    libjpeg-turbo/jdapimin.c
-A    libjpeg-turbo/rdgif.c
-A    libjpeg-turbo/jcdctmgr.c
-A    libjpeg-turbo/jddctmgr.c
-A    libjpeg-turbo/doxygen.config
-A    libjpeg-turbo/jerror.c
-A    libjpeg-turbo/md5
-A    libjpeg-turbo/md5/md5.c
-A    libjpeg-turbo/md5/md5cmp.c
-A    libjpeg-turbo/md5/Makefile.am
-A    libjpeg-turbo/md5/md5hl.c
-A    libjpeg-turbo/md5/md5.h
-A    libjpeg-turbo/jdhuff.c
-A    libjpeg-turbo/jerror.h
-A    libjpeg-turbo/jpegcomp.h
-A    libjpeg-turbo/jmemnobs.c
-A    libjpeg-turbo/jdhuff.h
-A    libjpeg-turbo/jccolext.c
-A    libjpeg-turbo/jdcolext.c
-A    libjpeg-turbo/sharedlib
-A    libjpeg-turbo/sharedlib/CMakeLists.txt
-A    libjpeg-turbo/jcinit.c
-A    libjpeg-turbo/jcarith.c
-A    libjpeg-turbo/wrbmp.c
-A    libjpeg-turbo/jconfig.h.in
-A    libjpeg-turbo/example.c
-A    libjpeg-turbo/CMakeLists.txt
-A    libjpeg-turbo/structure.txt
-A    libjpeg-turbo/jfdctint.c
-A    libjpeg-turbo/cderror.h
-A    libjpeg-turbo/wrjpgcom.1
-A    libjpeg-turbo/cmakescripts
-A    libjpeg-turbo/cmakescripts/testclean.cmake
-A    libjpeg-turbo/cmakescripts/md5cmp.cmake
-A    libjpeg-turbo/jidctint.c
-A    libjpeg-turbo/jpegtran.c
-A    libjpeg-turbo/jccoefct.c
-A    libjpeg-turbo/tjbenchtest.java.in
-A    libjpeg-turbo/jdcoefct.c
-A    libjpeg-turbo/jcomapi.c
-A    libjpeg-turbo/ChangeLog.txt
-A    libjpeg-turbo/jdphuff.c
-A    libjpeg-turbo/jidctred.c
-A    libjpeg-turbo/wizard.txt
- U   libjpeg-turbo
-Checked out revision 1412.
-autoreconf: Entering directory `.'
-autoreconf: configure.ac: not using Gettext
-autoreconf: running: aclocal --force 
-configure.ac:22: warning: AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body
-../../lib/autoconf/lang.m4:197: AC_LANG_CONFTEST is expanded from...
-../../lib/autoconf/general.m4:2670: _AC_LINK_IFELSE is expanded from...
-../../lib/autoconf/general.m4:2680: AC_LINK_IFELSE is expanded from...
-/usr/local/share/aclocal/libtool.m4:1100: _LT_SYS_MODULE_PATH_AIX is expanded from...
-/usr/local/share/aclocal/libtool.m4:5331: _LT_LINKER_SHLIBS is expanded from...
-/usr/local/share/aclocal/libtool.m4:5416: _LT_LANG_C_CONFIG is expanded from...
-/usr/local/share/aclocal/libtool.m4:240: _LT_SETUP is expanded from...
-/usr/local/share/aclocal/libtool.m4:104: LT_INIT is expanded from...
-/usr/local/share/aclocal/libtool.m4:107: AC_PROG_LIBTOOL is expanded from...
-configure.ac:22: the top level
-configure.ac:22: warning: AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body
-../../lib/autoconf/lang.m4:197: AC_LANG_CONFTEST is expanded from...
-../../lib/autoconf/general.m4:2670: _AC_LINK_IFELSE is expanded from...
-../../lib/autoconf/general.m4:2680: AC_LINK_IFELSE is expanded from...
-/usr/local/share/aclocal/libtool.m4:5331: _LT_LINKER_SHLIBS is expanded from...
-/usr/local/share/aclocal/libtool.m4:5416: _LT_LANG_C_CONFIG is expanded from...
-/usr/local/share/aclocal/libtool.m4:240: _LT_SETUP is expanded from...
-/usr/local/share/aclocal/libtool.m4:104: LT_INIT is expanded from...
-/usr/local/share/aclocal/libtool.m4:107: AC_PROG_LIBTOOL is expanded from...
-configure.ac:22: the top level
-autoreconf: configure.ac: tracing
-configure.ac:22: warning: AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body
-../../lib/autoconf/lang.m4:197: AC_LANG_CONFTEST is expanded from...
-../../lib/autoconf/general.m4:2670: _AC_LINK_IFELSE is expanded from...
-../../lib/autoconf/general.m4:2680: AC_LINK_IFELSE is expanded from...
-aclocal.m4:1116: _LT_SYS_MODULE_PATH_AIX is expanded from...
-aclocal.m4:5347: _LT_LINKER_SHLIBS is expanded from...
-aclocal.m4:5428: _LT_LANG_C_CONFIG is expanded from...
-aclocal.m4:262: _LT_SETUP is expanded from...
-aclocal.m4:126: LT_INIT is expanded from...
-aclocal.m4:129: AC_PROG_LIBTOOL is expanded from...
-configure.ac:22: the top level
-configure.ac:22: warning: AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body
-../../lib/autoconf/lang.m4:197: AC_LANG_CONFTEST is expanded from...
-../../lib/autoconf/general.m4:2670: _AC_LINK_IFELSE is expanded from...
-../../lib/autoconf/general.m4:2680: AC_LINK_IFELSE is expanded from...
-aclocal.m4:5347: _LT_LINKER_SHLIBS is expanded from...
-aclocal.m4:5428: _LT_LANG_C_CONFIG is expanded from...
-aclocal.m4:262: _LT_SETUP is expanded from...
-aclocal.m4:126: LT_INIT is expanded from...
-aclocal.m4:129: AC_PROG_LIBTOOL is expanded from...
-configure.ac:22: the top level
-autoreconf: running: libtoolize --copy --force
-configure.ac:22: warning: AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body
-../../lib/autoconf/lang.m4:197: AC_LANG_CONFTEST is expanded from...
-../../lib/autoconf/general.m4:2670: _AC_LINK_IFELSE is expanded from...
-../../lib/autoconf/general.m4:2680: AC_LINK_IFELSE is expanded from...
-/usr/local/share/aclocal/libtool.m4:1100: _LT_SYS_MODULE_PATH_AIX is expanded from...
-/usr/local/share/aclocal/libtool.m4:5331: _LT_LINKER_SHLIBS is expanded from...
-/usr/local/share/aclocal/libtool.m4:5416: _LT_LANG_C_CONFIG is expanded from...
-/usr/local/share/aclocal/libtool.m4:240: _LT_SETUP is expanded from...
-/usr/local/share/aclocal/libtool.m4:104: LT_INIT is expanded from...
-/usr/local/share/aclocal/libtool.m4:107: AC_PROG_LIBTOOL is expanded from...
-configure.ac:22: the top level
-configure.ac:22: warning: AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body
-../../lib/autoconf/lang.m4:197: AC_LANG_CONFTEST is expanded from...
-../../lib/autoconf/general.m4:2670: _AC_LINK_IFELSE is expanded from...
-../../lib/autoconf/general.m4:2680: AC_LINK_IFELSE is expanded from...
-/usr/local/share/aclocal/libtool.m4:5331: _LT_LINKER_SHLIBS is expanded from...
-/usr/local/share/aclocal/libtool.m4:5416: _LT_LANG_C_CONFIG is expanded from...
-/usr/local/share/aclocal/libtool.m4:240: _LT_SETUP is expanded from...
-/usr/local/share/aclocal/libtool.m4:104: LT_INIT is expanded from...
-/usr/local/share/aclocal/libtool.m4:107: AC_PROG_LIBTOOL is expanded from...
-configure.ac:22: the top level
-autoreconf: running: /usr/local/bin/autoconf --force
-configure.ac:22: warning: AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body
-../../lib/autoconf/lang.m4:197: AC_LANG_CONFTEST is expanded from...
-../../lib/autoconf/general.m4:2670: _AC_LINK_IFELSE is expanded from...
-../../lib/autoconf/general.m4:2680: AC_LINK_IFELSE is expanded from...
-aclocal.m4:1116: _LT_SYS_MODULE_PATH_AIX is expanded from...
-aclocal.m4:5347: _LT_LINKER_SHLIBS is expanded from...
-aclocal.m4:5428: _LT_LANG_C_CONFIG is expanded from...
-aclocal.m4:262: _LT_SETUP is expanded from...
-aclocal.m4:126: LT_INIT is expanded from...
-aclocal.m4:129: AC_PROG_LIBTOOL is expanded from...
-configure.ac:22: the top level
-configure.ac:22: warning: AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body
-../../lib/autoconf/lang.m4:197: AC_LANG_CONFTEST is expanded from...
-../../lib/autoconf/general.m4:2670: _AC_LINK_IFELSE is expanded from...
-../../lib/autoconf/general.m4:2680: AC_LINK_IFELSE is expanded from...
-aclocal.m4:5347: _LT_LINKER_SHLIBS is expanded from...
-aclocal.m4:5428: _LT_LANG_C_CONFIG is expanded from...
-aclocal.m4:262: _LT_SETUP is expanded from...
-aclocal.m4:126: LT_INIT is expanded from...
-aclocal.m4:129: AC_PROG_LIBTOOL is expanded from...
-configure.ac:22: the top level
-autoreconf: running: /usr/local/bin/autoheader --force
-configure.ac:22: warning: AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body
-../../lib/autoconf/lang.m4:197: AC_LANG_CONFTEST is expanded from...
-../../lib/autoconf/general.m4:2670: _AC_LINK_IFELSE is expanded from...
-../../lib/autoconf/general.m4:2680: AC_LINK_IFELSE is expanded from...
-aclocal.m4:1116: _LT_SYS_MODULE_PATH_AIX is expanded from...
-aclocal.m4:5347: _LT_LINKER_SHLIBS is expanded from...
-aclocal.m4:5428: _LT_LANG_C_CONFIG is expanded from...
-aclocal.m4:262: _LT_SETUP is expanded from...
-aclocal.m4:126: LT_INIT is expanded from...
-aclocal.m4:129: AC_PROG_LIBTOOL is expanded from...
-configure.ac:22: the top level
-configure.ac:22: warning: AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body
-../../lib/autoconf/lang.m4:197: AC_LANG_CONFTEST is expanded from...
-../../lib/autoconf/general.m4:2670: _AC_LINK_IFELSE is expanded from...
-../../lib/autoconf/general.m4:2680: AC_LINK_IFELSE is expanded from...
-aclocal.m4:5347: _LT_LINKER_SHLIBS is expanded from...
-aclocal.m4:5428: _LT_LANG_C_CONFIG is expanded from...
-aclocal.m4:262: _LT_SETUP is expanded from...
-aclocal.m4:126: LT_INIT is expanded from...
-aclocal.m4:129: AC_PROG_LIBTOOL is expanded from...
-configure.ac:22: the top level
-autoreconf: running: automake --add-missing --copy --force-missing
-configure.ac:22: warning: AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body
-../../lib/autoconf/lang.m4:197: AC_LANG_CONFTEST is expanded from...
-../../lib/autoconf/general.m4:2670: _AC_LINK_IFELSE is expanded from...
-../../lib/autoconf/general.m4:2680: AC_LINK_IFELSE is expanded from...
-aclocal.m4:1116: _LT_SYS_MODULE_PATH_AIX is expanded from...
-aclocal.m4:5347: _LT_LINKER_SHLIBS is expanded from...
-aclocal.m4:5428: _LT_LANG_C_CONFIG is expanded from...
-aclocal.m4:262: _LT_SETUP is expanded from...
-aclocal.m4:126: LT_INIT is expanded from...
-aclocal.m4:129: AC_PROG_LIBTOOL is expanded from...
-configure.ac:22: the top level
-configure.ac:22: warning: AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body
-../../lib/autoconf/lang.m4:197: AC_LANG_CONFTEST is expanded from...
-../../lib/autoconf/general.m4:2670: _AC_LINK_IFELSE is expanded from...
-../../lib/autoconf/general.m4:2680: AC_LINK_IFELSE is expanded from...
-aclocal.m4:5347: _LT_LINKER_SHLIBS is expanded from...
-aclocal.m4:5428: _LT_LANG_C_CONFIG is expanded from...
-aclocal.m4:262: _LT_SETUP is expanded from...
-aclocal.m4:126: LT_INIT is expanded from...
-aclocal.m4:129: AC_PROG_LIBTOOL is expanded from...
-configure.ac:22: the top level
-configure.ac:18: installing './ar-lib'
-configure.ac:20: installing './compile'
-configure.ac:22: installing './config.guess'
-configure.ac:22: installing './config.sub'
-configure.ac:8: installing './install-sh'
-configure.ac:8: installing './missing'
-Makefile.am: installing './depcomp'
-autoreconf: Leaving directory `.'
+Sat Dec  6 14:11:30 EST 2014
+Updating '.':
+At revision 1437.
+FETCH IS
 DOING ARCH armv7
 Configure armv7
 configure: WARNING: using cross tools not prefixed with host triplet
@@ -642,6 +78,65 @@ libtool: compile: ignoring unknown tag NASM
 libtool: compile: ignoring unknown tag NASM
 libtool: compile: ignoring unknown tag NASM
 libtool: compile: ignoring unknown tag NASM
+../../md5/md5cmp.c:52:7: warning: implicitly declaring library function 'strcasecmp' with type 'int (const char *, const char *)'
+        if (!strcasecmp(md5sum, argv[1])) {
+             ^
+../../md5/md5cmp.c:52:7: note: please include the header <strings.h> or explicitly provide a declaration for 'strcasecmp'
+1 warning generated.
+../turbojpeg.c:306:4: warning: implicitly declaring library function 'snprintf' with type 'int (char *, unsigned long, const char *, ...)'
+                        _throw("Unsupported pixel format");
+                        ^
+../turbojpeg.c:119:20: note: expanded from macro '_throw'
+#define _throw(m) {snprintf(errStr, JMSG_LENGTH_MAX, "%s", m);  \
+                   ^
+../turbojpeg.c:306:4: note: please include the header <stdio.h> or explicitly provide a declaration for 'snprintf'
+../turbojpeg.c:119:20: note: expanded from macro '_throw'
+#define _throw(m) {snprintf(errStr, JMSG_LENGTH_MAX, "%s", m);  \
+                   ^
+../turbojpeg.c:753:28: warning: implicit declaration of function 'putenv' is invalid in C99 [-Wimplicit-function-declaration]
+        if(flags&TJFLAG_FORCEMMX) putenv("JSIMD_FORCEMMX=1");
+                                  ^
+2 warnings generated.
+../tjbench.c:75:3: warning: implicitly declaring library function 'snprintf' with type 'int (char *, unsigned long, const char *, ...)'
+                snprintf(buf, 80, "%s %s", csName[cs], subNameLong[subsamp]);
+                ^
+../tjbench.c:75:3: note: please include the header <stdio.h> or explicitly provide a declaration for 'snprintf'
+../tjbench.c:773:7: warning: implicitly declaring library function 'strcasecmp' with type 'int (const char *, const char *)'
+                if(!strcasecmp(temp, ".bmp")) ext="bmp";
+                    ^
+../tjbench.c:773:7: note: please include the header <strings.h> or explicitly provide a declaration for 'strcasecmp'
+2 warnings generated.
+../bmp.c:113:3: warning: implicitly declaring library function 'snprintf' with type 'int (char *, unsigned long, const char *, ...)'
+                _throw("loadbmp(): Invalid argument");
+                ^
+../bmp.c:69:20: note: expanded from macro '_throw'
+#define _throw(m) {snprintf(errStr, JMSG_LENGTH_MAX, "%s", m);  \
+                   ^
+../bmp.c:113:3: note: please include the header <stdio.h> or explicitly provide a declaration for 'snprintf'
+../bmp.c:69:20: note: expanded from macro '_throw'
+#define _throw(m) {snprintf(errStr, JMSG_LENGTH_MAX, "%s", m);  \
+                   ^
+../bmp.c:228:13: warning: implicitly declaring library function 'strcasecmp' with type 'int (const char *, const char *)'
+        if(ptr && !strcasecmp(ptr, ".bmp"))
+                   ^
+../bmp.c:228:13: note: please include the header <strings.h> or explicitly provide a declaration for 'strcasecmp'
+2 warnings generated.
+../tjunittest.c:443:2: warning: implicitly declaring library function 'snprintf' with type 'int (char *, unsigned long, const char *, ...)'
+        snprintf(tempStr, 1024, "%s_enc_%s_%s_%s_Q%d.jpg", basename, pfStr, buStr,
+        ^
+../tjunittest.c:443:2: note: please include the header <stdio.h> or explicitly provide a declaration for 'snprintf'
+../tjunittest.c:626:9: warning: implicit declaration of function 'random' is invalid in C99 [-Wimplicit-function-declaration]
+                                        if(random()<RAND_MAX/2) srcBuf[i]=0;
+                                           ^
+../tjunittest.c:699:8: warning: implicitly declaring library function 'strcasecmp' with type 'int (const char *, const char *)'
+                        if(!strcasecmp(argv[i], "-yuv")) doyuv=1;
+                            ^
+../tjunittest.c:699:8: note: please include the header <strings.h> or explicitly provide a declaration for 'strcasecmp'
+../tjunittest.c:702:8: warning: implicitly declaring library function 'strncasecmp' with type 'int (const char *, const char *, unsigned long)'
+                        if(!strncasecmp(argv[i], "-h", 2) || !strcasecmp(argv[i], "-?"))
+                            ^
+../tjunittest.c:702:8: note: please include the header <strings.h> or explicitly provide a declaration for 'strncasecmp'
+4 warnings generated.
 WORKING is /Volumes/Data/git/libjpeg-turbo-builder/libjpeg-turbo/build
 Just finished arch i386
 DOING ARCH x86_64
@@ -663,6 +158,65 @@ libtool: compile: ignoring unknown tag NASM
 libtool: compile: ignoring unknown tag NASM
 libtool: compile: ignoring unknown tag NASM
 libtool: compile: ignoring unknown tag NASM
+../../md5/md5cmp.c:52:7: warning: implicitly declaring library function 'strcasecmp' with type 'int (const char *, const char *)'
+        if (!strcasecmp(md5sum, argv[1])) {
+             ^
+../../md5/md5cmp.c:52:7: note: please include the header <strings.h> or explicitly provide a declaration for 'strcasecmp'
+1 warning generated.
+../turbojpeg.c:306:4: warning: implicitly declaring library function 'snprintf' with type 'int (char *, unsigned long, const char *, ...)'
+                        _throw("Unsupported pixel format");
+                        ^
+../turbojpeg.c:119:20: note: expanded from macro '_throw'
+#define _throw(m) {snprintf(errStr, JMSG_LENGTH_MAX, "%s", m);  \
+                   ^
+../turbojpeg.c:306:4: note: please include the header <stdio.h> or explicitly provide a declaration for 'snprintf'
+../turbojpeg.c:119:20: note: expanded from macro '_throw'
+#define _throw(m) {snprintf(errStr, JMSG_LENGTH_MAX, "%s", m);  \
+                   ^
+../turbojpeg.c:753:28: warning: implicit declaration of function 'putenv' is invalid in C99 [-Wimplicit-function-declaration]
+        if(flags&TJFLAG_FORCEMMX) putenv("JSIMD_FORCEMMX=1");
+                                  ^
+2 warnings generated.
+../tjbench.c:75:3: warning: implicitly declaring library function 'snprintf' with type 'int (char *, unsigned long, const char *, ...)'
+                snprintf(buf, 80, "%s %s", csName[cs], subNameLong[subsamp]);
+                ^
+../tjbench.c:75:3: note: please include the header <stdio.h> or explicitly provide a declaration for 'snprintf'
+../tjbench.c:773:7: warning: implicitly declaring library function 'strcasecmp' with type 'int (const char *, const char *)'
+                if(!strcasecmp(temp, ".bmp")) ext="bmp";
+                    ^
+../tjbench.c:773:7: note: please include the header <strings.h> or explicitly provide a declaration for 'strcasecmp'
+2 warnings generated.
+../bmp.c:113:3: warning: implicitly declaring library function 'snprintf' with type 'int (char *, unsigned long, const char *, ...)'
+                _throw("loadbmp(): Invalid argument");
+                ^
+../bmp.c:69:20: note: expanded from macro '_throw'
+#define _throw(m) {snprintf(errStr, JMSG_LENGTH_MAX, "%s", m);  \
+                   ^
+../bmp.c:113:3: note: please include the header <stdio.h> or explicitly provide a declaration for 'snprintf'
+../bmp.c:69:20: note: expanded from macro '_throw'
+#define _throw(m) {snprintf(errStr, JMSG_LENGTH_MAX, "%s", m);  \
+                   ^
+../bmp.c:228:13: warning: implicitly declaring library function 'strcasecmp' with type 'int (const char *, const char *)'
+        if(ptr && !strcasecmp(ptr, ".bmp"))
+                   ^
+../bmp.c:228:13: note: please include the header <strings.h> or explicitly provide a declaration for 'strcasecmp'
+2 warnings generated.
+../tjunittest.c:443:2: warning: implicitly declaring library function 'snprintf' with type 'int (char *, unsigned long, const char *, ...)'
+        snprintf(tempStr, 1024, "%s_enc_%s_%s_%s_Q%d.jpg", basename, pfStr, buStr,
+        ^
+../tjunittest.c:443:2: note: please include the header <stdio.h> or explicitly provide a declaration for 'snprintf'
+../tjunittest.c:626:9: warning: implicit declaration of function 'random' is invalid in C99 [-Wimplicit-function-declaration]
+                                        if(random()<RAND_MAX/2) srcBuf[i]=0;
+                                           ^
+../tjunittest.c:699:8: warning: implicitly declaring library function 'strcasecmp' with type 'int (const char *, const char *)'
+                        if(!strcasecmp(argv[i], "-yuv")) doyuv=1;
+                            ^
+../tjunittest.c:699:8: note: please include the header <strings.h> or explicitly provide a declaration for 'strcasecmp'
+../tjunittest.c:702:8: warning: implicitly declaring library function 'strncasecmp' with type 'int (const char *, const char *, unsigned long)'
+                        if(!strncasecmp(argv[i], "-h", 2) || !strcasecmp(argv[i], "-?"))
+                            ^
+../tjunittest.c:702:8: note: please include the header <strings.h> or explicitly provide a declaration for 'strncasecmp'
+4 warnings generated.
 WORKING is /Volumes/Data/git/libjpeg-turbo-builder/libjpeg-turbo/build
 Just finished arch x86_64
 Lipo The Following Archives:  /tmp/libARMV7.a /tmp/libARM64.a /tmp/libI386.a /tmp/libX86_64.a
