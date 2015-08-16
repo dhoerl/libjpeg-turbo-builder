@@ -53,19 +53,19 @@ private var regEx8 = NSRegularExpression(pattern: " ([0-9]+)\\]", options:NSRegu
 let sLen = 256
 var s : UnsafeMutablePointer<Int8> = UnsafeMutablePointer.alloc(sLen)
 while fgets(s, Int32(sLen), stdin) != nil {	// stdin
-    let len = strlen(s)
+	let len = strlen(s)
 	if len == 1 {
 		println("")
 		continue
 	}
 	if len > 1 {
-        let sAtIndex = s.advancedBy(Int(len - 1))
+		let sAtIndex = s.advancedBy(Int(len - 1))
 		sAtIndex.memory = 0	// remove trailing carriage return
 		
 	}
 
 	let str: NSString! = NSString(CString: s, encoding: NSASCIIStringEncoding)!
-    let theString = String(str)
+	let theString = String(str)
 	
 	// Skip global labels, those starting with a '-'
 	if true {
