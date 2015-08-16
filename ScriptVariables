@@ -35,7 +35,7 @@ OPTIONS_ARM64="--host aarch64-apple-darwin"
 
 # Simulator 32bit
 # assuming that NATIVE_ARCH_32_BIT is i386, this is what you would use for the simulator
-FLAGS_I386="-arch i386 -mmacosx-version-min=10.9 -D_ANSI_SOURCE"
+FLAGS_I386="-arch i386 -mmacosx-version-min=10.9 -D_ANSI_SOURCE -D_NONSTD_SOURCE"
 CFLAGS_I386="-O3 -m32 ${FLAGS_I386}"
 CCASFLAGS_I386=""
 LDFLAGS_I386="-m32 ${FLAGS_I386}"
