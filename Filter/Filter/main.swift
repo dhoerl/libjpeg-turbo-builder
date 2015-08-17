@@ -59,11 +59,13 @@ while fgets(s, Int32(sLen), stdin) != nil {	// stdin
 		continue
 	}
 	if len > 1 {
-		s[len - 1] = 0	// remove trailing carriage return
+		let sAtIndex = s.advancedBy(Int(len - 1))
+		sAtIndex.memory = 0	// remove trailing carriage return
 		
 	}
 
 	let str: NSString! = NSString(CString: s, encoding: NSASCIIStringEncoding)!
+	let theString = String(str)
 	
 	// Skip global labels, those starting with a '-'
 	if true {
@@ -87,7 +89,7 @@ while fgets(s, Int32(sLen), stdin) != nil {	// stdin
 	// Issue 2
 	if true {
 		var shouldContinue = false
-		regEx2!.enumerateMatchesInString(str, options: NSMatchingOptions(), range:NSMakeRange(0, str.length)) { (result, flags, stop) in
+		regEx2!.enumerateMatchesInString(theString, options: NSMatchingOptions(), range:NSMakeRange(0, str.length)) { (result, flags, stop) in
 			let count = result.numberOfRanges
 			if count == 3 {
 				let r1 = result.rangeAtIndex(1)
@@ -121,7 +123,7 @@ while fgets(s, Int32(sLen), stdin) != nil {	// stdin
 	// Issue 2a
 	if true {
 		var shouldContinue = false
-		regEx2a!.enumerateMatchesInString(str, options: NSMatchingOptions(), range:NSMakeRange(0, str.length)) { (result, flags, stop) in
+		regEx2a!.enumerateMatchesInString(theString, options: NSMatchingOptions(), range:NSMakeRange(0, str.length)) { (result, flags, stop) in
 			let count = result.numberOfRanges
 			if count == 3 {
 				let r1 = result.rangeAtIndex(1)
@@ -158,7 +160,7 @@ while fgets(s, Int32(sLen), stdin) != nil {	// stdin
 		var offset: Int = 0
 
 		var shouldContinue = false
-		regEx3!.enumerateMatchesInString(str, options: NSMatchingOptions(), range:NSMakeRange(0, str.length)) { (result, flags, stop) in
+		regEx3!.enumerateMatchesInString(theString, options: NSMatchingOptions(), range:NSMakeRange(0, str.length)) { (result, flags, stop) in
 			let count = result.numberOfRanges
 			if count == 3 {
 
@@ -186,7 +188,7 @@ while fgets(s, Int32(sLen), stdin) != nil {	// stdin
 	// Issue 5
 	if true {
 		var shouldContinue = false
-		regEx5!.enumerateMatchesInString(str, options: NSMatchingOptions(), range:NSMakeRange(0, str.length)) { (result, flags, stop) in
+		regEx5!.enumerateMatchesInString(theString, options: NSMatchingOptions(), range:NSMakeRange(0, str.length)) { (result, flags, stop) in
 			let count = result.numberOfRanges
 			if count == 2 {
 
@@ -213,7 +215,7 @@ while fgets(s, Int32(sLen), stdin) != nil {	// stdin
 	// Issue 8
 	if true {
 		var shouldContinue = false
-		regEx8!.enumerateMatchesInString(str, options: NSMatchingOptions(), range:NSMakeRange(0, str.length)) { (result, flags, stop) in
+		regEx8!.enumerateMatchesInString(theString, options: NSMatchingOptions(), range:NSMakeRange(0, str.length)) { (result, flags, stop) in
 			let count = result.numberOfRanges
 			if count == 2 {
 
