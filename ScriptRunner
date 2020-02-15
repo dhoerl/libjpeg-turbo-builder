@@ -90,10 +90,12 @@ rm -rf build
 if [[ -f /usr/local/bin/yasm ]]
 then
 	# builds the C only version
+	echo "Building SIMD version of the Simulator slice"
 	../buildSIM_SIMD
 
 else
 	# builds the C only version
+	echo "Building C version of the Simulator slice"
 	../buildSIM_C
 fi
 

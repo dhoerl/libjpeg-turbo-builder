@@ -45,15 +45,7 @@
 				DE4ADA9614E342AC00D63E5A /* Log */,
 				DE588D5514E5F53500C7E151 /* Log.configure */,
 				DE588D5614E5F54B00C7E151 /* Log.make */,
-				DE4ADA6E14E2C9C400D63E5A /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		DE4ADA6E14E2C9C400D63E5A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,7 +70,7 @@
 				en,
 			);
 			mainGroup = DE4ADA6214E2C9C400D63E5A;
-			productRefGroup = DE4ADA6E14E2C9C400D63E5A /* Products */;
+			productRefGroup = DE4ADA6214E2C9C400D63E5A;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
