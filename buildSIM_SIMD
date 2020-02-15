@@ -1,0 +1,18 @@
+SRCDIR=$PWD
+echo $SRCDIR
+
+rm -rf build
+mkdir build
+cd build
+
+cmake -G"Unix Makefiles"  \
+	-UCMAKE_OSX_DEPLOYMENT_TARGET \
+	-DCMAKE_C_FLAGS='-miphoneos-version-min=10.0' \
+	-DCMAKE_OSX_SYSROOT=`xcode-select -p `/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk \
+	-DCMAKE_POSITION_INDEPENDENT_CODE=1 \
+	-DREQUIRE_SIMD=1 \
+	-DCMAKE_ASM_NASM_COMPILER=/usr/local/bin/yasm \
+	$SRCDIR
+
+make
+

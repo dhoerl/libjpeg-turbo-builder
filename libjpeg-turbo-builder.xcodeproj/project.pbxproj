@@ -21,20 +21,15 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXFileReference section */
-		DE1183F51A17B98B008229E5 /* gas-preprocessor.pl */ = {isa = PBXFileReference; lastKnownFileType = text.script.perl; path = "gas-preprocessor.pl"; sourceTree = "<group>"; };
-		DE1183F61A17B98B008229E5 /* orig-gas-preprocessor.pl */ = {isa = PBXFileReference; lastKnownFileType = text.script.perl; path = "orig-gas-preprocessor.pl"; sourceTree = "<group>"; };
-		DE4ADA7914E2C9C400D63E5A /* libjpeg-turbo-builder-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "libjpeg-turbo-builder-Info.plist"; sourceTree = "<group>"; };
-		DE4ADA7B14E2C9C400D63E5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DE4ADA7D14E2C9C400D63E5A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DE4ADA7F14E2C9C400D63E5A /* libjpeg-turbo-builder-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libjpeg-turbo-builder-Prefix.pch"; sourceTree = "<group>"; };
-		DE4ADA8014E2C9C400D63E5A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		DE4ADA8114E2C9C400D63E5A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DE4ADA8814E2C9F900D63E5A /* ScriptVariables */ = {isa = PBXFileReference; lastKnownFileType = text; path = ScriptVariables; sourceTree = "<group>"; };
 		DE4ADA9614E342AC00D63E5A /* Log */ = {isa = PBXFileReference; lastKnownFileType = text; path = Log; sourceTree = "<group>"; };
 		DE4ADA9714E3437000D63E5A /* ScriptRunner */ = {isa = PBXFileReference; lastKnownFileType = text; path = ScriptRunner; sourceTree = "<group>"; };
 		DE4ADA9814E3439A00D63E5A /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		DE588D5514E5F53500C7E151 /* Log.configure */ = {isa = PBXFileReference; lastKnownFileType = text; path = Log.configure; sourceTree = "<group>"; };
 		DE588D5614E5F54B00C7E151 /* Log.make */ = {isa = PBXFileReference; lastKnownFileType = text; path = Log.make; sourceTree = "<group>"; };
+		DEF78BFE23F884D5003E3E3A /* buildIOS */ = {isa = PBXFileReference; lastKnownFileType = text; path = buildIOS; sourceTree = "<group>"; };
+		DEF78BFF23F884D5003E3E3A /* buildSIM_SIMD */ = {isa = PBXFileReference; lastKnownFileType = text; path = buildSIM_SIMD; sourceTree = "<group>"; };
+		DEF78C0023F884D5003E3E3A /* buildSIM_C */ = {isa = PBXFileReference; lastKnownFileType = text; path = buildSIM_C; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -42,14 +37,14 @@
 			isa = PBXGroup;
 			children = (
 				DE4ADA9814E3439A00D63E5A /* README */,
+				DEF78BFE23F884D5003E3E3A /* buildIOS */,
+				DEF78C0023F884D5003E3E3A /* buildSIM_C */,
+				DEF78BFF23F884D5003E3E3A /* buildSIM_SIMD */,
 				DE4ADA8814E2C9F900D63E5A /* ScriptVariables */,
 				DE4ADA9714E3437000D63E5A /* ScriptRunner */,
 				DE4ADA9614E342AC00D63E5A /* Log */,
 				DE588D5514E5F53500C7E151 /* Log.configure */,
 				DE588D5614E5F54B00C7E151 /* Log.make */,
-				DE1183F51A17B98B008229E5 /* gas-preprocessor.pl */,
-				DE1183F61A17B98B008229E5 /* orig-gas-preprocessor.pl */,
-				DE4ADA7714E2C9C400D63E5A /* libjpeg-turbo-builder */,
 				DE4ADA6E14E2C9C400D63E5A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,27 +54,6 @@
 			children = (
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		DE4ADA7714E2C9C400D63E5A /* libjpeg-turbo-builder */ = {
-			isa = PBXGroup;
-			children = (
-				DE4ADA8014E2C9C400D63E5A /* AppDelegate.h */,
-				DE4ADA8114E2C9C400D63E5A /* AppDelegate.m */,
-				DE4ADA7814E2C9C400D63E5A /* Supporting Files */,
-			);
-			path = "libjpeg-turbo-builder";
-			sourceTree = "<group>";
-		};
-		DE4ADA7814E2C9C400D63E5A /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				DE4ADA7914E2C9C400D63E5A /* libjpeg-turbo-builder-Info.plist */,
-				DE4ADA7A14E2C9C400D63E5A /* InfoPlist.strings */,
-				DE4ADA7D14E2C9C400D63E5A /* main.m */,
-				DE4ADA7F14E2C9C400D63E5A /* libjpeg-turbo-builder-Prefix.pch */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -100,6 +74,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = DE4ADA6214E2C9C400D63E5A;
@@ -124,20 +99,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/ksh;
-			shellScript = "> Log\n> Log.configure\n> Log.make\n./scriptRunner 2>&1 | tee -a Log";
+			shellScript = "> Log\n> Log.configure\n> Log.make\n./scriptRunner 2>&1 | tee -a Log\n";
 		};
 /* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		DE4ADA7A14E2C9C400D63E5A /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DE4ADA7B14E2C9C400D63E5A /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DE4ADA8314E2C9C400D63E5A /* Debug */ = {

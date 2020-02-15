@@ -1,11 +1,11 @@
 #! /usr/bin/env -i /bin/ksh
-# Copyright (c) 2014 David Hoerl, all rights reserved
+# KSH is the one shell language I know really well.
+
+# Copyright (c) 2015-2020 David Hoerl, all rights reserved
 #
 # I needed to clean the environment - some Xcode defines were messing up the build (this as of Xcode 6)
 # above from http://crashingdaily.wordpress.com/2008/03/07/clearing-environment-variables-in-bash-scripts/ (Search on Gordon)
 # and http://unix.stackexchange.com/questions/48994/how-to-run-a-program-in-a-clean-environment-in-bash
-
-# KSH is the one shell language I know really well.
 
 PWD=$(pwd)
 export PATH="${PWD}:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
@@ -13,7 +13,6 @@ export PATH="${PWD}:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 #if you want to see every command execute, remove the # below as "set -x" causes a lot of helpful output
 #set -x
-#set
 
 date
 
@@ -21,192 +20,107 @@ date
 . ./ScriptVariables
 # set
 
-# Make sure we have gas-preprocessor.pl per the libjpeg-turbo instructions for arm
-if [ ! -f ./gas-preprocessor.pl ]
-then
-pwd
-ls -l gas-preprocessor.pl
-	print "Please download Special gas-processor.git"
-	exit 1
-    # https://raw.githubusercontent.com/libav/gas-preprocessor/master/gas-preprocessor.pl
-fi
-if [ ! -x ./gas-preprocessor.pl ]
-then
-    chmod +x ./gas-preprocessor.pl # just be sure
-fi
-
-# need to pickup the gas-assembler.pl executable
-# export PATH="${PWD}:/usr/local/bin:$PATH"
-
 # Now lets get the source
 
+FETCH=""
 VERSION=""
+
 if [ -f ./libjpeg-turbo/VERSION ]
 then
 	VERSION=$(cat ./libjpeg-turbo/VERSION)
 fi
 
-FETCH=""
-if [[ ${TURBO_VERSION} == "trunk" && ( ${VERSION} == "" || ${VERSION} == "trunk" ) ]]
+if [ -d ./libjpeg-turbo ]
 then
-    # user wants latest svn code
-    if [ -d ./libjpeg-turbo ]
-    then
-        cd ./libjpeg-turbo
-        svn update
-        cd ..
-    else
-        FETCH="trunk"
-		TURBO_VERSION="trunk"
-		# If you want to test a branch you can do it like this
-        #FETCH="//libjpeg-turbo.svn.sourceforge.net/svnroot/libjpeg-turbo/branches/1.2.x" # HACK REMOVE
-		#TURBO_VERSION="branches/1.2.x"
-    fi
+	if [[ ${TURBO_VERSION} == "master" ]]
+	then
+		if [[ ${VERSION} == "master" ]]
+		then
+			cd ./libjpeg-turbo
+			git pull origin master # update
+			cd ..
+		else
+			FETCH=" "
+		fi
+	else
+		# user selected a numbered release
+		if [[ ${TURBO_VERSION} != ${VERSION} ]]
+		then
+			FETCH="-b${TURBO_VERSION}"
+			echo "Cloning version ${TURBO_VERSION}"
+		else
+			echo "Using version $(cat ./libjpeg-turbo/VERSION)"
+		fi
+	fi
 else
-    # user selected a numbered release
-    if [[ ! -d ./libjpeg-turbo || ${TURBO_VERSION} != ${VERSION} ]]
-    then
-        FETCH="tags/${TURBO_VERSION}"
-    else
-		echo "Using version $(cat ./libjpeg-turbo/VERSION)"
-    fi
+	if [[ ${TURBO_VERSION} == "master" ]]
+	then
+		FETCH=" "
+	else
+		FETCH="-b${TURBO_VERSION}"
+	fi
 fi
 
-echo FETCH IS ${FETCH}
-
 if [[ ${FETCH} != "" ]]
-then 
-    svn co svn://svn.code.sf.net/p/libjpeg-turbo/code/${FETCH} libjpeg-turbo
+then
+	rm -rf ./libjpeg-turbo
+	git clone ${FETCH} https://github.com/libjpeg-turbo/libjpeg-turbo.git
     echo ${TURBO_VERSION} > ./libjpeg-turbo/VERSION
     
     # just do this once
     cd libjpeg-turbo
 	date >> ../Log.configure
-	echo 'autoreconf -fiv' >> ../Log.configure
-    autoreconf -fiv >> ../Log.configure
     cd ..
 fi
 
-ARCHIVES=""
-
+# Go into the source dir
 cd libjpeg-turbo
 
-#env
+../buildIOS
+if [[ -f build/libturbojpeg.a ]]
+then
+	cp -f build/libturbojpeg.a /tmp/ios.a
+else
+	echo "BUILD FAILED"
+	exit 1
+fi
 
-for a in ${SCRIPT_ARCHES} # ${NATIVE_ARCH_32_BIT}
-do
-	echo "DOING ARCH $a"
+rm -rf build
 
-    typeset -u ARCH=${a}
-    TCC=CC_${ARCH}
-    TCFLAGS=CFLAGS_${ARCH}
-	TCCASFLAGS=CCASFLAGS_${ARCH}
-    TLDFLAGS=LDFLAGS_${ARCH}
-	TOPTIONS=OPTIONS_${ARCH}
-	TFINALFLAGS=FINALFLAGS_${ARCH}
+if [[ -f /usr/local/bin/yasm ]]
+then
+	# builds the C only version
+	../buildSIM_SIMD
 
-    #echo TCC $TCC
-    #echo TCFLAGS $TCFLAGS
-    #echo TCCASFLAGS $TCCASFLAGS
-    #echo TCCASFLAGS $TLDFLAGS
-    #echo TOPTIONS $TOPTIONS
-    #echo TFINALFLAGS $TFINALFLAGS
+else
+	# builds the C only version
+	../buildSIM_C
+fi
 
-    typeset -n TCC="${TCC}"
-    typeset -n TCFLAGS="${TCFLAGS}"
-	typeset -n TCCASFLAGS="${TCCASFLAGS}"
-    typeset -n TLDFLAGS="${TLDFLAGS}"
-    typeset -n TOPTIONS="${TOPTIONS}"
-    typeset -n TFINALFLAGS="${TFINALFLAGS}"
+if [[ -f build/libturbojpeg.a ]]
+then
+	cp -f build/libturbojpeg.a /tmp/sim.a
+else
+	echo "BUILD FAILED"
+	exit 1
+fi
 
-    #echo 2 TCC $TCC
-    #echo 2 TCFLAGS $TCFLAGS
-    #echo 2 TCCASFLAGS $TCCASFLAGS
-    #echo 2 TLDFLAGS $TLDFLAGS
-	#echo 2 TOPTIONS $TOPTIONS
-    #echo 2 TFINALFLAGS $TFINALFLAGS
+rm -rf build
 
-    if [[ ${TCC} == "" || ${TCFLAGS} == "" || ${TLDFLAGS} == "" || ${TOPTIONS} == "" ]]
-    then
-        continue
-    fi
+# ... now pop out
+cd ..
 
-    #echo TCC $TCC
-    #echo TCFLAGS $TCFLAGS
-    #echo TCFLAGS $TLDFLAGS
-    #echo TOPTIONS $TOPTIONS
-    
-	echo "Configure $a"
+rm -f libturbojpeg.a
+lipo -create /tmp/ios.a /tmp/sim.a -output libturbojpeg.a
 
-	# Uncomment to see this get executed - most likely place of failure
-
-	rm -rf build
-	mkdir build
-	cd build
-
-# To just see the config scipt, uncomment the echo, the CONFIG_DEBUG line, and the exit 0
-#set -x
-#echo <<CONFIG_DEBUG
-	date >> ../../Log.configure
-
-cat <<CONFIG_LOG >> ../../Log.configure
-    ../configure ${TOPTIONS} --enable-static --disable-shared \
-        CC="${TCC}" LD="${TCC}" \
-        CFLAGS="${TCFLAGS}" \
-        LDFLAGS="${TLDFLAGS}" \
-		CCASFLAGS="${TCCASFLAGS} ${TCFLAGS}" \
-		${TFINALFLAGS} \
-
-CONFIG_LOG
-    ../configure ${TOPTIONS} --enable-static --disable-shared \
-        CC="${TCC}" LD="${TCC}" \
-        CFLAGS="${TCFLAGS}" \
-        LDFLAGS="${TLDFLAGS}" \
-		CCASFLAGS="${TCCASFLAGS} ${TCFLAGS}" \
-		${TFINALFLAGS} \
-		>> ../../Log.configure
-#CONFIG_DEBUG
-    if [ $? != "0" ] 
-    then 
-        echo "Config failed!"
-		cd ..
-		rm -rf build
-        exit 1
-	else
-		echo "Config SUCCEEDED!"
-    fi
-#exit 0
-#set +x
-
-	echo "Making $a..."
-    make >> ../../Log.make #--debug=j
-    if [ $? != "0" ] 
-    then 
-        echo "Make failed!"
-		cd ..
-		rm -rf build
-        exit 1
-    fi
-    
-    TMPLOC="/tmp/lib${ARCH}.a"
-    ARCHIVES="$ARCHIVES $TMPLOC"
-    
-    echo WORKING is $PWD
-    mv -f .libs/libturbojpeg.a $TMPLOC  
-
-    echo "Just finished arch $a"
-	cd ..
-	# rm -rf build
-done
-
-echo "Lipo The Following Archives: $ARCHIVES"
-
-rm -f ../libturbojpeg.a
-lipo -create $ARCHIVES -output ../libturbojpeg.a
-if [ $? != "0" ] 
-then 
+if [ $? != "0" ]
+then
     echo "Lipo failed!"
     exit 1
 fi
+
+rm /tmp/ios.a /tmp/sim.a
+
+echo "SUCCESS!!!"
 
 exit 0
