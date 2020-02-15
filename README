@@ -1,3 +1,12 @@
+Feb 14, 2020
+
+This project has been almost totally redone since it was crated a decade ago.
+The latest libturbojpeg build process has changed greatly, its now hosted on github
+and this project basically uses scripts created by DRC to build for iOS and the Simulator.
+
+NOTE: Xcode 11.4-beta complains about the current official Simulator slice in the offical
+  binaries, and fails with a hard error! If you want to use libturbojpeg get it here,
+  or use the project to build from scratch.
 
 The current version of the archive in this repository is 2.0.4
 You can just grab it, libturbojpeg.a (with arm64, x86_64) or build it from scratch.
